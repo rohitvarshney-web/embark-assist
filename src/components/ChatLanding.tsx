@@ -292,86 +292,155 @@ export default function ChatLanding() {
 
 function AdCarousel({ images }: { images: { src: string; title?: string; subtitle?: string }[] }) {
   const [idx, setIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   
   useEffect(() => {
-    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 5000);
+    if (isPaused) return;
+    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 6000);
     return () => clearInterval(t);
-  }, [images.length]);
+  }, [images.length, isPaused]);
 
   if (!images || images.length === 0) return null;
 
   return (
-    <section className="bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to border-b border-border py-8 px-4">
-      <div className="max-w-6xl mx-auto relative rounded-2xl overflow-hidden shadow-xl">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={idx}
-            src={images[idx].src}
-            alt={images[idx].title}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
-            className="w-full h-64 md:h-80 object-cover"
-          />
-        </AnimatePresence>
-
-        {/* Text Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-8 lg:p-12">
-          <motion.h2
-            key={`title-${idx}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl md:text-4xl font-bold mb-3 text-white drop-shadow-lg"
+    <section className="relative bg-gradient-to-br from-secondary/20 via-background to-secondary/10 border-b border-border py-12 px-4 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      
+      <div className="max-w-7xl mx-auto relative">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center">
+          {/* Left: Featured content card */}
+          <div 
+            className="lg:col-span-2 space-y-4"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            {images[idx].title}
-          </motion.h2>
-          <motion.p
-            key={`subtitle-${idx}`}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-sm md:text-lg max-w-2xl text-white/95 drop-shadow-md mb-4"
-          >
-            {images[idx].subtitle}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <Button className="shadow-lg">
-              Learn More
-            </Button>
-          </motion.div>
-        </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-semibold text-foreground">Featured</span>
+            </div>
+            
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="space-y-4"
+              >
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+                  {images[idx].title}
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {images[idx].subtitle}
+                </p>
+                <div className="flex gap-3 pt-2">
+                  <Button size="lg" className="group shadow-lg hover:shadow-xl transition-all">
+                    Learn More
+                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  <Button variant="outline" size="lg">
+                    Contact Sales
+                  </Button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
 
-        {/* Controls */}
-        <button
-          onClick={() => setIdx((i) => (i - 1 + images.length) % images.length)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 hover:bg-white shadow-lg backdrop-blur-sm transition-all hover:scale-110"
-        >
-          <ChevronLeft className="w-5 h-5 text-foreground" />
-        </button>
-        <button
-          onClick={() => setIdx((i) => (i + 1) % images.length)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 hover:bg-white shadow-lg backdrop-blur-sm transition-all hover:scale-110"
-        >
-          <ChevronRight className="w-5 h-5 text-foreground" />
-        </button>
+            {/* Progress indicators */}
+            <div className="flex gap-2 pt-4">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIdx(i)}
+                  className="group relative h-1.5 flex-1 rounded-full bg-secondary overflow-hidden"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: i === idx ? 1 : 0 }}
+                    transition={{ duration: i === idx && !isPaused ? 6 : 0.3 }}
+                    style={{ transformOrigin: 'left' }}
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
 
-        {/* Indicators */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIdx(i)}
-              className={`h-1.5 rounded-full transition-all ${
-                i === idx ? "bg-white w-8" : "bg-white/50 w-1.5 hover:bg-white/70"
-              }`}
-            />
-          ))}
+          {/* Right: Image carousel with modern cards */}
+          <div 
+            className="lg:col-span-3 relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
+                  className="relative aspect-[16/10] w-full"
+                >
+                  <img
+                    src={images[idx].src}
+                    alt={images[idx].title}
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Gradient overlay for better visual hierarchy */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  
+                  {/* Floating badge */}
+                  <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                      <span className="text-sm font-semibold text-foreground">Live Demo</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation controls */}
+              <button
+                onClick={() => setIdx((i) => (i - 1 + images.length) % images.length)}
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/95 backdrop-blur-md shadow-lg border border-border hover:bg-background hover:scale-110 transition-all"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5 text-foreground" />
+              </button>
+              <button
+                onClick={() => setIdx((i) => (i + 1) % images.length)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/95 backdrop-blur-md shadow-lg border border-border hover:bg-background hover:scale-110 transition-all"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5 text-foreground" />
+              </button>
+            </div>
+
+            {/* Thumbnail preview */}
+            <div className="flex gap-3 mt-4 overflow-x-auto pb-2 scrollbar-hide">
+              {images.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIdx(i)}
+                  className={`relative flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                    i === idx 
+                      ? 'border-primary shadow-lg scale-105' 
+                      : 'border-border/50 opacity-60 hover:opacity-100 hover:border-border'
+                  }`}
+                >
+                  <img src={img.src} alt="" className="w-full h-full object-cover" />
+                  {i === idx && (
+                    <div className="absolute inset-0 bg-primary/20" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
