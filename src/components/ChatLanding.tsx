@@ -9,8 +9,6 @@ import { TestimonialsSection } from "./landing/TestimonialsSection";
 import { FAQSection } from "./landing/FAQSection";
 import { Footer } from "./landing/Footer";
 import { FloatingCTA } from "./landing/FloatingCTA";
-import { PhoneCollectionModal } from "./PhoneCollectionModal";
-import { useWhatsAppSession } from "@/hooks/useWhatsAppSession";
 
 type Reply = { id: string; text: string; next?: string };
 type Node = { id: string; from: "bot" | "user"; text?: string; replies?: Reply[] };
@@ -101,25 +99,6 @@ export default function ChatLanding() {
   const [history, setHistory] = useState<Node[]>([FLOW.start]);
   const [input, setInput] = useState("");
   const [showForm, setShowForm] = useState(false);
-  const [showPhoneModal, setShowPhoneModal] = useState(true);
-  
-  const { session, incomingMessages, updatePhoneNumber, sendToWhatsApp, clearIncomingMessages } = useWhatsAppSession();
-
-  // Merge incoming WhatsApp messages with chat history
-  useEffect(() => {
-    incomingMessages.forEach((msg) => {
-      if (!history.find((h) => h.id === msg.id)) {
-        setHistory((h) => [
-          ...h,
-          {
-            id: msg.id,
-            from: "bot",
-            text: msg.text,
-          },
-        ]);
-      }
-    });
-  }, [incomingMessages, history]);
 
   function pushNode(nodeId: string) {
     const node = FLOW[nodeId];
@@ -127,30 +106,17 @@ export default function ChatLanding() {
     setHistory((h) => [...h, node]);
   }
 
-  async function handleReplyClick(reply: Reply) {
+  function handleReplyClick(reply: Reply) {
     const userNode: Node = { id: `u_${Date.now()}`, from: "user", text: reply.text };
     setHistory((h) => [...h, userNode]);
-
-    // Send to WhatsApp if connected
-    if (session.isWhatsAppConnected && reply.text) {
-      const context = history.length > 0 ? history[history.length - 1].text : undefined;
-      await sendToWhatsApp(reply.text, context);
-    }
     if (reply.next) setTimeout(() => pushNode(reply.next!), 300);
     if (reply.next === "form_passport") setShowForm(true);
   }
 
-  async function handleSendFreeText() {
+  function handleSendFreeText() {
     if (!input.trim()) return;
     const userNode: Node = { id: `u_${Date.now()}`, from: "user", text: input.trim() };
     setHistory((h) => [...h, userNode]);
-    
-    // Send to WhatsApp if connected
-    if (session.isWhatsAppConnected && input.trim()) {
-      const context = history.length > 0 ? history[history.length - 1].text : undefined;
-      await sendToWhatsApp(input.trim(), context);
-    }
-    
     const lastBot = [...history].reverse().find((x) => x.from === "bot");
     if (lastBot?.id === "track_order") {
       setTimeout(() => 
@@ -183,13 +149,6 @@ export default function ChatLanding() {
             <Sparkles className="w-5 h-5 text-primary-foreground" />
           </div>
           <span className="text-lg font-semibold text-foreground">StampMyVisa</span>
-          {session.isWhatsAppConnected && (
-            <div className="ml-4 flex items-center gap-2 text-green-600 bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full text-sm">
-              <Check className="w-4 h-4" />
-              <span className="hidden sm:inline">WhatsApp Connected</span>
-              <span className="sm:hidden">WA</span>
-            </div>
-          )}
         </div>
         <nav className="flex items-center gap-3 text-sm">
           <Button variant="ghost" size="sm" className="hidden sm:flex">
@@ -343,16 +302,6 @@ export default function ChatLanding() {
           />
         )}
       </AnimatePresence>
-
-      {showPhoneModal && !session.isPhoneCollected && (
-        <PhoneCollectionModal
-          onSubmit={(phoneNumber) => {
-            updatePhoneNumber(phoneNumber);
-            setShowPhoneModal(false);
-          }}
-          onClose={() => setShowPhoneModal(false)}
-        />
-      )}
     </div>
   );
 }
