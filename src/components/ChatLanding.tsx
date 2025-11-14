@@ -20,77 +20,58 @@ const FLOW: Record<string, Node> = {
     from: "bot",
     text: "Hi — I'm Stamp, your visa assistant. How can I help today?",
     replies: [
-      { id: "apply", text: "Apply for a visa", next: "apply_which" },
+      { id: "apply", text: "Apply for a visa", next: "redirect_visa_apply" },
       { id: "esim", text: "Buy eSIM", next: "esim_info" },
       { id: "travel_insurance", text: "Travel Insurance", next: "travel_insurance_info" },
       { id: "visa_rejection", text: "Visa Rejection Insurance", next: "visa_rejection_info" },
     ],
+  },
+  redirect_visa_apply: {
+    id: "redirect_visa_apply",
+    from: "bot",
+    text: "Redirecting you to start your visa application...",
   },
   esim_info: {
     id: "esim_info",
     from: "bot",
     text: "Get connected instantly with our international eSIM plans:\n\n• 160+ countries coverage\n• Instant activation\n• Data plans from $4.99\n• No physical SIM needed\n• Works in 160+ destinations worldwide\n\nReady to purchase your eSIM?",
     replies: [
-      { id: "esim_buy", text: "Buy eSIM now", next: "esim_purchase" },
+      { id: "esim_buy", text: "Buy eSIM now", next: "redirect_esim" },
       { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
-  esim_purchase: {
-    id: "esim_purchase",
+  redirect_esim: {
+    id: "redirect_esim",
     from: "bot",
-    text: "Perfect! Click the button below to browse our eSIM plans and complete your purchase.",
+    text: "Redirecting you to browse our eSIM plans...",
   },
   travel_insurance_info: {
     id: "travel_insurance_info",
     from: "bot",
     text: "Protect your trip with comprehensive travel insurance:\n\n• Medical emergencies coverage up to $500,000\n• Trip cancellation/interruption protection\n• Lost baggage coverage\n• Emergency evacuation\n• Travel delays\n• 24/7 global assistance\n\nStarting from ₹53/day\n\nReady to get your travel insurance?",
     replies: [
-      { id: "insurance_buy", text: "Get insurance now", next: "insurance_purchase" },
+      { id: "insurance_buy", text: "Get insurance now", next: "redirect_insurance" },
       { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
-  insurance_purchase: {
-    id: "insurance_purchase",
+  redirect_insurance: {
+    id: "redirect_insurance",
     from: "bot",
-    text: "Great! Click the button below to view our travel insurance plans and get your coverage.",
+    text: "Redirecting you to our travel insurance page...",
   },
   visa_rejection_info: {
     id: "visa_rejection_info",
     from: "bot",
     text: "Visa Rejection Insurance protects your investment:\n\n• Full refund of visa fees if rejected\n• Available for Schengen, USA, UK, Canada and other country visas\n• Instant claim processing\n• Quick refund within 5-7 business days\n\nStarting from only ₹299 per application\n\nProtect your visa application today!",
     replies: [
-      { id: "rejection_buy", text: "Get VRI now", next: "rejection_purchase" },
+      { id: "rejection_buy", text: "Get VRI now", next: "redirect_vri" },
       { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
-  rejection_purchase: {
-    id: "rejection_purchase",
+  redirect_vri: {
+    id: "redirect_vri",
     from: "bot",
-    text: "Excellent! Click the button below to protect your visa application with our rejection insurance.",
-  },
-  rejection_terms: {
-    id: "rejection_terms",
-    from: "bot",
-    text: "Visa Rejection Insurance Terms:\n\n• Valid for first-time applications\n• Refunds processed within 7 days of rejection\n• Must provide official rejection letter\n• Covers visa fees + service charges\n• Available at time of application only\n\nFull terms will be emailed after purchase.",
-    replies: [
-      { id: "add_insurance", text: "Add to application", next: "rejection_purchase" },
-      { id: "back", text: "Back to main menu", next: "start" },
-    ],
-  },
-  apply_which: {
-    id: "apply_which",
-    from: "bot",
-    text: "Which visa would you like to apply for?",
-    replies: [
-      { id: "schengen", text: "Schengen", next: "form_passport" },
-      { id: "malaysia", text: "Malaysia eVisa", next: "form_passport" },
-      { id: "usa", text: "USA", next: "form_passport" },
-    ],
-  },
-  form_passport: {
-    id: "form_passport",
-    from: "bot",
-    text: "Great! Let me collect some basic information to start your application.",
+    text: "Redirecting you to protect your visa application...",
   },
 };
 
@@ -131,8 +112,26 @@ export default function ChatLanding() {
   function handleReplyClick(reply: Reply) {
     const userNode: Node = { id: `u_${Date.now()}`, from: "user", text: reply.text };
     setHistory((h) => [...h, userNode]);
-    if (reply.next) setTimeout(() => pushNode(reply.next!), 300);
-    if (reply.next === "form_passport") setShowForm(true);
+    
+    // Handle redirects
+    if (reply.next === "redirect_visa_apply" || reply.next === "redirect_vri") {
+      setTimeout(() => {
+        pushNode(reply.next!);
+        setTimeout(() => window.open("https://stampmyvisa.com/home/create-visa", "_blank"), 500);
+      }, 300);
+    } else if (reply.next === "redirect_esim") {
+      setTimeout(() => {
+        pushNode(reply.next!);
+        setTimeout(() => window.open("https://stampmyvisa.com/home/travel-esim", "_blank"), 500);
+      }, 300);
+    } else if (reply.next === "redirect_insurance") {
+      setTimeout(() => {
+        pushNode(reply.next!);
+        setTimeout(() => window.open("https://stampmyvisa.com/home/insure", "_blank"), 500);
+      }, 300);
+    } else if (reply.next) {
+      setTimeout(() => pushNode(reply.next!), 300);
+    }
   }
 
   function handleSendFreeText() {
@@ -481,75 +480,45 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
 }
 
 function ChatWindow({ history, onReplyClick }: { history: Node[]; onReplyClick: (r: Reply) => void }) {
-  const getExternalLink = (nodeId: string) => {
-    switch (nodeId) {
-      case "esim_purchase":
-        return "https://stampmyvisa.com/home/travel-esim";
-      case "insurance_purchase":
-        return "https://stampmyvisa.com/home/insure";
-      case "rejection_purchase":
-        return "https://stampmyvisa.com/home/create-visa";
-      default:
-        return null;
-    }
-  };
-
   return (
     <div className="flex flex-col gap-4">
-      {history.map((m, i) => {
-        const externalLink = getExternalLink(m.id);
-        
-        return (
-          <motion.div
-            key={m.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: i * 0.1 }}
-            className={`flex ${m.from === "bot" ? "items-start" : "justify-end"}`}
-          >
-            {m.from === "bot" ? (
-              <div className="max-w-[85%]">
-                <div className="bg-background border border-border rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-                  <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">{m.text}</p>
-                </div>
-                {externalLink && (
-                  <div className="mt-3">
-                    <a
-                      href={externalLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium hover:shadow-lg transition-all"
+      {history.map((m, i) => (
+        <motion.div
+          key={m.id}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: i * 0.1 }}
+          className={`flex ${m.from === "bot" ? "items-start" : "justify-end"}`}
+        >
+          {m.from === "bot" ? (
+            <div className="max-w-[85%]">
+              <div className="bg-background border border-border rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
+                <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">{m.text}</p>
+              </div>
+              {m.replies && (
+                <div className="mt-3 flex gap-2 flex-wrap">
+                  {m.replies.map((r) => (
+                    <button
+                      key={r.id}
+                      onClick={() => onReplyClick(r)}
+                      className="px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary font-medium hover:bg-primary/20 transition-colors"
                     >
-                      Visit Purchase Page
-                      <ChevronRight className="w-4 h-4" />
-                    </a>
-                  </div>
-                )}
-                {m.replies && (
-                  <div className="mt-3 flex gap-2 flex-wrap">
-                    {m.replies.map((r) => (
-                      <button
-                        key={r.id}
-                        onClick={() => onReplyClick(r)}
-                        className="px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary font-medium hover:bg-primary/20 transition-colors"
-                      >
-                        {r.text}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="max-w-[85%] bg-gradient-to-br from-primary to-primary-hover text-primary-foreground rounded-2xl rounded-tr-sm px-4 py-3 shadow-md">
-                <div className="flex items-center gap-2">
-                  <p className="text-sm leading-relaxed">{m.text}</p>
-                  <Check className="w-3.5 h-3.5 flex-shrink-0" />
+                      {r.text}
+                    </button>
+                  ))}
                 </div>
+              )}
+            </div>
+          ) : (
+            <div className="max-w-[85%] bg-gradient-to-br from-primary to-primary-hover text-primary-foreground rounded-2xl rounded-tr-sm px-4 py-3 shadow-md">
+              <div className="flex items-center gap-2">
+                <p className="text-sm leading-relaxed">{m.text}</p>
+                <Check className="w-3.5 h-3.5 flex-shrink-0" />
               </div>
-            )}
-          </motion.div>
-        );
-      })}
+            </div>
+          )}
+        </motion.div>
+      ))}
     </div>
   );
 }
