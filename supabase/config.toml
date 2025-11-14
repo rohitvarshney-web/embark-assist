@@ -1,1 +1,4 @@
 project_id = "ykfgtfqggbypjyaolaus"
+
+[functions.periskope-webhook]
+verify_jwt = false
