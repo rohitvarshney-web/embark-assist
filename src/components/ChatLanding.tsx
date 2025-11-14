@@ -21,9 +21,9 @@ const FLOW: Record<string, Node> = {
     text: "Hi — I'm Stamp, your visa assistant. How can I help today?",
     replies: [
       { id: "apply", text: "Apply for a visa", next: "apply_which" },
-      { id: "track", text: "Track order", next: "track_order" },
-      { id: "checklist", text: "Document checklist", next: "show_checklist" },
-      { id: "services", text: "Travel services", next: "travel_services" },
+      { id: "eSIM", text: "Buy eSIM", next: "eSIM" },
+      { id: "ti", text: "Travel Isnurance", next: "travel_isnurance" },
+      { id: "vri", text: "Visa Rejection Insurance", next: "vri" },
     ],
   },
   travel_services: {
@@ -137,15 +137,15 @@ const FLOW: Record<string, Node> = {
 • Passport photo
 • Return ticket`,
   },
-  track_order: { 
-    id: "track_order", 
-    from: "bot", 
-    text: "Please enter your order ID to track your application." 
+  track_order: {
+    id: "track_order",
+    from: "bot",
+    text: "Please enter your order ID to track your application.",
   },
-  form_passport: { 
-    id: "form_passport", 
-    from: "bot", 
-    text: "Great! Let me collect some basic information to start your application." 
+  form_passport: {
+    id: "form_passport",
+    from: "bot",
+    text: "Great! Let me collect some basic information to start your application.",
   },
 };
 
@@ -196,22 +196,30 @@ export default function ChatLanding() {
     setHistory((h) => [...h, userNode]);
     const lastBot = [...history].reverse().find((x) => x.from === "bot");
     if (lastBot?.id === "track_order") {
-      setTimeout(() => 
-        setHistory((h) => [...h, { 
-          id: `bot_track_${Date.now()}`, 
-          from: "bot", 
-          text: `Order ${input.trim()}: Status — Processing\nExpected completion: 5-7 business days` 
-        }]), 
-        400
+      setTimeout(
+        () =>
+          setHistory((h) => [
+            ...h,
+            {
+              id: `bot_track_${Date.now()}`,
+              from: "bot",
+              text: `Order ${input.trim()}: Status — Processing\nExpected completion: 5-7 business days`,
+            },
+          ]),
+        400,
       );
     } else {
-      setTimeout(() => 
-        setHistory((h) => [...h, { 
-          id: `bot_ack_${Date.now()}`, 
-          from: "bot", 
-          text: `Thanks for your message. A specialist will respond shortly.` 
-        }]), 
-        300
+      setTimeout(
+        () =>
+          setHistory((h) => [
+            ...h,
+            {
+              id: `bot_ack_${Date.now()}`,
+              from: "bot",
+              text: `Thanks for your message. A specialist will respond shortly.`,
+            },
+          ]),
+        300,
       );
     }
     setInput("");
@@ -244,7 +252,7 @@ export default function ChatLanding() {
       <main className="flex-1 flex items-center justify-center px-4 py-12 lg:py-16">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left: hero */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -254,14 +262,14 @@ export default function ChatLanding() {
               <span className="w-2 h-2 rounded-full bg-badge-text animate-pulse"></span>
               Trusted by 10,000+ travel agents
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               India's #1 Visa Partner for Travel Planners
             </h1>
-            
+
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
-              Trusted by thousands of travel planners — we handle visa applications, 
-              document checklists, and appointment bookings so you can focus on your business.
+              Trusted by thousands of travel planners — we handle visa applications, document checklists, and
+              appointment bookings so you can focus on your business.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
@@ -287,7 +295,7 @@ export default function ChatLanding() {
           </motion.div>
 
           {/* Right: chat widget */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -320,11 +328,7 @@ export default function ChatLanding() {
                     placeholder="Type order ID or message..."
                     className="flex-1 rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring transition-shadow"
                   />
-                  <Button 
-                    onClick={handleSendFreeText} 
-                    size="sm"
-                    className="px-3"
-                  >
+                  <Button onClick={handleSendFreeText} size="sm" className="px-3">
                     <Send className="w-4 h-4" />
                   </Button>
                 </div>
@@ -371,9 +375,9 @@ export default function ChatLanding() {
                 {
                   id: `bot_submit_${Date.now()}`,
                   from: "bot",
-                  text: `Application created for ${vals.fullName}.\n\nOrder ID: ORD${Math.floor(
-                    Math.random() * 90000
-                  ) + 10000}\n\nWe'll email you the next steps shortly.`,
+                  text: `Application created for ${vals.fullName}.\n\nOrder ID: ORD${
+                    Math.floor(Math.random() * 90000) + 10000
+                  }\n\nWe'll email you the next steps shortly.`,
                 },
               ]);
             }}
@@ -387,7 +391,7 @@ export default function ChatLanding() {
 function AdCarousel({ images }: { images: { src: string; title?: string; subtitle?: string }[] }) {
   const [idx, setIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  
+
   useEffect(() => {
     if (isPaused) return;
     const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 6000);
@@ -402,11 +406,11 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      
+
       <div className="max-w-7xl mx-auto relative">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center">
           {/* Left: Featured content card */}
-          <div 
+          <div
             className="lg:col-span-2 space-y-4"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -415,7 +419,7 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-semibold text-foreground">Featured</span>
             </div>
-            
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={idx}
@@ -425,12 +429,8 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="space-y-4"
               >
-                <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
-                  {images[idx].title}
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {images[idx].subtitle}
-                </p>
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">{images[idx].title}</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">{images[idx].subtitle}</p>
                 <div className="flex gap-3 pt-2">
                   <Button size="lg" className="group shadow-lg hover:shadow-xl transition-all">
                     Learn More
@@ -456,7 +456,7 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: i === idx ? 1 : 0 }}
                     transition={{ duration: i === idx && !isPaused ? 6 : 0.3 }}
-                    style={{ transformOrigin: 'left' }}
+                    style={{ transformOrigin: "left" }}
                   />
                 </button>
               ))}
@@ -464,7 +464,7 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
           </div>
 
           {/* Right: Image carousel with modern cards */}
-          <div 
+          <div
             className="lg:col-span-3 relative"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -479,15 +479,11 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
                   transition={{ duration: 0.7, ease: "easeInOut" }}
                   className="relative aspect-[16/10] w-full"
                 >
-                  <img
-                    src={images[idx].src}
-                    alt={images[idx].title}
-                    className="w-full h-full object-cover"
-                  />
-                  
+                  <img src={images[idx].src} alt={images[idx].title} className="w-full h-full object-cover" />
+
                   {/* Gradient overlay for better visual hierarchy */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  
+
                   {/* Floating badge */}
                   <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md shadow-lg">
                     <div className="flex items-center gap-2">
@@ -522,15 +518,13 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
                   key={i}
                   onClick={() => setIdx(i)}
                   className={`relative flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                    i === idx 
-                      ? 'border-primary shadow-lg scale-105' 
-                      : 'border-border/50 opacity-60 hover:opacity-100 hover:border-border'
+                    i === idx
+                      ? "border-primary shadow-lg scale-105"
+                      : "border-border/50 opacity-60 hover:opacity-100 hover:border-border"
                   }`}
                 >
                   <img src={img.src} alt="" className="w-full h-full object-cover" />
-                  {i === idx && (
-                    <div className="absolute inset-0 bg-primary/20" />
-                  )}
+                  {i === idx && <div className="absolute inset-0 bg-primary/20" />}
                 </button>
               ))}
             </div>
@@ -541,13 +535,7 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
   );
 }
 
-function ChatWindow({
-  history,
-  onReplyClick,
-}: {
-  history: Node[];
-  onReplyClick: (r: Reply) => void;
-}) {
+function ChatWindow({ history, onReplyClick }: { history: Node[]; onReplyClick: (r: Reply) => void }) {
   return (
     <div className="flex flex-col gap-4">
       {history.map((m, i) => (
@@ -561,9 +549,7 @@ function ChatWindow({
           {m.from === "bot" ? (
             <div className="max-w-[85%]">
               <div className="bg-background border border-border rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-                <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">
-                  {m.text}
-                </p>
+                <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">{m.text}</p>
               </div>
               {m.replies && (
                 <div className="mt-3 flex gap-2 flex-wrap">
@@ -620,20 +606,14 @@ function PassportModal({
       >
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-xl font-semibold text-foreground">Start Application</h3>
-          <button
-            onClick={onClose}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <span className="sr-only">Close</span>
-            ✕
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors">
+            <span className="sr-only">Close</span>✕
           </button>
         </div>
 
         <div className="space-y-4 mb-6">
           <div>
-            <label className="text-sm font-medium text-foreground mb-1.5 block">
-              Full Name
-            </label>
+            <label className="text-sm font-medium text-foreground mb-1.5 block">Full Name</label>
             <input
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
@@ -642,9 +622,7 @@ function PassportModal({
             />
           </div>
           <div>
-            <label className="text-sm font-medium text-foreground mb-1.5 block">
-              Passport Number
-            </label>
+            <label className="text-sm font-medium text-foreground mb-1.5 block">Passport Number</label>
             <input
               value={passport}
               onChange={(e) => setPassport(e.target.value)}
