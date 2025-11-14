@@ -90,62 +90,79 @@ serve(async (req: Request) => {
     const chatId = `${phoneNumber}@c.us`;
     const fullMessage = context ? `[Context: ${context}]\n\n${sanitizedMessage}` : sanitizedMessage;
 
-    // Controlled list of likely endpoints to test
-    const endpoints = [
-      "https://api.periskope.app/message", // Preferred per docs: POST /message
-      "https://api.periskope.app/v1/message",
-      "https://api.periskope.app/message/send",
-      "https://api.periskope.app/v1/message/send",
-      "https://api.periskope.app/messages/send",
-      "https://api.periskope.app/v1/messages/send",
-    ];
-
-    const headersBase = {
+    // Use the correct Periskope API endpoint: POST /v1/message
+    const url = "https://api.periskope.app/v1/message";
+    
+    const headers = {
       Authorization: `Bearer ${periskopeApiKey}`,
-      "x-phone": businessWhatsAppNumber,
+      phone: businessWhatsAppNumber,
       "Content-Type": "application/json",
       Accept: "application/json",
     };
 
-    const attempts: Array<{ url: string; status: number | string; body: string | null }> = [];
+    console.log("Sending to Periskope API:", { 
+      url, 
+      chat_id: chatId, 
+      phoneHeader: businessWhatsAppNumber 
+    });
 
-    for (const url of endpoints) {
-      try {
-        console.log("Attempting endpoint:", url);
-        const res = await fetch(url, {
-          method: "POST",
-          headers: headersBase,
-          body: JSON.stringify({ chat_id: chatId, message: fullMessage, body: fullMessage }),
-        });
-        const text = await readSafeBody(res);
-        console.log("Endpoint result", { url, status: res.status, textPreview: text?.slice?.(0, 2000) });
-        attempts.push({ url, status: res.status, body: text });
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ 
+          chat_id: chatId, 
+          message: fullMessage 
+        }),
+      });
 
-        if (res.ok) {
-          let parsed = null;
-          try {
-            parsed = JSON.parse(text || "null");
-          } catch (_e) {
-            parsed = text;
+      const responseText = await readSafeBody(response);
+      console.log("Periskope API response:", { 
+        status: response.status, 
+        body: responseText?.slice(0, 2000) 
+      });
+
+      if (!response.ok) {
+        console.error("Periskope API error:", response.status, responseText);
+        return new Response(
+          JSON.stringify({ 
+            error: "Failed to send message via WhatsApp",
+            details: responseText ? JSON.parse(responseText || '{}') : "No response body",
+            hint: response.status === 401 ? "Check if BUSINESS_WHATSAPP_NUMBER secret is correct and authorized in Periskope" : null
+          }),
+          { 
+            status: response.status, 
+            headers: { ...corsHeaders, "Content-Type": "application/json" } 
           }
-          return new Response(JSON.stringify({ success: true, endpoint: url, data: parsed }), {
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
-          });
-        }
-      } catch (err) {
-        console.error("Fetch error for", url, err instanceof Error ? err.message : err);
-        attempts.push({ url, status: "fetch_error", body: String(err) });
+        );
       }
-    }
 
-    console.error(
-      "All endpoints failed. Attempts:",
-      attempts.map((a) => ({ url: a.url, status: a.status })),
-    );
-    return new Response(
-      JSON.stringify({ error: "Failed to send message via WhatsApp (all tested endpoints failed)", attempts }),
-      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
-    );
+      const data = responseText ? JSON.parse(responseText) : {};
+      console.log("✅ Message sent successfully:", data?.queue_id || data?.messageId);
+      
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          messageId: data?.queue_id || data?.messageId || "unknown",
+          data 
+        }),
+        { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+
+    } catch (err) {
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      console.error("Failed to send message:", errorMsg);
+      return new Response(
+        JSON.stringify({ 
+          error: "Failed to send message via WhatsApp",
+          details: errorMsg 
+        }),
+        { 
+          status: 500, 
+          headers: { ...corsHeaders, "Content-Type": "application/json" } 
+        }
+      );
+    }
   } catch (err) {
     console.error("Unhandled error", err instanceof Error ? err.message : err);
     return new Response(JSON.stringify({ error: err instanceof Error ? err.message : "Unknown error" }), {
