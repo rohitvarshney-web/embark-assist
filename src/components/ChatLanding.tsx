@@ -21,20 +21,9 @@ const FLOW: Record<string, Node> = {
     text: "Hi — I'm Stamp, your visa assistant. How can I help today?",
     replies: [
       { id: "apply", text: "Apply for a visa", next: "apply_which" },
-      { id: "eSIM", text: "Buy eSIM", next: "eSIM" },
-      { id: "ti", text: "Travel Isnurance", next: "travel_isnurance" },
-      { id: "vri", text: "Visa Rejection Insurance", next: "vri" },
-    ],
-  },
-  travel_services: {
-    id: "travel_services",
-    from: "bot",
-    text: "Select the service you need:",
-    replies: [
-      { id: "esim", text: "eSIM", next: "esim_info" },
+      { id: "esim", text: "Buy eSIM", next: "esim_info" },
       { id: "travel_insurance", text: "Travel Insurance", next: "travel_insurance_info" },
       { id: "visa_rejection", text: "Visa Rejection Insurance", next: "visa_rejection_info" },
-      { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
   esim_info: {
@@ -46,6 +35,7 @@ const FLOW: Record<string, Node> = {
       { id: "esim_asia", text: "Asia", next: "esim_purchase" },
       { id: "esim_americas", text: "Americas", next: "esim_purchase" },
       { id: "esim_global", text: "Global", next: "esim_purchase" },
+      { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
   esim_purchase: {
@@ -60,7 +50,7 @@ const FLOW: Record<string, Node> = {
     replies: [
       { id: "insurance_yes", text: "Yes, get quote", next: "insurance_quote" },
       { id: "insurance_info", text: "More information", next: "insurance_details" },
-      { id: "back_services", text: "Back to services", next: "travel_services" },
+      { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
   insurance_quote: {
@@ -74,7 +64,7 @@ const FLOW: Record<string, Node> = {
     text: "Our travel insurance covers:\n\n✓ Medical expenses up to $500,000\n✓ Emergency evacuation\n✓ Trip cancellation/interruption\n✓ Baggage loss/delay\n✓ Travel delays\n✓ 24/7 global assistance\n\nPolicies are underwritten by leading insurance providers.",
     replies: [
       { id: "get_quote", text: "Get a quote", next: "insurance_quote" },
-      { id: "back_services", text: "Back to services", next: "travel_services" },
+      { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
   visa_rejection_info: {
@@ -84,7 +74,7 @@ const FLOW: Record<string, Node> = {
     replies: [
       { id: "rejection_yes", text: "Yes, add insurance", next: "rejection_purchase" },
       { id: "rejection_terms", text: "View terms", next: "rejection_terms" },
-      { id: "back_services", text: "Back to services", next: "travel_services" },
+      { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
   rejection_purchase: {
@@ -98,7 +88,7 @@ const FLOW: Record<string, Node> = {
     text: "Visa Rejection Insurance Terms:\n\n• Valid for first-time applications\n• Refunds processed within 7 days of rejection\n• Must provide official rejection letter\n• Covers visa fees + service charges\n• Available at time of application only\n\nFull terms will be emailed after purchase.",
     replies: [
       { id: "add_insurance", text: "Add to application", next: "rejection_purchase" },
-      { id: "back_services", text: "Back to services", next: "travel_services" },
+      { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
   apply_which: {
@@ -110,37 +100,6 @@ const FLOW: Record<string, Node> = {
       { id: "malaysia", text: "Malaysia eVisa", next: "form_passport" },
       { id: "usa", text: "USA", next: "form_passport" },
     ],
-  },
-  show_checklist: {
-    id: "show_checklist",
-    from: "bot",
-    text: "Select country checklist",
-    replies: [
-      { id: "sc", text: "Schengen", next: "show_checklist_schengen" },
-      { id: "ml", text: "Malaysia", next: "show_checklist_malaysia" },
-    ],
-  },
-  show_checklist_schengen: {
-    id: "show_checklist_schengen",
-    from: "bot",
-    text: `Schengen checklist:
-• Passport (6+ months validity)
-• Recent photos (2)
-• Travel itinerary
-• Travel insurance`,
-  },
-  show_checklist_malaysia: {
-    id: "show_checklist_malaysia",
-    from: "bot",
-    text: `Malaysia checklist:
-• Passport copy
-• Passport photo
-• Return ticket`,
-  },
-  track_order: {
-    id: "track_order",
-    from: "bot",
-    text: "Please enter your order ID to track your application.",
   },
   form_passport: {
     id: "form_passport",
