@@ -9,6 +9,7 @@ import { TestimonialsSection } from "./landing/TestimonialsSection";
 import { FAQSection } from "./landing/FAQSection";
 import { Footer } from "./landing/Footer";
 import { FloatingCTA } from "./landing/FloatingCTA";
+import { PromotionalAds } from "./landing/PromotionalAds";
 
 type Reply = { id: string; text: string; next?: string };
 type Node = { id: string; from: "bot" | "user"; text?: string; replies?: Reply[] };
@@ -275,6 +276,7 @@ export default function ChatLanding() {
 
       {/* Modular sections */}
       <StatsSection />
+      <PromotionalAds />
       <HowItWorks />
       <FeaturesGrid />
       <TestimonialsSection />
