@@ -48,8 +48,14 @@ serve(async (req) => {
       ? `[Context: ${context}]\n\n${sanitizedMessage}`
       : sanitizedMessage;
 
-    // Call Periskope API
-    const periskopeResponse = await fetch('https://api.periskope.app/message/send', {
+    console.log('Calling Periskope API with:', {
+      endpoint: 'https://api.periskope.app/api/v1/message/send',
+      chat_id: phoneNumber,
+      messageLength: fullMessage.length
+    });
+
+    // Call Periskope API - using /api/v1/ path and chat_id field
+    const periskopeResponse = await fetch('https://api.periskope.app/api/v1/message/send', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${periskopeApiKey}`,
@@ -57,12 +63,13 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        to: phoneNumber,
+        chat_id: phoneNumber,  // Changed from 'to' to 'chat_id'
         message: fullMessage,
       }),
     });
 
     const periskopeData = await periskopeResponse.json();
+    console.log('Periskope response:', { status: periskopeResponse.status, data: periskopeData });
 
     if (!periskopeResponse.ok) {
       console.error('Periskope API error:', periskopeData);
