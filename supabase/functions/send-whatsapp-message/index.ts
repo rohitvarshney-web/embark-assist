@@ -92,11 +92,12 @@ serve(async (req: Request) => {
 
     // Controlled list of likely endpoints to test
     const endpoints = [
-      "https://api.periskope.app/v1/message/send",
-      "https://api.periskope.app/message/send",
-      "https://api.periskope.app/v1/messages/send",
-      "https://api.periskope.app/messages/send",
+      "https://api.periskope.app/message", // Preferred per docs: POST /message
       "https://api.periskope.app/v1/message",
+      "https://api.periskope.app/message/send",
+      "https://api.periskope.app/v1/message/send",
+      "https://api.periskope.app/messages/send",
+      "https://api.periskope.app/v1/messages/send",
     ];
 
     const headersBase = {
@@ -114,7 +115,7 @@ serve(async (req: Request) => {
         const res = await fetch(url, {
           method: "POST",
           headers: headersBase,
-          body: JSON.stringify({ chat_id: chatId, message: fullMessage }),
+          body: JSON.stringify({ chat_id: chatId, message: fullMessage, body: fullMessage }),
         });
         const text = await readSafeBody(res);
         console.log("Endpoint result", { url, status: res.status, textPreview: text?.slice?.(0, 2000) });
