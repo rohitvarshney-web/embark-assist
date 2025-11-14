@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "How long does visa processing take?",
-    a: "Processing time varies by country: Schengen (10-15 days), USA (3-5 weeks), Malaysia (5-7 days). We offer expedited services for urgent applications with priority processing available.",
+    a: "Processing time varies by country: Schengen (10-15 days), USA (3-5 weeks), Malaysia (1 day). We offer expedited services for urgent applications with priority processing available.",
   },
   {
     q: "What is your visa approval rate?",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Do you offer refunds if visa is rejected?",
-    a: "Government fees are non-refundable as they're paid directly to embassies. However, we refund 100% of our service charges if your application is rejected due to any error on our part.",
+    a: "Government fees are non-refundable as they're paid directly to embassies. However, we got you covered with our Visa Rejection Insurance you get 100% of visa fee refunded if your application is rejected*.",
   },
   {
     q: "Can I track my application status?",
@@ -41,18 +41,14 @@ export function FAQSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Everything you need to know about our services
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
+          <p className="text-muted-foreground text-lg">Everything you need to know about our services</p>
         </motion.div>
 
         <div className="space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
-            
+
             return (
               <motion.div
                 key={idx}
@@ -71,18 +67,18 @@ export function FAQSection() {
                     <span className="font-semibold text-foreground group-hover:text-primary transition-colors pr-4">
                       {faq.q}
                     </span>
-                    <ChevronDown 
+                    <ChevronDown
                       className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
                   </div>
-                  
+
                   <motion.div
                     initial={false}
-                    animate={{ 
+                    animate={{
                       height: isOpen ? "auto" : 0,
-                      opacity: isOpen ? 1 : 0
+                      opacity: isOpen ? 1 : 0,
                     }}
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
