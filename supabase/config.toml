@@ -1,4 +1,10 @@
 project_id = "ykfgtfqggbypjyaolaus"
 
+[functions.send-whatsapp-message]
+verify_jwt = false
+
+[functions.whatsapp-sse-stream]
+verify_jwt = false
+
 [functions.periskope-webhook]
 verify_jwt = false
