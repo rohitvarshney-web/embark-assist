@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { label: "Visa Applications", value: "50,000+", trend: "+23% this month" },
+  { label: "Visa Applications", value: "5,02,397+", trend: "+23% this month" },
   { label: "Travel Partners", value: "10,000+", trend: "Growing daily" },
   { label: "Approval Rate", value: "99.3%", trend: "Industry leading" },
-  { label: "Countries Covered", value: "45+", trend: "Expanding" },
+  { label: "Countries Covered", value: "112+", trend: "Expanding" },
 ];
 
 export function StatsSection() {
