@@ -52,8 +52,8 @@ serve(async (req) => {
       );
     }
 
-    // Build chatId with @c.us suffix for WhatsApp
-    const chatId = phoneNumber.includes('@') ? phoneNumber : `${phoneNumber}@c.us`;
+    // Build chatId (digits only; @c.us optional per docs)
+    const chatId = phoneNumber;
 
     // Build message with context if provided
     const fullMessage = context 
@@ -63,20 +63,24 @@ serve(async (req) => {
     // Try multiple Periskope endpoints in order
     const endpoints = [
       {
-        url: `https://api.periskope.app/api/v1/message/send/${encodeURIComponent(chatId)}`,
-        body: { body: fullMessage }
+        url: 'https://api.periskope.app/api/message/send',
+        body: { chat_id: chatId, message: fullMessage }
       },
       {
-        url: `https://api.periskope.app/message/send/${encodeURIComponent(chatId)}`,
-        body: { body: fullMessage }
-      },
-      {
-        url: 'https://api.periskope.app/api/v1/messages/send',
-        body: { chat_id: chatId, body: fullMessage }
+        url: 'https://api.periskope.app/api/v1/message/send',
+        body: { chat_id: chatId, message: fullMessage }
       },
       {
         url: 'https://api.periskope.app/message/send',
-        body: { chat_id: chatId, body: fullMessage }
+        body: { chat_id: chatId, message: fullMessage }
+      },
+      {
+        url: 'https://api.periskope.app/api/v1/messages/send',
+        body: { chat_id: chatId, message: fullMessage }
+      },
+      {
+        url: 'https://api.periskope.app/messages/send',
+        body: { chat_id: chatId, message: fullMessage }
       }
     ];
 
@@ -84,6 +88,7 @@ serve(async (req) => {
       'Authorization': `Bearer ${periskopeApiKey}`,
       'x-phone': businessWhatsAppNumber,
       'Content-Type': 'application/json',
+      'Accept': 'application/json',
     };
 
     let lastError: any = null;
@@ -108,7 +113,8 @@ serve(async (req) => {
           status: periskopeResponse.status, 
           ok: periskopeResponse.ok,
           code: periskopeData?.code,
-          message: periskopeData?.message?.substring(0, 100)
+          message: periskopeData?.message?.substring(0, 200),
+          error: periskopeData?.error?.substring?.(0, 200)
         });
 
         if (periskopeResponse.ok) {
