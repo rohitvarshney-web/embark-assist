@@ -46,7 +46,7 @@ const FLOW: Record<string, Node> = {
   travel_insurance_info: {
     id: "travel_insurance_info",
     from: "bot",
-    text: "Protect your trip with comprehensive travel insurance:\n\n• Medical emergencies coverage\n• Trip cancellation protection\n• Lost baggage coverage\n• 24/7 assistance\n\nStarting from $15/trip\n\nWould you like to get a quote?",
+    text: "Protect your trip with comprehensive travel insurance:\n\n• Medical emergencies coverage\n• Trip cancellation protection\n• Lost baggage coverage\n• 24/7 assistance\n\nStarting from ₹53/day\n\nWould you like to get a quote?",
     replies: [
       { id: "insurance_yes", text: "Yes, get quote", next: "insurance_quote" },
       { id: "insurance_info", text: "More information", next: "insurance_details" },
@@ -70,7 +70,7 @@ const FLOW: Record<string, Node> = {
   visa_rejection_info: {
     id: "visa_rejection_info",
     from: "bot",
-    text: "Visa Rejection Insurance protects your investment:\n\n• Full refund of visa fees if rejected\n• Covers application & service fees\n• Available for Schengen, USA, UK visas\n• Instant claim processing\n\nOnly $29 per application\n\nWould you like to add this to your visa application?",
+    text: "Visa Rejection Insurance protects your investment:\n\n• Full refund of visa fees if rejected\n• Available for Schengen, USA, UK and other country visas\n• Instant claim processing\n\nStarting from only ₹299 per application\n\nWould you like to add this to your visa application?",
     replies: [
       { id: "rejection_yes", text: "Yes, add insurance", next: "rejection_purchase" },
       { id: "rejection_terms", text: "View terms", next: "rejection_terms" },
