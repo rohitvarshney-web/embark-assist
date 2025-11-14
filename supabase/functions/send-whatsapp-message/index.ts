@@ -95,7 +95,7 @@ serve(async (req: Request) => {
     
     const headers = {
       Authorization: `Bearer ${periskopeApiKey}`,
-      phone: businessWhatsAppNumber,
+      "x-phone": businessWhatsAppNumber,
       "Content-Type": "application/json",
       Accept: "application/json",
     };
