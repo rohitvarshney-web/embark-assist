@@ -91,7 +91,7 @@ serve(async (req: Request) => {
     const fullMessage = context ? `[Context: ${context}]\n\n${sanitizedMessage}` : sanitizedMessage;
 
     // Use the correct Periskope API endpoint: POST /v1/message
-    const url = "https://api.periskope.app/v1/message";
+    const url = "https://api.periskope.app/message";
     
     const headers = {
       Authorization: `Bearer ${periskopeApiKey}`,
@@ -112,7 +112,8 @@ serve(async (req: Request) => {
         headers,
         body: JSON.stringify({ 
           chat_id: chatId, 
-          message: fullMessage 
+          message: fullMessage,
+          body: fullMessage
         }),
       });
 
