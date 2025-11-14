@@ -13,7 +13,7 @@ serve(async (req) => {
   try {
     const { phoneNumber, message, sessionId, context } = await req.json();
 
-    console.log('Sending message to WhatsApp:', { phoneNumber, sessionId, messageLength: message.length });
+    console.log('Sending message to WhatsApp:', { sessionId, messageLength: message.length });
 
     // Validate phone number format (E.164 without +)
     if (!phoneNumber || !/^\d{10,15}$/.test(phoneNumber)) {
@@ -43,54 +43,101 @@ serve(async (req) => {
       );
     }
 
+    // Validate BUSINESS_WHATSAPP_NUMBER format
+    if (!/^\d{10,15}$/.test(businessWhatsAppNumber)) {
+      console.error('Invalid BUSINESS_WHATSAPP_NUMBER format');
+      return new Response(
+        JSON.stringify({ error: 'Invalid BUSINESS_WHATSAPP_NUMBER – must include country code and digits only' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Build chatId with @c.us suffix for WhatsApp
+    const chatId = phoneNumber.includes('@') ? phoneNumber : `${phoneNumber}@c.us`;
+
     // Build message with context if provided
     const fullMessage = context 
       ? `[Context: ${context}]\n\n${sanitizedMessage}`
       : sanitizedMessage;
 
-    console.log('Calling Periskope API with:', {
-      endpoint: 'https://api.periskope.app/api/v1/message/send',
-      chat_id: phoneNumber,
-      messageLength: fullMessage.length
-    });
-
-    // Call Periskope API - using /api/v1/ path and chat_id field
-    const periskopeResponse = await fetch('https://api.periskope.app/api/v1/message/send', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${periskopeApiKey}`,
-        'x-phone': businessWhatsAppNumber,
-        'Content-Type': 'application/json',
+    // Try multiple Periskope endpoints in order
+    const endpoints = [
+      {
+        url: `https://api.periskope.app/api/v1/message/send/${encodeURIComponent(chatId)}`,
+        body: { body: fullMessage }
       },
-      body: JSON.stringify({
-        chat_id: phoneNumber,  // Changed from 'to' to 'chat_id'
-        message: fullMessage,
-      }),
-    });
+      {
+        url: `https://api.periskope.app/message/send/${encodeURIComponent(chatId)}`,
+        body: { body: fullMessage }
+      },
+      {
+        url: 'https://api.periskope.app/api/v1/messages/send',
+        body: { chat_id: chatId, body: fullMessage }
+      },
+      {
+        url: 'https://api.periskope.app/message/send',
+        body: { chat_id: chatId, body: fullMessage }
+      }
+    ];
 
-    const periskopeData = await periskopeResponse.json();
-    console.log('Periskope response:', { status: periskopeResponse.status, data: periskopeData });
+    const headers = {
+      'Authorization': `Bearer ${periskopeApiKey}`,
+      'x-phone': businessWhatsAppNumber,
+      'Content-Type': 'application/json',
+    };
 
-    if (!periskopeResponse.ok) {
-      console.error('Periskope API error:', periskopeData);
-      return new Response(
-        JSON.stringify({ 
-          error: 'Failed to send message via WhatsApp',
-          details: periskopeData 
-        }),
-        { status: periskopeResponse.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+    let lastError: any = null;
+    
+    for (const endpoint of endpoints) {
+      console.log('Attempting Periskope endpoint:', { 
+        url: endpoint.url, 
+        chatId,
+        bodyKeys: Object.keys(endpoint.body) 
+      });
+
+      try {
+        const periskopeResponse = await fetch(endpoint.url, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(endpoint.body),
+        });
+
+        const periskopeData = await periskopeResponse.json();
+        console.log('Periskope response:', { 
+          endpoint: endpoint.url,
+          status: periskopeResponse.status, 
+          ok: periskopeResponse.ok,
+          code: periskopeData?.code,
+          message: periskopeData?.message?.substring(0, 100)
+        });
+
+        if (periskopeResponse.ok) {
+          console.log('Message sent successfully via:', endpoint.url);
+          return new Response(
+            JSON.stringify({ 
+              success: true,
+              messageId: periskopeData.queue_id || periskopeData.messageId || `msg_${Date.now()}`,
+              data: periskopeData
+            }),
+            { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
+
+        lastError = periskopeData;
+      } catch (error) {
+        console.error('Error calling endpoint:', endpoint.url, error);
+        lastError = { error: error instanceof Error ? error.message : 'Unknown error' };
+      }
     }
 
-    console.log('Message sent successfully:', periskopeData);
-
+    // All endpoints failed
+    console.error('All Periskope endpoints failed. Last error:', lastError);
     return new Response(
       JSON.stringify({ 
-        success: true,
-        messageId: periskopeData.messageId || `msg_${Date.now()}`,
-        data: periskopeData
+        error: 'Failed to send message via WhatsApp',
+        details: lastError 
       }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 
   } catch (error) {
