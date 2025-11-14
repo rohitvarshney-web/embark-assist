@@ -29,58 +29,44 @@ const FLOW: Record<string, Node> = {
   esim_info: {
     id: "esim_info",
     from: "bot",
-    text: "Get connected instantly with our international eSIM plans:\n\n• 160+ countries coverage\n• Instant activation\n• Data plans from $4.99\n• No physical SIM needed\n\nWhich destination do you need eSIM for?",
+    text: "Get connected instantly with our international eSIM plans:\n\n• 160+ countries coverage\n• Instant activation\n• Data plans from $4.99\n• No physical SIM needed\n• Works in 160+ destinations worldwide\n\nReady to purchase your eSIM?",
     replies: [
-      { id: "esim_europe", text: "Europe", next: "esim_purchase" },
-      { id: "esim_asia", text: "Asia", next: "esim_purchase" },
-      { id: "esim_americas", text: "Americas", next: "esim_purchase" },
-      { id: "esim_global", text: "Global", next: "esim_purchase" },
+      { id: "esim_buy", text: "Buy eSIM now", next: "esim_purchase" },
       { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
   esim_purchase: {
     id: "esim_purchase",
     from: "bot",
-    text: "Great choice! I'll help you set up your eSIM. Please provide your email to receive the QR code and activation instructions.",
+    text: "Perfect! Click the button below to browse our eSIM plans and complete your purchase.",
   },
   travel_insurance_info: {
     id: "travel_insurance_info",
     from: "bot",
-    text: "Protect your trip with comprehensive travel insurance:\n\n• Medical emergencies coverage\n• Trip cancellation protection\n• Lost baggage coverage\n• 24/7 assistance\n\nStarting from ₹53/day\n\nWould you like to get a quote?",
+    text: "Protect your trip with comprehensive travel insurance:\n\n• Medical emergencies coverage up to $500,000\n• Trip cancellation/interruption protection\n• Lost baggage coverage\n• Emergency evacuation\n• Travel delays\n• 24/7 global assistance\n\nStarting from ₹53/day\n\nReady to get your travel insurance?",
     replies: [
-      { id: "insurance_yes", text: "Yes, get quote", next: "insurance_quote" },
-      { id: "insurance_info", text: "More information", next: "insurance_details" },
+      { id: "insurance_buy", text: "Get insurance now", next: "insurance_purchase" },
       { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
-  insurance_quote: {
-    id: "insurance_quote",
+  insurance_purchase: {
+    id: "insurance_purchase",
     from: "bot",
-    text: "I'll need some details for your travel insurance quote:\n• Destination country\n• Travel dates\n• Number of travelers\n• Age of travelers\n\nPlease provide these details to continue.",
-  },
-  insurance_details: {
-    id: "insurance_details",
-    from: "bot",
-    text: "Our travel insurance covers:\n\n✓ Medical expenses up to $500,000\n✓ Emergency evacuation\n✓ Trip cancellation/interruption\n✓ Baggage loss/delay\n✓ Travel delays\n✓ 24/7 global assistance\n\nPolicies are underwritten by leading insurance providers.",
-    replies: [
-      { id: "get_quote", text: "Get a quote", next: "insurance_quote" },
-      { id: "back", text: "Back to main menu", next: "start" },
-    ],
+    text: "Great! Click the button below to view our travel insurance plans and get your coverage.",
   },
   visa_rejection_info: {
     id: "visa_rejection_info",
     from: "bot",
-    text: "Visa Rejection Insurance protects your investment:\n\n• Full refund of visa fees if rejected\n• Available for Schengen, USA, UK and other country visas\n• Instant claim processing\n\nStarting from only ₹299 per application\n\nWould you like to add this to your visa application?",
+    text: "Visa Rejection Insurance protects your investment:\n\n• Full refund of visa fees if rejected\n• Available for Schengen, USA, UK, Canada and other country visas\n• Instant claim processing\n• Quick refund within 5-7 business days\n\nStarting from only ₹299 per application\n\nProtect your visa application today!",
     replies: [
-      { id: "rejection_yes", text: "Yes, add insurance", next: "rejection_purchase" },
-      { id: "rejection_terms", text: "View terms", next: "rejection_terms" },
+      { id: "rejection_buy", text: "Get VRI now", next: "rejection_purchase" },
       { id: "back", text: "Back to main menu", next: "start" },
     ],
   },
   rejection_purchase: {
     id: "rejection_purchase",
     from: "bot",
-    text: "Excellent choice! Visa Rejection Insurance will be added to your application for $29.\n\nYou'll receive:\n• Full policy document via email\n• Claim process instructions\n• 24/7 support access\n\nContinue with your visa application to complete the purchase.",
+    text: "Excellent! Click the button below to protect your visa application with our rejection insurance.",
   },
   rejection_terms: {
     id: "rejection_terms",
@@ -495,45 +481,75 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
 }
 
 function ChatWindow({ history, onReplyClick }: { history: Node[]; onReplyClick: (r: Reply) => void }) {
+  const getExternalLink = (nodeId: string) => {
+    switch (nodeId) {
+      case "esim_purchase":
+        return "https://stampmyvisa.com/home/travel-esim";
+      case "insurance_purchase":
+        return "https://stampmyvisa.com/home/insure";
+      case "rejection_purchase":
+        return "https://stampmyvisa.com/home/create-visa";
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="flex flex-col gap-4">
-      {history.map((m, i) => (
-        <motion.div
-          key={m.id}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: i * 0.1 }}
-          className={`flex ${m.from === "bot" ? "items-start" : "justify-end"}`}
-        >
-          {m.from === "bot" ? (
-            <div className="max-w-[85%]">
-              <div className="bg-background border border-border rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-                <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">{m.text}</p>
-              </div>
-              {m.replies && (
-                <div className="mt-3 flex gap-2 flex-wrap">
-                  {m.replies.map((r) => (
-                    <button
-                      key={r.id}
-                      onClick={() => onReplyClick(r)}
-                      className="px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary font-medium hover:bg-primary/20 transition-colors"
-                    >
-                      {r.text}
-                    </button>
-                  ))}
+      {history.map((m, i) => {
+        const externalLink = getExternalLink(m.id);
+        
+        return (
+          <motion.div
+            key={m.id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: i * 0.1 }}
+            className={`flex ${m.from === "bot" ? "items-start" : "justify-end"}`}
+          >
+            {m.from === "bot" ? (
+              <div className="max-w-[85%]">
+                <div className="bg-background border border-border rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
+                  <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed">{m.text}</p>
                 </div>
-              )}
-            </div>
-          ) : (
-            <div className="max-w-[85%] bg-gradient-to-br from-primary to-primary-hover text-primary-foreground rounded-2xl rounded-tr-sm px-4 py-3 shadow-md">
-              <div className="flex items-center gap-2">
-                <p className="text-sm leading-relaxed">{m.text}</p>
-                <Check className="w-3.5 h-3.5 flex-shrink-0" />
+                {externalLink && (
+                  <div className="mt-3">
+                    <a
+                      href={externalLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium hover:shadow-lg transition-all"
+                    >
+                      Visit Purchase Page
+                      <ChevronRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                )}
+                {m.replies && (
+                  <div className="mt-3 flex gap-2 flex-wrap">
+                    {m.replies.map((r) => (
+                      <button
+                        key={r.id}
+                        onClick={() => onReplyClick(r)}
+                        className="px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary font-medium hover:bg-primary/20 transition-colors"
+                      >
+                        {r.text}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
-          )}
-        </motion.div>
-      ))}
+            ) : (
+              <div className="max-w-[85%] bg-gradient-to-br from-primary to-primary-hover text-primary-foreground rounded-2xl rounded-tr-sm px-4 py-3 shadow-md">
+                <div className="flex items-center gap-2">
+                  <p className="text-sm leading-relaxed">{m.text}</p>
+                  <Check className="w-3.5 h-3.5 flex-shrink-0" />
+                </div>
+              </div>
+            )}
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
