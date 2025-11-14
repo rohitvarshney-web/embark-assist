@@ -23,6 +23,82 @@ const FLOW: Record<string, Node> = {
       { id: "apply", text: "Apply for a visa", next: "apply_which" },
       { id: "track", text: "Track order", next: "track_order" },
       { id: "checklist", text: "Document checklist", next: "show_checklist" },
+      { id: "services", text: "Travel services", next: "travel_services" },
+    ],
+  },
+  travel_services: {
+    id: "travel_services",
+    from: "bot",
+    text: "Select the service you need:",
+    replies: [
+      { id: "esim", text: "eSIM", next: "esim_info" },
+      { id: "travel_insurance", text: "Travel Insurance", next: "travel_insurance_info" },
+      { id: "visa_rejection", text: "Visa Rejection Insurance", next: "visa_rejection_info" },
+      { id: "back", text: "Back to main menu", next: "start" },
+    ],
+  },
+  esim_info: {
+    id: "esim_info",
+    from: "bot",
+    text: "Get connected instantly with our international eSIM plans:\n\n• 160+ countries coverage\n• Instant activation\n• Data plans from $4.99\n• No physical SIM needed\n\nWhich destination do you need eSIM for?",
+    replies: [
+      { id: "esim_europe", text: "Europe", next: "esim_purchase" },
+      { id: "esim_asia", text: "Asia", next: "esim_purchase" },
+      { id: "esim_americas", text: "Americas", next: "esim_purchase" },
+      { id: "esim_global", text: "Global", next: "esim_purchase" },
+    ],
+  },
+  esim_purchase: {
+    id: "esim_purchase",
+    from: "bot",
+    text: "Great choice! I'll help you set up your eSIM. Please provide your email to receive the QR code and activation instructions.",
+  },
+  travel_insurance_info: {
+    id: "travel_insurance_info",
+    from: "bot",
+    text: "Protect your trip with comprehensive travel insurance:\n\n• Medical emergencies coverage\n• Trip cancellation protection\n• Lost baggage coverage\n• 24/7 assistance\n\nStarting from $15/trip\n\nWould you like to get a quote?",
+    replies: [
+      { id: "insurance_yes", text: "Yes, get quote", next: "insurance_quote" },
+      { id: "insurance_info", text: "More information", next: "insurance_details" },
+      { id: "back_services", text: "Back to services", next: "travel_services" },
+    ],
+  },
+  insurance_quote: {
+    id: "insurance_quote",
+    from: "bot",
+    text: "I'll need some details for your travel insurance quote:\n• Destination country\n• Travel dates\n• Number of travelers\n• Age of travelers\n\nPlease provide these details to continue.",
+  },
+  insurance_details: {
+    id: "insurance_details",
+    from: "bot",
+    text: "Our travel insurance covers:\n\n✓ Medical expenses up to $500,000\n✓ Emergency evacuation\n✓ Trip cancellation/interruption\n✓ Baggage loss/delay\n✓ Travel delays\n✓ 24/7 global assistance\n\nPolicies are underwritten by leading insurance providers.",
+    replies: [
+      { id: "get_quote", text: "Get a quote", next: "insurance_quote" },
+      { id: "back_services", text: "Back to services", next: "travel_services" },
+    ],
+  },
+  visa_rejection_info: {
+    id: "visa_rejection_info",
+    from: "bot",
+    text: "Visa Rejection Insurance protects your investment:\n\n• Full refund of visa fees if rejected\n• Covers application & service fees\n• Available for Schengen, USA, UK visas\n• Instant claim processing\n\nOnly $29 per application\n\nWould you like to add this to your visa application?",
+    replies: [
+      { id: "rejection_yes", text: "Yes, add insurance", next: "rejection_purchase" },
+      { id: "rejection_terms", text: "View terms", next: "rejection_terms" },
+      { id: "back_services", text: "Back to services", next: "travel_services" },
+    ],
+  },
+  rejection_purchase: {
+    id: "rejection_purchase",
+    from: "bot",
+    text: "Excellent choice! Visa Rejection Insurance will be added to your application for $29.\n\nYou'll receive:\n• Full policy document via email\n• Claim process instructions\n• 24/7 support access\n\nContinue with your visa application to complete the purchase.",
+  },
+  rejection_terms: {
+    id: "rejection_terms",
+    from: "bot",
+    text: "Visa Rejection Insurance Terms:\n\n• Valid for first-time applications\n• Refunds processed within 7 days of rejection\n• Must provide official rejection letter\n• Covers visa fees + service charges\n• Available at time of application only\n\nFull terms will be emailed after purchase.",
+    replies: [
+      { id: "add_insurance", text: "Add to application", next: "rejection_purchase" },
+      { id: "back_services", text: "Back to services", next: "travel_services" },
     ],
   },
   apply_which: {
