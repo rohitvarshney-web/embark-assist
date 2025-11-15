@@ -195,67 +195,60 @@ export default function ChatLanding() {
       {/* Main content */}
       <main className="flex-1 flex items-center justify-center px-4 py-12 lg:py-16">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left: Simple CTA */}
+          {/* Left: Trust & Social Proof */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="px-4 lg:px-0 space-y-8 text-center lg:text-left"
+            className="px-4 lg:px-0 space-y-8"
           >
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                15,000+ Travel Agents
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                Start Processing Visas<br />in Minutes
-              </h2>
-              
-              <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                Join thousands of travel agents simplifying their visa workflow. Get started with 3 free applications.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <button 
-                onClick={() => window.location.href = 'https://stampmyvisa.com/home/login'}
-                className="group w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
-              >
-                Create Free Account
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </button>
-              
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1">
-                  <Check className="w-4 h-4 text-primary" />
-                  No credit card
-                </span>
-                <span className="flex items-center gap-1">
-                  <Check className="w-4 h-4 text-primary" />
-                  3 free applications
-                </span>
-                <span className="flex items-center gap-1">
-                  <Check className="w-4 h-4 text-primary" />
-                  Cancel anytime
-                </span>
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                  Try Our AI Assistant
+                </h2>
+                <p className="text-muted-foreground text-lg">
+                  Get instant answers about visas, eSIMs, and travel insurance
+                </p>
               </div>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-4 text-sm">
-                <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold text-primary">50K+</div>
-                  <div className="text-muted-foreground text-xs">Visas Processed</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold text-primary">99.3%</div>
-                  <div className="text-muted-foreground text-xs">Success Rate</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold text-primary">48h</div>
-                  <div className="text-muted-foreground text-xs">Avg. Approval</div>
+              <div className="space-y-3">
+                <p className="text-sm font-medium text-muted-foreground">Trusted by leading travel companies</p>
+                <div className="grid grid-cols-3 gap-8 items-center">
+                  {/* MakeMyTrip Logo */}
+                  <div className="flex items-center justify-center grayscale opacity-60 hover:opacity-80 transition-opacity">
+                    <div className="text-center">
+                      <div className="font-bold text-lg tracking-tight text-foreground">MakeMyTrip</div>
+                    </div>
+                  </div>
+                  
+                  {/* Yatra Logo */}
+                  <div className="flex items-center justify-center grayscale opacity-60 hover:opacity-80 transition-opacity">
+                    <div className="text-center">
+                      <div className="font-bold text-2xl tracking-wide text-foreground">Yatra</div>
+                    </div>
+                  </div>
+                  
+                  {/* TravClan Logo */}
+                  <div className="flex items-center justify-center grayscale opacity-60 hover:opacity-80 transition-opacity">
+                    <div className="text-center">
+                      <div className="font-semibold text-lg tracking-tight text-foreground">TravClan</div>
+                    </div>
+                  </div>
+                  
+                  {/* pickyourtrail Logo */}
+                  <div className="flex items-center justify-center grayscale opacity-60 hover:opacity-80 transition-opacity col-span-2">
+                    <div className="text-center">
+                      <div className="font-medium text-base tracking-tight text-foreground lowercase">pickyourtrail</div>
+                    </div>
+                  </div>
+                  
+                  {/* EaseMyTrip Logo */}
+                  <div className="flex items-center justify-center grayscale opacity-60 hover:opacity-80 transition-opacity">
+                    <div className="text-center">
+                      <div className="font-bold text-lg tracking-tight text-foreground">EaseMyTrip</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
