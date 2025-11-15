@@ -195,50 +195,67 @@ export default function ChatLanding() {
       {/* Main content */}
       <main className="flex-1 flex items-center justify-center px-4 py-12 lg:py-16">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left: Key benefits */}
+          {/* Left: Simple CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="px-4 lg:px-0 space-y-6"
+            className="px-4 lg:px-0 space-y-8 text-center lg:text-left"
           >
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                Why Travel Agents Choose Us
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                15,000+ Travel Agents
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                Start Processing Visas<br />in Minutes
               </h2>
-              <p className="text-muted-foreground">
-                Everything you need to streamline your visa services and grow your business.
+              
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                Join thousands of travel agents simplifying their visa workflow. Get started with 3 free applications.
               </p>
             </div>
 
             <div className="space-y-4">
-              <div className="flex gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-border/50">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Check className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Instant Processing</h3>
-                  <p className="text-sm text-muted-foreground">Get your visa applications processed faster with our streamlined system</p>
-                </div>
+              <button 
+                onClick={() => window.location.href = 'https://stampmyvisa.com/home/login'}
+                className="group w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
+              >
+                Create Free Account
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </button>
+              
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1">
+                  <Check className="w-4 h-4 text-primary" />
+                  No credit card
+                </span>
+                <span className="flex items-center gap-1">
+                  <Check className="w-4 h-4 text-primary" />
+                  3 free applications
+                </span>
+                <span className="flex items-center gap-1">
+                  <Check className="w-4 h-4 text-primary" />
+                  Cancel anytime
+                </span>
               </div>
 
-              <div className="flex gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-border/50">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Check className="w-6 h-6 text-primary" />
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-4 text-sm">
+                <div className="text-center lg:text-left">
+                  <div className="text-2xl font-bold text-primary">50K+</div>
+                  <div className="text-muted-foreground text-xs">Visas Processed</div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Expert Support</h3>
-                  <p className="text-sm text-muted-foreground">24/7 dedicated support team to help you at every step</p>
+                <div className="text-center lg:text-left">
+                  <div className="text-2xl font-bold text-primary">99.3%</div>
+                  <div className="text-muted-foreground text-xs">Success Rate</div>
                 </div>
-              </div>
-
-              <div className="flex gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-border/50">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Check className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Best Success Rate</h3>
-                  <p className="text-sm text-muted-foreground">99.3% visa approval rate with comprehensive document verification</p>
+                <div className="text-center lg:text-left">
+                  <div className="text-2xl font-bold text-primary">48h</div>
+                  <div className="text-muted-foreground text-xs">Avg. Approval</div>
                 </div>
               </div>
             </div>
