@@ -112,7 +112,7 @@ export default function ChatLanding() {
   function handleReplyClick(reply: Reply) {
     const userNode: Node = { id: `u_${Date.now()}`, from: "user", text: reply.text };
     setHistory((h) => [...h, userNode]);
-    
+
     // Handle redirects
     if (reply.next === "redirect_visa_apply" || reply.next === "redirect_vri") {
       setTimeout(() => {
@@ -160,7 +160,7 @@ export default function ChatLanding() {
             {
               id: `bot_ack_${Date.now()}`,
               from: "bot",
-              text: `Thanks for your message. A specialist will respond shortly.`,
+              text: `Thanks for your message. Please reach out to our support at 90047 02232.`,
             },
           ]),
         300,
@@ -173,38 +173,38 @@ export default function ChatLanding() {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="flex items-center justify-between px-6 lg:px-12 py-5 border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-20">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="flex items-center"
         >
-          <img 
-            width={207} 
-            height={32} 
-            className="cursor-pointer h-8 w-auto" 
-            src="https://stampmyvisa.com/assets/images/logo-with-name.svg" 
+          <img
+            width={207}
+            height={32}
+            className="cursor-pointer h-8 w-auto"
+            src="https://stampmyvisa.com/assets/images/logo-with-name.svg"
             alt="SMV logo"
           />
         </motion.div>
-        <motion.nav 
+        <motion.nav
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex items-center gap-3 text-sm"
         >
-          <Button 
-            variant="ghost" 
-            size="sm" 
+          <Button
+            variant="ghost"
+            size="sm"
             className="hidden sm:flex"
-            onClick={() => window.location.href = 'https://stampmyvisa.com/home/login'}
+            onClick={() => (window.location.href = "https://stampmyvisa.com/home/login")}
           >
             Login
           </Button>
-          <Button 
-            size="sm" 
+          <Button
+            size="sm"
             className="font-medium"
-            onClick={() => window.location.href = 'https://stampmyvisa.com/home/login'}
+            onClick={() => (window.location.href = "https://stampmyvisa.com/home/login")}
           >
             Get Started
           </Button>
@@ -218,13 +218,13 @@ export default function ChatLanding() {
       <main className="relative flex-1 flex items-center justify-center px-6 lg:px-12 py-20 lg:py-28 overflow-hidden">
         {/* Premium background effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.06, scale: 1 }}
             transition={{ duration: 1.5 }}
             className="absolute top-0 -right-48 w-[600px] h-[600px] bg-primary rounded-full blur-[120px]"
           />
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.04, scale: 1 }}
             transition={{ duration: 1.5, delay: 0.3 }}
@@ -242,7 +242,7 @@ export default function ChatLanding() {
           >
             {/* Headline */}
             <div className="space-y-6">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -250,7 +250,7 @@ export default function ChatLanding() {
               >
                 <span className="text-foreground">Transform Your</span>
                 <br />
-                <motion.span 
+                <motion.span
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
@@ -259,34 +259,43 @@ export default function ChatLanding() {
                   Visa Business
                 </motion.span>
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl"
               >
-                One powerful platform for <span className="text-foreground font-semibold">visa applications</span>, <span className="text-foreground font-semibold">travel insurance</span>, <span className="text-foreground font-semibold">eSIM</span>, and <span className="text-foreground font-semibold">VRI</span>. Grow your revenue while we handle the complexity.
+                One powerful platform for <span className="text-foreground font-semibold">visa applications</span>,{" "}
+                <span className="text-foreground font-semibold">travel insurance</span>,{" "}
+                <span className="text-foreground font-semibold">eSIM</span>, and{" "}
+                <span className="text-foreground font-semibold">VRI</span>. Grow your revenue while we handle the
+                complexity.
               </motion.p>
             </div>
 
             {/* Product Cards */}
             <div className="grid grid-cols-2 gap-5">
               {/* Visa */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4"
                 >
                   <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
                   </svg>
                 </motion.div>
                 <h3 className="font-bold text-foreground mb-1 text-lg">Visa</h3>
@@ -294,20 +303,25 @@ export default function ChatLanding() {
               </motion.div>
 
               {/* Insurance */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-green-500/10 to-green-500/5 border border-green-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center mb-4"
                 >
                   <svg className="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
                   </svg>
                 </motion.div>
                 <h3 className="font-bold text-foreground mb-1 text-lg">Insurance</h3>
@@ -315,20 +329,25 @@ export default function ChatLanding() {
               </motion.div>
 
               {/* eSIM */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4"
                 >
                   <svg className="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                    />
                   </svg>
                 </motion.div>
                 <h3 className="font-bold text-foreground mb-1 text-lg">eSIM</h3>
@@ -336,27 +355,31 @@ export default function ChatLanding() {
               </motion.div>
 
               {/* VRI */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="bg-gradient-to-br from-pink-500/10 to-pink-500/5 border border-pink-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="w-14 h-14 rounded-xl bg-pink-500/20 flex items-center justify-center mb-4"
                 >
                   <svg className="w-7 h-7 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                 </motion.div>
                 <h3 className="font-bold text-foreground mb-1 text-lg">VRI</h3>
                 <p className="text-sm text-muted-foreground">Refund guarantee</p>
               </motion.div>
             </div>
-
           </motion.div>
 
           {/* Right: chat widget */}
