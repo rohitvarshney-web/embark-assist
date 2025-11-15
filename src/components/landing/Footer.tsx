@@ -244,69 +244,43 @@ export function Footer() {
           className="pt-8 border-t border-border/50"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col md:flex-row items-center gap-3">
-              <motion.p 
-                className="text-sm text-muted-foreground"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                © 2024 StampMyVisa. All rights reserved.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: 0.6,
-                  type: "spring",
-                  stiffness: 300
-                }}
-                className="flex items-center gap-1.5 text-sm"
-              >
-                <span className="text-muted-foreground">Made with</span>
-                <motion.span
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{ 
-                    duration: 0.8,
-                    repeat: Infinity,
-                    repeatDelay: 2,
-                    ease: "easeInOut"
-                  }}
-                  className="text-red-500"
-                >
-                  ❤️
-                </motion.span>
-                <span className="text-muted-foreground">in India</span>
-              </motion.div>
-            </div>
-            <motion.div 
-              className="flex gap-6 text-sm text-muted-foreground"
+            <motion.p 
+              className="text-sm text-muted-foreground"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <motion.a 
-                href="#" 
-                className="hover:text-primary transition-colors"
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.2 }}
+              © 2024 StampMyVisa. All rights reserved.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.6,
+                type: "spring",
+                stiffness: 300
+              }}
+              className="flex items-center gap-1.5 text-sm"
+            >
+              <span className="text-muted-foreground">Made with</span>
+              <motion.span
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{ 
+                  duration: 0.8,
+                  repeat: Infinity,
+                  repeatDelay: 2,
+                  ease: "easeInOut"
+                }}
+                className="text-red-500"
               >
-                Sitemap
-              </motion.a>
-              <motion.a 
-                href="#" 
-                className="hover:text-primary transition-colors"
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.2 }}
-              >
-                Accessibility
-              </motion.a>
+                ❤️
+              </motion.span>
+              <span className="text-muted-foreground">in India</span>
             </motion.div>
           </div>
         </motion.div>
