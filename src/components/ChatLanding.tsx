@@ -240,23 +240,6 @@ export default function ChatLanding() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-10"
           >
-            {/* Trust Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full"
-            >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="w-5 h-5 rounded-full bg-gradient-to-tr from-primary to-purple-500 flex items-center justify-center"
-              >
-                <Check className="w-3 h-3 text-white" />
-              </motion.div>
-              <span className="text-sm font-medium text-primary">Trusted by 15,000+ Travel Agents</span>
-            </motion.div>
-
             {/* Headline */}
             <div className="space-y-6">
               <motion.h1 
@@ -287,30 +270,100 @@ export default function ChatLanding() {
               </motion.p>
             </div>
 
-            {/* CTA Buttons */}
+            {/* Product Cards */}
+            <div className="grid grid-cols-2 gap-5">
+              {/* Visa */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4"
+                >
+                  <svg className="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </motion.div>
+                <h3 className="font-bold text-foreground mb-1 text-lg">Visa</h3>
+                <p className="text-sm text-muted-foreground">40+ countries</p>
+              </motion.div>
+
+              {/* Insurance */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-gradient-to-br from-green-500/10 to-green-500/5 border border-green-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center mb-4"
+                >
+                  <svg className="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </motion.div>
+                <h3 className="font-bold text-foreground mb-1 text-lg">Insurance</h3>
+                <p className="text-sm text-muted-foreground">Full coverage</p>
+              </motion.div>
+
+              {/* eSIM */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4"
+                >
+                  <svg className="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                </motion.div>
+                <h3 className="font-bold text-foreground mb-1 text-lg">eSIM</h3>
+                <p className="text-sm text-muted-foreground">160+ countries</p>
+              </motion.div>
+
+              {/* VRI */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-gradient-to-br from-pink-500/10 to-pink-500/5 border border-pink-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="w-14 h-14 rounded-xl bg-pink-500/20 flex items-center justify-center mb-4"
+                >
+                  <svg className="w-7 h-7 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </motion.div>
+                <h3 className="font-bold text-foreground mb-1 text-lg">VRI</h3>
+                <p className="text-sm text-muted-foreground">Refund guarantee</p>
+              </motion.div>
+            </div>
+
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 1 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <motion.button
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => window.location.href = 'https://stampmyvisa.com/home/login'}
-                className="group px-8 py-4 bg-gradient-to-r from-primary to-purple-600 text-white rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 relative overflow-hidden"
-              >
-                <span className="relative z-10">Start Free Trial</span>
-                <motion.span
-                  className="relative z-10"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  →
-                </motion.span>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.button>
-              
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -328,7 +381,7 @@ export default function ChatLanding() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
               className="flex flex-wrap gap-8 pt-4"
             >
               <div className="flex flex-col">
