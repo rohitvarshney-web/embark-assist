@@ -183,7 +183,7 @@ export default function ChatLanding() {
             width={207} 
             height={32} 
             className="cursor-pointer h-8 w-auto" 
-            src="/assets/images/logo-with-name.svg" 
+            src="https://stampmyvisa.com/assets/images/logo-with-name.svg" 
             alt="SMV logo"
           />
         </motion.div>
