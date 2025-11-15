@@ -195,28 +195,23 @@ export default function ChatLanding() {
       {/* Main content */}
       <main className="flex-1 flex items-center justify-center px-4 py-12 lg:py-16">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left: Video & Trust */}
+          {/* Left: Simple intro text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="px-4 lg:px-0 space-y-6"
           >
-            <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                See How It Works
+            <div className="space-y-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Try Our AI Assistant
               </h2>
-              <video 
-                className="h-auto w-full origin-center rounded-2xl object-cover transition-transform scale-100 shadow-lg" 
-                src="https://stampmyvisa-public.s3.ap-south-1.amazonaws.com/important-docs/vid+1.mp4" 
-                playsInline 
-                loop 
-                autoPlay
-                muted
-              />
+              <p className="text-muted-foreground text-lg">
+                Get instant answers about visas, eSIMs, and travel insurance
+              </p>
             </div>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-4">
               <p className="text-sm font-medium text-muted-foreground">Trusted by leading travel companies</p>
               <div className="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
                 <div className="grayscale opacity-50 hover:opacity-70 transition-opacity">

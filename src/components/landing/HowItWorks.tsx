@@ -43,6 +43,23 @@ export function HowItWorks() {
           </p>
         </motion.div>
 
+        {/* Video Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 max-w-4xl mx-auto"
+        >
+          <video 
+            className="h-auto w-full origin-center rounded-2xl object-cover transition-transform scale-100 shadow-xl" 
+            src="https://stampmyvisa-public.s3.ap-south-1.amazonaws.com/important-docs/vid+1.mp4" 
+            playsInline 
+            loop 
+            autoPlay
+            muted
+          />
+        </motion.div>
+
         <div className="grid md:grid-cols-3 gap-8 relative">
           {/* Connection lines for desktop */}
           <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" />
