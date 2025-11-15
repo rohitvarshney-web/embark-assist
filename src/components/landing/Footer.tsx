@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const footerLinks = {
   services: [
-    { name: "Schengen Visa", href: "#" },
-    { name: "USA Visa", href: "#" },
-    { name: "Malaysia eVisa", href: "#" },
-    { name: "All Countries", href: "#" },
+    { name: "Visa", href: "#" },
+    { name: "Travel Insurance", href: "#" },
+    { name: "eSIM", href: "#" },
+    { name: "Visa Rejection Insurance", href: "#" },
   ],
   company: [
     { name: "About Us", href: "#" },
@@ -49,13 +49,13 @@ export function Footer() {
     <footer className="bg-gradient-to-b from-background to-card border-t border-border relative overflow-hidden">
       {/* Ambient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 0.03, scale: 1 }}
           transition={{ duration: 1.5 }}
           className="absolute -top-48 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
         />
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 0.03, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.3 }}
@@ -64,7 +64,7 @@ export function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto px-8 py-16 relative">
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -73,12 +73,8 @@ export function Footer() {
         >
           {/* Brand */}
           <motion.div variants={itemVariants}>
-            <motion.div 
-              className="flex items-center gap-2 mb-6"
-              whileHover={{ x: 4 }}
-              transition={{ duration: 0.2 }}
-            >
-              <motion.div 
+            <motion.div className="flex items-center gap-2 mb-6" whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+              <motion.div
                 className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -88,7 +84,7 @@ export function Footer() {
               <span className="text-xl font-bold text-foreground">StampMyVisa</span>
             </motion.div>
             <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
-              India's most trusted visa partner for travel professionals. Simplifying visa processing since 2020.
+              India's most trusted visa partner for travel professionals. Simplifying visa processing since 2017.
             </p>
             <div className="flex gap-3">
               {["Twitter", "LinkedIn", "Instagram", "Facebook"].map((social, idx) => (
@@ -97,16 +93,16 @@ export function Footer() {
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ 
+                  transition={{
                     delay: idx * 0.1,
                     type: "spring",
                     stiffness: 400,
-                    damping: 15
+                    damping: 15,
                   }}
-                  whileHover={{ 
+                  whileHover={{
                     y: -4,
                     scale: 1.1,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.2 },
                   }}
                   whileTap={{ scale: 0.95 }}
                   className="w-11 h-11 rounded-xl border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300 flex items-center justify-center group"
@@ -122,7 +118,7 @@ export function Footer() {
 
           {/* Services Links */}
           <motion.div variants={itemVariants}>
-            <motion.h4 
+            <motion.h4
               className="font-semibold text-foreground mb-6 text-lg"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -133,15 +129,15 @@ export function Footer() {
             </motion.h4>
             <ul className="space-y-4">
               {footerLinks.services.map((link, idx) => (
-                <motion.li 
+                <motion.li
                   key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ 
+                  transition={{
                     delay: idx * 0.05,
                     duration: 0.5,
-                    ease: [0.16, 1, 0.3, 1]
+                    ease: [0.16, 1, 0.3, 1],
                   }}
                 >
                   <motion.a
@@ -160,7 +156,7 @@ export function Footer() {
 
           {/* Company Links */}
           <motion.div variants={itemVariants}>
-            <motion.h4 
+            <motion.h4
               className="font-semibold text-foreground mb-6 text-lg"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -171,15 +167,15 @@ export function Footer() {
             </motion.h4>
             <ul className="space-y-4">
               {footerLinks.company.map((link, idx) => (
-                <motion.li 
+                <motion.li
                   key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ 
+                  transition={{
                     delay: idx * 0.05,
                     duration: 0.5,
-                    ease: [0.16, 1, 0.3, 1]
+                    ease: [0.16, 1, 0.3, 1],
                   }}
                 >
                   <motion.a
@@ -198,7 +194,7 @@ export function Footer() {
 
           {/* Legal Links */}
           <motion.div variants={itemVariants}>
-            <motion.h4 
+            <motion.h4
               className="font-semibold text-foreground mb-6 text-lg"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -209,15 +205,15 @@ export function Footer() {
             </motion.h4>
             <ul className="space-y-4">
               {footerLinks.legal.map((link, idx) => (
-                <motion.li 
+                <motion.li
                   key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ 
+                  transition={{
                     delay: idx * 0.05,
                     duration: 0.5,
-                    ease: [0.16, 1, 0.3, 1]
+                    ease: [0.16, 1, 0.3, 1],
                   }}
                 >
                   <motion.a
@@ -236,7 +232,7 @@ export function Footer() {
         </motion.div>
 
         {/* Bottom bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -244,37 +240,37 @@ export function Footer() {
           className="pt-8 border-t border-border/50"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <motion.p 
+            <motion.p
               className="text-sm text-muted-foreground"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              © 2024 StampMyVisa. All rights reserved.
+              © 2017 StampMyVisa. All rights reserved.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: 0.6,
                 type: "spring",
-                stiffness: 300
+                stiffness: 300,
               }}
               className="flex items-center gap-1.5 text-sm"
             >
               <span className="text-muted-foreground">Made with</span>
               <motion.span
-                animate={{ 
+                animate={{
                   scale: [1, 1.2, 1],
                 }}
-                transition={{ 
+                transition={{
                   duration: 0.8,
                   repeat: Infinity,
                   repeatDelay: 2,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
                 className="text-red-500"
               >
