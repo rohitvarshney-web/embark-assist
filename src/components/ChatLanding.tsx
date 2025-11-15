@@ -195,45 +195,51 @@ export default function ChatLanding() {
       {/* Main content */}
       <main className="flex-1 flex items-center justify-center px-4 py-12 lg:py-16">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left: hero */}
+          {/* Left: Key benefits */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="px-4 lg:px-0"
+            className="px-4 lg:px-0 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-badge-bg text-badge-text text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-badge-text animate-pulse"></span>
-              Trusted by 10,000+ travel agents
+            <div className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                Why Travel Agents Choose Us
+              </h2>
+              <p className="text-muted-foreground">
+                Everything you need to streamline your visa services and grow your business.
+              </p>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              India's #1 Visa Partner for Travel Planners
-            </h1>
-
-            <p className="text-lg text-muted-foreground max-w-xl mb-8">
-              Trusted by thousands of travel planners — we handle visa applications, document checklists, and
-              appointment bookings so you can focus on your business.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <Button size="lg" className="font-medium shadow-lg hover:shadow-xl transition-shadow">
-                Get Started for Free
-              </Button>
-              <Button variant="outline" size="lg" className="font-medium">
-                Contact Us
-              </Button>
-            </div>
-
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-1">
-                <span className="text-lg">⭐</span>
-                <span className="font-semibold text-foreground">4.8</span>
-                <span>/5 rating</span>
+            <div className="space-y-4">
+              <div className="flex gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-border/50">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Check className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Instant Processing</h3>
+                  <p className="text-sm text-muted-foreground">Get your visa applications processed faster with our streamlined system</p>
+                </div>
               </div>
-              <div className="h-4 w-px bg-border"></div>
-              <div>
-                <span className="font-semibold text-foreground">99.3%</span> visa approval rate
+
+              <div className="flex gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-border/50">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Check className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Expert Support</h3>
+                  <p className="text-sm text-muted-foreground">24/7 dedicated support team to help you at every step</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-border/50">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Check className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Best Success Rate</h3>
+                  <p className="text-sm text-muted-foreground">99.3% visa approval rate with comprehensive document verification</p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -353,61 +359,7 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
 
       <div className="max-w-7xl mx-auto relative">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center">
-          {/* Left: Featured content card */}
-          <div
-            className="lg:col-span-2 space-y-4"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Featured</span>
-            </div>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="space-y-4"
-              >
-                <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">{images[idx].title}</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">{images[idx].subtitle}</p>
-                <div className="flex gap-3 pt-2">
-                  <Button size="lg" className="group shadow-lg hover:shadow-xl transition-all">
-                    Learn More
-                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button variant="outline" size="lg">
-                    Contact Sales
-                  </Button>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Progress indicators */}
-            <div className="flex gap-2 pt-4">
-              {images.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setIdx(i)}
-                  className="group relative h-1.5 flex-1 rounded-full bg-secondary overflow-hidden"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: i === idx ? 1 : 0 }}
-                    transition={{ duration: i === idx && !isPaused ? 6 : 0.3 }}
-                    style={{ transformOrigin: "left" }}
-                  />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Image carousel with modern cards */}
+          {/* Left: Image carousel with modern cards */}
           <div
             className="lg:col-span-3 relative"
             onMouseEnter={() => setIsPaused(true)}
@@ -455,22 +407,61 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
               </button>
             </div>
 
-            {/* Thumbnail preview */}
-            <div className="flex gap-3 mt-4 overflow-x-auto pb-2 scrollbar-hide">
-              {images.map((img, i) => (
+            {/* Progress indicators - moved from content section */}
+            <div className="flex gap-2 mt-4">
+              {images.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setIdx(i)}
-                  className={`relative flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-all ${
-                    i === idx
-                      ? "border-primary shadow-lg scale-105"
-                      : "border-border/50 opacity-60 hover:opacity-100 hover:border-border"
-                  }`}
+                  className="group relative h-1.5 flex-1 rounded-full bg-secondary overflow-hidden"
                 >
-                  <img src={img.src} alt="" className="w-full h-full object-cover" />
-                  {i === idx && <div className="absolute inset-0 bg-primary/20" />}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: i === idx ? 1 : 0 }}
+                    transition={{ duration: i === idx && !isPaused ? 6 : 0.3 }}
+                    style={{ transformOrigin: "left" }}
+                  />
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* Right: Hero content */}
+          <div className="lg:col-span-2 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-badge-bg text-badge-text text-sm font-medium">
+              <span className="w-2 h-2 rounded-full bg-badge-text animate-pulse"></span>
+              Trusted by 10,000+ travel agents
+            </div>
+
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground leading-tight">
+              India's #1 Visa Partner for Travel Planners
+            </h2>
+
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Trusted by thousands of travel planners — we handle visa applications, document checklists, and
+              appointment bookings so you can focus on your business.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <Button size="lg" className="font-medium shadow-lg hover:shadow-xl transition-shadow">
+                Get Started for Free
+              </Button>
+              <Button variant="outline" size="lg" className="font-medium">
+                Contact Us
+              </Button>
+            </div>
+
+            <div className="flex items-center gap-6 text-sm text-muted-foreground pt-2">
+              <div className="flex items-center gap-1">
+                <span className="text-lg">⭐</span>
+                <span className="font-semibold text-foreground">4.8</span>
+                <span>/5 rating</span>
+              </div>
+              <div className="h-4 w-px bg-border"></div>
+              <div>
+                <span className="font-semibold text-foreground">99.3%</span> visa approval rate
+              </div>
             </div>
           </div>
         </div>
