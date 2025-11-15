@@ -27,32 +27,65 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-20 px-8 bg-background relative">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-8 bg-background relative overflow-hidden">
+      {/* Ambient background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.05 }}
+          transition={{ duration: 1 }}
+          className="absolute -top-24 -right-24 w-96 h-96 bg-primary rounded-full blur-3xl"
+        />
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.05 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500 rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3"
+          >
             How It Works
-          </h2>
-          <p className="text-muted-foreground text-lg">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-muted-foreground text-lg"
+          >
             Simple, fast, and hassle-free visa processing
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Video and Steps Side by Side */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Video */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: -40, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ scale: 1.02 }}
+            className="relative group"
           >
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <video 
-              className="h-auto w-full origin-center rounded-2xl object-cover shadow-xl" 
+              className="relative h-auto w-full origin-center rounded-2xl object-cover shadow-2xl" 
               src="https://stampmyvisa-public.s3.ap-south-1.amazonaws.com/important-docs/vid+1.mp4" 
               playsInline 
               loop 
@@ -68,21 +101,38 @@ export function HowItWorks() {
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.15, duration: 0.5 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: idx * 0.15,
+                    ease: [0.16, 1, 0.3, 1]
+                  }}
                 >
-                  <div className="relative bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
+                  <motion.div 
+                    whileHover={{ x: 8, transition: { duration: 0.2 } }}
+                    className="relative bg-card border border-border rounded-xl p-6 hover:shadow-2xl hover:border-primary/30 transition-all duration-300 group cursor-pointer"
+                  >
                     <div className="flex gap-4 items-start">
                       {/* Icon with step number */}
                       <div className="relative flex-shrink-0">
-                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <motion.div 
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                          className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center`}
+                        >
                           <Icon className="w-7 h-7 text-primary" />
-                        </div>
-                        <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">
+                        </motion.div>
+                        <motion.div 
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: idx * 0.15 + 0.3, type: "spring", stiffness: 500, damping: 15 }}
+                          className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold shadow-lg"
+                        >
                           {item.step}
-                        </div>
+                        </motion.div>
                       </div>
                       
                       {/* Content */}
@@ -95,7 +145,7 @@ export function HowItWorks() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </motion.div>
               );
             })}
