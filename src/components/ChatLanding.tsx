@@ -195,25 +195,40 @@ export default function ChatLanding() {
       {/* Main content */}
       <main className="flex-1 flex items-center justify-center px-4 py-12 lg:py-16">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left: Simple intro text */}
+          {/* Left: One Portal messaging */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="px-4 lg:px-0 space-y-6"
+            className="px-4 lg:px-0 space-y-8"
           >
-            <div className="space-y-3">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Try Our AI Assistant
+            <div className="space-y-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                One Portal for All Your Customer's Travel Needs
               </h2>
-              <p className="text-muted-foreground text-lg">
-                Get instant answers about visas, eSIMs, and travel insurance
-              </p>
+              <div className="space-y-3 text-lg text-muted-foreground">
+                <p className="flex items-start gap-2">
+                  <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <span><strong className="text-foreground">Visa Applications</strong> - Process visas for 40+ countries</span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <span><strong className="text-foreground">Travel Insurance</strong> - Comprehensive coverage for all trips</span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <span><strong className="text-foreground">eSIM</strong> - Stay connected in 160+ countries</span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <span><strong className="text-foreground">Visa Rejection Insurance</strong> - Full refund if visa gets rejected</span>
+                </p>
+              </div>
             </div>
 
-            <div className="space-y-3 pt-4">
+            <div className="space-y-3 pt-4 border-t border-border">
               <p className="text-sm font-medium text-muted-foreground">Trusted by leading travel companies</p>
-              <div className="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
+              <div className="flex flex-wrap items-center gap-6">
                 <div className="grayscale opacity-50 hover:opacity-70 transition-opacity">
                   <span className="font-bold text-base text-foreground">MakeMyTrip</span>
                 </div>
