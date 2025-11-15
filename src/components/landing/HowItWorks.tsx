@@ -43,64 +43,63 @@ export function HowItWorks() {
           </p>
         </motion.div>
 
-        {/* Video Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 max-w-4xl mx-auto"
-        >
-          <video 
-            className="h-auto w-full origin-center rounded-2xl object-cover transition-transform scale-100 shadow-xl" 
-            src="https://stampmyvisa-public.s3.ap-south-1.amazonaws.com/important-docs/vid+1.mp4" 
-            playsInline 
-            loop 
-            autoPlay
-            muted
-          />
-        </motion.div>
+        {/* Video and Steps Side by Side */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Video */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <video 
+              className="h-auto w-full origin-center rounded-2xl object-cover shadow-xl" 
+              src="https://stampmyvisa-public.s3.ap-south-1.amazonaws.com/important-docs/vid+1.mp4" 
+              playsInline 
+              loop 
+              autoPlay
+              muted
+            />
+          </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connection lines for desktop */}
-          <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" />
-          
-          {steps.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2, duration: 0.6 }}
-                className="relative"
-              >
-                <div className="relative bg-card border border-border rounded-2xl p-8 hover:shadow-2xl hover:border-primary/30 transition-all duration-300 group">
-                  {/* Step number badge */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow-lg">
-                    {item.step}
+          {/* Steps - Vertical Layout */}
+          <div className="space-y-6">
+            {steps.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.15, duration: 0.5 }}
+                >
+                  <div className="relative bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
+                    <div className="flex gap-4 items-start">
+                      {/* Icon with step number */}
+                      <div className="relative flex-shrink-0">
+                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                          <Icon className="w-7 h-7 text-primary" />
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">
+                          {item.step}
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  
-                  {/* Icon with gradient background */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-8 h-8 text-primary" />
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {item.desc}
-                  </p>
-                  
-                  {/* Hover arrow */}
-                  <div className="mt-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                    →
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
