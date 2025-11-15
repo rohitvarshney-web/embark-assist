@@ -357,46 +357,6 @@ export default function ChatLanding() {
               </motion.div>
             </div>
 
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <motion.button
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-background border-2 border-border hover:border-primary text-foreground rounded-xl font-semibold text-lg transition-all flex items-center justify-center gap-2"
-              >
-                <span>Watch Demo</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </motion.button>
-            </motion.div>
-
-            {/* Social Proof Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
-              className="flex flex-wrap gap-8 pt-4"
-            >
-              <div className="flex flex-col">
-                <div className="text-3xl font-bold text-foreground font-display">50K+</div>
-                <div className="text-sm text-muted-foreground">Visas Processed</div>
-              </div>
-              <div className="flex flex-col">
-                <div className="text-3xl font-bold text-foreground font-display">99.3%</div>
-                <div className="text-sm text-muted-foreground">Success Rate</div>
-              </div>
-              <div className="flex flex-col">
-                <div className="text-3xl font-bold text-foreground font-display">48h</div>
-                <div className="text-sm text-muted-foreground">Avg. Approval</div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right: chat widget */}
@@ -404,7 +364,7 @@ export default function ChatLanding() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center justify-center"
+            className="flex items-start justify-center"
           >
             <div className="w-full max-w-md bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden">
               <div className="px-5 py-4 border-b border-chat-border bg-gradient-to-r from-primary/5 to-accent/5">
