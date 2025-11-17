@@ -87,12 +87,12 @@ const AD_IMAGES = [
     subtitle: "Get end-to-end support for Schengen, USA, and Malaysia visas.",
   },
   {
-    src: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80",
+    src: "https://ik.imagekit.io/9pjdbdyeq/Website%20Images/VN%20Express%20visa%20(1200%20x%20628%20px).jpg",
     title: "Partner with Us",
     subtitle: "Empower your travel business with automated visa tools.",
   },
   {
-    src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1400&q=80",
+    src: "https://ik.imagekit.io/9pjdbdyeq/Website%20Images/Indonesia%20(1200%20x%20628%20px).jpg",
     title: "Trusted by 10,000+ Agents",
     subtitle: "Experience reliability and transparency with every application.",
   },
