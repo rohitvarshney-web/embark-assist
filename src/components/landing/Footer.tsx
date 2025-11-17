@@ -247,7 +247,7 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              © 2017 StampMyVisa. All rights reserved.
+              ©2025 StampMyVisa. All rights reserved.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
