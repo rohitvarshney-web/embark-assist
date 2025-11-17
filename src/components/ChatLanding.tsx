@@ -384,7 +384,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-16 left-4 w-16 h-16 opacity-[0.08] pointer-events-none"
+              className="absolute -top-16 left-4 w-16 h-16 opacity-[0.15] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 backdrop-blur-sm flex items-center justify-center">
                 <Plane className="w-8 h-8 text-blue-500/40" />
@@ -395,7 +395,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -top-16 right-4 w-16 h-16 opacity-[0.08] pointer-events-none"
+              className="absolute -top-16 right-4 w-16 h-16 opacity-[0.15] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 backdrop-blur-sm flex items-center justify-center">
                 <Globe className="w-8 h-8 text-purple-500/40" />
@@ -406,7 +406,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ x: [0, -8, 0], rotate: [0, -8, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute top-20 -left-20 w-14 h-14 opacity-[0.06] pointer-events-none"
+              className="absolute top-20 -left-20 w-14 h-14 opacity-[0.12] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-cyan-500/15 to-cyan-600/10 backdrop-blur-sm flex items-center justify-center">
                 <Ticket className="w-7 h-7 text-cyan-500/40" />
@@ -417,7 +417,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ x: [0, -10, 0] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-              className="absolute top-1/2 -translate-y-1/2 -left-20 w-14 h-14 opacity-[0.06] pointer-events-none"
+              className="absolute top-1/2 -translate-y-1/2 -left-20 w-14 h-14 opacity-[0.12] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-green-500/15 to-green-600/10 backdrop-blur-sm flex items-center justify-center">
                 <Shield className="w-7 h-7 text-green-500/40" />
@@ -428,7 +428,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ x: [0, -8, 0], rotate: [0, 8, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute bottom-20 -left-20 w-14 h-14 opacity-[0.06] pointer-events-none"
+              className="absolute bottom-20 -left-20 w-14 h-14 opacity-[0.12] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-yellow-500/15 to-yellow-600/10 backdrop-blur-sm flex items-center justify-center">
                 <MapPin className="w-7 h-7 text-yellow-500/40" />
@@ -439,7 +439,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ x: [0, 8, 0], rotate: [0, 8, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              className="absolute top-20 -right-20 w-14 h-14 opacity-[0.06] pointer-events-none"
+              className="absolute top-20 -right-20 w-14 h-14 opacity-[0.12] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-pink-500/15 to-pink-600/10 backdrop-blur-sm flex items-center justify-center">
                 <CreditCard className="w-7 h-7 text-pink-500/40" />
@@ -450,7 +450,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ x: [0, 10, 0] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2.2 }}
-              className="absolute top-1/2 -translate-y-1/2 -right-20 w-14 h-14 opacity-[0.06] pointer-events-none"
+              className="absolute top-1/2 -translate-y-1/2 -right-20 w-14 h-14 opacity-[0.12] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-orange-500/15 to-orange-600/10 backdrop-blur-sm flex items-center justify-center">
                 <Luggage className="w-7 h-7 text-orange-500/40" />
@@ -461,7 +461,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ x: [0, 8, 0], rotate: [0, -8, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
-              className="absolute bottom-20 -right-20 w-14 h-14 opacity-[0.06] pointer-events-none"
+              className="absolute bottom-20 -right-20 w-14 h-14 opacity-[0.12] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-teal-500/15 to-teal-600/10 backdrop-blur-sm flex items-center justify-center">
                 <Navigation className="w-7 h-7 text-teal-500/40" />
@@ -472,7 +472,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ y: [0, 12, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-              className="absolute -bottom-16 left-4 w-16 h-16 opacity-[0.08] pointer-events-none"
+              className="absolute -bottom-16 left-4 w-16 h-16 opacity-[0.15] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/10 backdrop-blur-sm flex items-center justify-center">
                 <Map className="w-8 h-8 text-rose-500/40" />
@@ -483,7 +483,7 @@ export default function ChatLanding() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-              className="absolute -bottom-16 right-4 w-16 h-16 opacity-[0.08] pointer-events-none"
+              className="absolute -bottom-16 right-4 w-16 h-16 opacity-[0.15] pointer-events-none"
             >
               <div className="w-full h-full rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 backdrop-blur-sm flex items-center justify-center">
                 <motion.div
@@ -495,7 +495,7 @@ export default function ChatLanding() {
               </div>
             </motion.div>
 
-            <div className="w-full max-w-md bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden relative z-10">
+            <div className="w-full max-w-2xl bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden relative z-10">
               <div className="px-5 py-4 border-b border-chat-border bg-gradient-to-r from-primary/5 to-accent/5">
                 <div className="flex items-center justify-between">
                   <div>
@@ -509,7 +509,7 @@ export default function ChatLanding() {
                 </div>
               </div>
 
-              <div ref={chatScrollRef} className="p-5 h-80 overflow-y-auto bg-secondary/30 scroll-smooth">
+              <div ref={chatScrollRef} className="p-5 h-96 overflow-y-auto bg-secondary/30 scroll-smooth">
                 <ChatWindow history={history} onReplyClick={handleReplyClick} scrollContainerRef={chatScrollRef} />
               </div>
 
