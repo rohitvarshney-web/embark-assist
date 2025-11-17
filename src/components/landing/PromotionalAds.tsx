@@ -29,6 +29,18 @@ export const PromotionalAds = () => {
       action: "Apply Now",
       link: "https://stampmyvisa.com/select-visa?country=VNM&purpose=VACATION&visa-type=68af383b14f107587c94f08a", // Add your link URL here
     },
+    {
+      id: "whitelabel-pg",
+      icon: Zap,
+      image: "", // Add your image URL here (1200x628px or any size)
+      country: "Global",
+      title: "Whitelabel Payment Gateway",
+      description: "Launch your own branded payment solution with enterprise-grade infrastructure",
+      highlight: "Enterprise Ready",
+      color: "from-purple-600 to-pink-600",
+      action: "Learn More",
+      link: "https://stampmyvisa.com/whitelabel-pg", // Add your link URL here
+    },
   ];
 
   return (
@@ -48,7 +60,7 @@ export const PromotionalAds = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ads.map((ad, index) => (
             <motion.div
               key={ad.id}
