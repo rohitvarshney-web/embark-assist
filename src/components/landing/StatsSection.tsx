@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+import makemytripLogo from "@/assets/brands/makemytrip.svg";
+import travclanLogo from "@/assets/brands/travclan.svg";
+import easemytripLogo from "@/assets/brands/easemytrip.svg";
+import pickyourtrailLogo from "@/assets/brands/pickyourtrail.svg";
 
 const stats = [
   { label: "Visa Applications", value: "500K+", trend: "+23% this month" },
@@ -52,11 +56,10 @@ export function StatsSection() {
         </div>
 
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-30 grayscale hover:opacity-50 transition-opacity duration-300">
-          {["MakeMyTrip", "Yatra", "TravClan", "pickyourtrail", "EaseMyTrip"].map((brand) => (
-            <div key={brand} className="text-xl md:text-2xl font-bold text-muted-foreground">
-              {brand}
-            </div>
-          ))}
+          <img src={makemytripLogo} alt="MakeMyTrip" className="h-8 md:h-10" />
+          <img src={travclanLogo} alt="TravClan" className="h-8 md:h-10" />
+          <img src={easemytripLogo} alt="EaseMyTrip" className="h-8 md:h-10" />
+          <img src={pickyourtrailLogo} alt="pickyourtrail" className="h-8 md:h-10" />
         </div>
       </div>
     </section>
