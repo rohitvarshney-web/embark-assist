@@ -15,7 +15,7 @@ export const PromotionalAds = () => {
       highlight: "Limited Slots",
       color: "from-blue-600 to-indigo-600",
       action: "Book Now",
-      link: "/usa-early-appointment", // Add your link URL here
+      link: "https://stampmyvisa.com/select-visa?country=USA&purpose=VACATION&visa-type=68a0649fe73e9470e74df393", // Add your link URL here
     },
     {
       id: "vietnam-express",
@@ -27,7 +27,7 @@ export const PromotionalAds = () => {
       highlight: "Express Processing",
       color: "from-emerald-600 to-teal-600",
       action: "Apply Now",
-      link: "/vietnam-express", // Add your link URL here
+      link: "https://stampmyvisa.com/select-visa?country=VNM&purpose=VACATION&visa-type=68af383b14f107587c94f08a", // Add your link URL here
     },
   ];
 
