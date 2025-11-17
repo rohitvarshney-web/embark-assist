@@ -18,7 +18,7 @@ const FLOW: Record<string, Node> = {
   start: {
     id: "start",
     from: "bot",
-    text: "Hi — I'm Stamp, your visa assistant. How can I help today?",
+    text: "Hi — Welcome to StampMyVisa. How can we help today?",
     replies: [
       { id: "apply", text: "Apply for a visa", next: "redirect_visa_apply" },
       { id: "esim", text: "Buy eSIM", next: "esim_info" },
@@ -530,7 +530,7 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
                   <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md shadow-lg">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                      <span className="text-sm font-semibold text-foreground">Live Demo</span>
+                      <span className="text-sm font-semibold text-foreground">Live Offers</span>
                     </div>
                   </div>
                 </motion.div>
@@ -590,16 +590,16 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="font-medium shadow-lg hover:shadow-xl transition-shadow"
                 onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
               >
                 Get Started for Free
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="font-medium"
                 onClick={() => (window.location.href = "https://stampmyvisa.com/contact-us")}
               >
