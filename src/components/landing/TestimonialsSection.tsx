@@ -64,8 +64,8 @@ export function TestimonialsSection() {
                 </div>
 
                 {/* Rating */}
-                <div className="flex gap-1 mb-4 mt-2">
-                  {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
+                <div className="flex gap-1 mb-4 mt-2" aria-label={`Rating: ${testimonial.rating} out of 5`}>
+                  {Array.from({ length: Math.max(0, Math.min(5, Math.floor(Number(testimonial.rating) || 0))) }).map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                   ))}
                 </div>
