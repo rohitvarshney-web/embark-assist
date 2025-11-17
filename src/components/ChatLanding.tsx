@@ -273,9 +273,9 @@ export default function ChatLanding() {
               >
                 One powerful platform for <span className="text-foreground font-semibold">visa</span>,{" "}
                 <span className="text-foreground font-semibold">travel insurance</span>,{" "}
-                <span className="text-foreground font-semibold">eSIM</span>, and{" "}
-                <span className="text-foreground font-semibold">visa rejection insurance</span>. Grow your revenue while
-                we handle the complexity.
+                <span className="text-foreground font-semibold">eSIM</span>,{" "}
+                <span className="text-foreground font-semibold">visa rejection insurance</span> and more. Grow your
+                revenue while we handle the complexity.
               </motion.p>
             </div>
 
