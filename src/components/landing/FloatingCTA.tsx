@@ -36,7 +36,7 @@ export function FloatingCTA() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-md px-4"
+          className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 w-full max-w-md px-4"
         >
           <div className="bg-card/95 backdrop-blur-xl border-2 border-primary/20 rounded-2xl shadow-2xl p-4 flex items-center gap-4">
             <div className="flex-1">
