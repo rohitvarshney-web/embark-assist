@@ -74,13 +74,13 @@ export function Footer() {
           {/* Brand */}
           <motion.div variants={itemVariants}>
             <motion.div className="flex items-center gap-2 mb-6" whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-              <motion.div
-                className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center shadow-lg"
+              <motion.img
+                src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
+                alt="StampMyVisa Logo"
+                className="w-10 h-10"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className="text-primary-foreground font-bold text-lg">S</span>
-              </motion.div>
+              />
               <span className="text-xl font-bold text-foreground">StampMyVisa</span>
             </motion.div>
             <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
