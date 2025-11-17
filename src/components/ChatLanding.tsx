@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { Send, Check, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { Send, Check, ChevronLeft, ChevronRight, Sparkles, Plane, MapPin, Shield, Globe, CreditCard, Ticket, Luggage, Compass, Navigation, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StatsSection } from "./landing/StatsSection";
 import { HowItWorks } from "./landing/HowItWorks";
@@ -378,67 +378,95 @@ export default function ChatLanding() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-start justify-center relative"
           >
-            {/* Animated decorative elements around chat */}
+            {/* Animated interactive decorative elements around chat */}
             <motion.div
               animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-8 -left-12 w-20 h-20 opacity-20 pointer-events-none"
+              whileHover={{ scale: 1.3, rotate: 15 }}
+              className="absolute -top-12 -left-16 w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/30 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-blue-500/20 shadow-lg"
             >
-              <svg viewBox="0 0 100 100" className="w-full h-full text-primary">
-                <rect x="10" y="20" width="80" height="50" rx="4" fill="currentColor" opacity="0.3" />
-                <circle cx="30" cy="35" r="8" fill="currentColor" />
-                <rect x="45" y="30" width="40" height="4" rx="2" fill="currentColor" />
-                <rect x="45" y="40" width="30" height="3" rx="1.5" fill="currentColor" />
-              </svg>
+              <Plane className="w-8 h-8 text-blue-500" />
             </motion.div>
             
             <motion.div
               animate={{ y: [0, 20, 0], x: [0, -5, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute top-16 -right-16 w-24 h-24 opacity-15 pointer-events-none"
+              whileHover={{ scale: 1.3, rotate: -15 }}
+              className="absolute top-12 -right-20 w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/30 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-purple-500/20 shadow-lg"
             >
-              <svg viewBox="0 0 100 100" className="w-full h-full text-blue-500">
-                <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="2" />
-                <path d="M 50 20 L 55 40 L 75 45 L 55 50 L 50 70 L 45 50 L 25 45 L 45 40 Z" fill="currentColor" />
-              </svg>
+              <Globe className="w-8 h-8 text-purple-500" />
             </motion.div>
             
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [0, -8, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute -bottom-6 -left-8 w-16 h-16 opacity-20 pointer-events-none"
+              whileHover={{ scale: 1.3, y: -5 }}
+              className="absolute -bottom-8 -left-12 w-14 h-14 bg-gradient-to-br from-green-500/20 to-green-600/30 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-green-500/20 shadow-lg"
             >
-              <svg viewBox="0 0 100 100" className="w-full h-full text-purple-500">
-                <path d="M 50 10 Q 70 25 70 50 Q 70 75 50 90 Q 30 75 30 50 Q 30 25 50 10 Z" fill="currentColor" opacity="0.4" />
-                <circle cx="50" cy="50" r="15" fill="currentColor" />
-                <path d="M 43 48 L 47 53 L 57 43" stroke="white" strokeWidth="3" fill="none" />
-              </svg>
+              <Shield className="w-7 h-7 text-green-500" />
             </motion.div>
             
             <motion.div
               animate={{ y: [0, 18, 0], x: [0, 8, 0] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute bottom-20 -right-12 w-18 h-18 opacity-15 pointer-events-none"
+              whileHover={{ scale: 1.3, rotate: 10 }}
+              className="absolute bottom-24 -right-16 w-14 h-14 bg-gradient-to-br from-pink-500/20 to-pink-600/30 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-pink-500/20 shadow-lg"
             >
-              <svg viewBox="0 0 100 100" className="w-full h-full text-pink-500">
-                <rect x="20" y="25" width="60" height="50" rx="5" fill="currentColor" opacity="0.4" />
-                <circle cx="50" cy="40" r="10" fill="white" opacity="0.8" />
-                <rect x="35" y="55" width="30" height="3" rx="1.5" fill="white" opacity="0.8" />
-                <rect x="40" y="62" width="20" height="2" rx="1" fill="white" opacity="0.8" />
-              </svg>
+              <CreditCard className="w-7 h-7 text-pink-500" />
             </motion.div>
             
             <motion.div
-              animate={{ scale: [1, 1.1, 1], rotate: [0, 180, 360] }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute top-32 -left-16 w-14 h-14 opacity-10 pointer-events-none"
+              animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ scale: 1.4, rotate: 20 }}
+              className="absolute top-32 -left-20 w-14 h-14 bg-gradient-to-br from-cyan-500/20 to-cyan-600/30 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-cyan-500/20 shadow-lg"
             >
-              <svg viewBox="0 0 100 100" className="w-full h-full text-cyan-500">
-                <rect x="15" y="25" width="70" height="50" rx="6" fill="currentColor" opacity="0.3" />
-                <rect x="25" y="35" width="20" height="15" rx="3" fill="white" opacity="0.6" />
-                <rect x="55" y="35" width="20" height="15" rx="3" fill="white" opacity="0.6" />
-                <path d="M 35 60 Q 50 70 65 60" stroke="white" strokeWidth="3" fill="none" opacity="0.6" />
-              </svg>
+              <Ticket className="w-7 h-7 text-cyan-500" />
+            </motion.div>
+            
+            <motion.div
+              animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              whileHover={{ scale: 1.3, rotate: -10 }}
+              className="absolute top-56 -right-14 w-12 h-12 bg-gradient-to-br from-orange-500/20 to-orange-600/30 rounded-xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-orange-500/20 shadow-lg"
+            >
+              <Luggage className="w-6 h-6 text-orange-500" />
+            </motion.div>
+            
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              whileHover={{ scale: 1.3, rotate: 180 }}
+              className="absolute -top-4 right-20 w-12 h-12 bg-gradient-to-br from-indigo-500/20 to-indigo-600/30 rounded-xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-indigo-500/20 shadow-lg"
+            >
+              <Compass className="w-6 h-6 text-indigo-500" />
+            </motion.div>
+            
+            <motion.div
+              animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+              whileHover={{ scale: 1.3, rotate: 15 }}
+              className="absolute bottom-32 left-[-60px] w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-yellow-600/30 rounded-xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-yellow-500/20 shadow-lg"
+            >
+              <MapPin className="w-6 h-6 text-yellow-500" />
+            </motion.div>
+            
+            <motion.div
+              animate={{ x: [0, 10, 0], y: [0, -8, 0] }}
+              transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+              whileHover={{ scale: 1.3, rotate: -20 }}
+              className="absolute top-72 -right-12 w-12 h-12 bg-gradient-to-br from-teal-500/20 to-teal-600/30 rounded-xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-teal-500/20 shadow-lg"
+            >
+              <Navigation className="w-6 h-6 text-teal-500" />
+            </motion.div>
+            
+            <motion.div
+              animate={{ scale: [1, 1.05, 1], rotate: [0, 3, 0] }}
+              transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              whileHover={{ scale: 1.3, y: -5 }}
+              className="absolute bottom-4 left-[-50px] w-11 h-11 bg-gradient-to-br from-rose-500/20 to-rose-600/30 rounded-xl flex items-center justify-center cursor-pointer backdrop-blur-sm border border-rose-500/20 shadow-lg"
+            >
+              <Map className="w-5 h-5 text-rose-500" />
             </motion.div>
 
             <div className="w-full max-w-md bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden relative z-10">
