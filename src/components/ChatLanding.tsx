@@ -513,7 +513,15 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
                   transition={{ duration: 0.7, ease: "easeInOut" }}
                   className="relative aspect-[1200/628] w-full"
                 >
-                  <img src={images[idx].src} alt={images[idx].title} width={1200} height={628} loading="lazy" decoding="async" className="w-full h-full object-cover object-center" />
+                  <img
+                    src={images[idx].src}
+                    alt={images[idx].title}
+                    width={1200}
+                    height={628}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-center"
+                  />
 
                   {/* Gradient overlay for better visual hierarchy */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -569,7 +577,7 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
           <div className="lg:col-span-2 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-badge-bg text-badge-text text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-badge-text animate-pulse"></span>
-              Trusted by 10,000+ travel agents
+              Trusted by 5000+ travel agents
             </div>
 
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground leading-tight">
