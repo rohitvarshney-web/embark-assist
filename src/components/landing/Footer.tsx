@@ -15,7 +15,7 @@ const footerLinks = {
   ],
   legal: [
     { name: "Privacy Policy", href: "https://stampmyvisa.com/privacy" },
-    { name: "Terms of Service", href: "https://stampmyvisa.com/terms" },
+    { name: "Terms & Conditions", href: "https://stampmyvisa.com/terms" },
     // { name: "Refund Policy", href: "#" },
     // { name: "Cookie Policy", href: "#" },
   ],
