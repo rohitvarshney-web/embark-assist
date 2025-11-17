@@ -6,9 +6,9 @@ import pickyourtrailLogo from "@/assets/brands/pickyourtrail.svg";
 
 const stats = [
   { label: "Visa Applications", value: "500K+", trend: "+23% this month" },
-  { label: "Travel Partners", value: "10,000+", trend: "Growing daily" },
+  { label: "Travel Partners", value: "5000+", trend: "Growing daily" },
   { label: "Approval Rate", value: "99.3%", trend: "Industry leading" },
-  { label: "Countries Covered", value: "112+", trend: "Expanding" },
+  { label: "Countries Covered", value: "80+", trend: "Expanding" },
 ];
 
 export function StatsSection() {
