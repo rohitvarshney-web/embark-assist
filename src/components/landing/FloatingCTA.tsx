@@ -51,6 +51,7 @@ export function FloatingCTA() {
             <Button 
               size="sm"
               className="gap-2 whitespace-nowrap shadow-lg hover:shadow-xl transition-shadow"
+              onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
             >
               Get Started
               <ArrowRight className="w-4 h-4" />
