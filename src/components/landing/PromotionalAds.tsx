@@ -8,6 +8,7 @@ export const PromotionalAds = () => {
     {
       id: "usa-early",
       icon: Clock,
+      image: "", // Add your image URL here (1200x628px or any size)
       country: "USA",
       title: "Early Appointment Available",
       description: "Skip the wait! Get your USA visa appointment date moved up",
@@ -18,6 +19,7 @@ export const PromotionalAds = () => {
     {
       id: "vietnam-express",
       icon: Zap,
+      image: "", // Add your image URL here (1200x628px or any size)
       country: "Vietnam",
       title: "1-Day Express Service",
       description: "Get your Vietnam visa approved in just 24 hours",
@@ -51,35 +53,54 @@ export const PromotionalAds = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl flex flex-col"
             >
-              {/* Gradient overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${ad.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
-              
-              {/* Content */}
-              <div className="relative p-8">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${ad.color} text-white`}>
-                      <ad.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-muted-foreground">
-                        {ad.country}
-                      </div>
-                      <h3 className="text-2xl font-bold text-foreground">
-                        {ad.title}
-                      </h3>
+              {/* Image Section - Fixed aspect ratio container */}
+              {ad.image ? (
+                <div className="relative w-full aspect-[1.91/1] overflow-hidden">
+                  <img 
+                    src={ad.image} 
+                    alt={ad.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${ad.color} opacity-10`} />
+                  <div className={`absolute top-4 right-4 px-3 py-1 rounded-full bg-gradient-to-r ${ad.color} text-white text-xs font-semibold animate-pulse`}>
+                    {ad.highlight}
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {/* Gradient overlay for non-image cards */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${ad.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
+                  <div className="absolute top-8 right-8">
+                    <div className={`px-3 py-1 rounded-full bg-gradient-to-r ${ad.color} text-white text-xs font-semibold animate-pulse`}>
+                      {ad.highlight}
                     </div>
                   </div>
-                  <div className={`px-3 py-1 rounded-full bg-gradient-to-r ${ad.color} text-white text-xs font-semibold animate-pulse`}>
-                    {ad.highlight}
+                </>
+              )}
+              
+              {/* Content */}
+              <div className="relative p-6 flex-1 flex flex-col">
+                {/* Header */}
+                <div className="flex items-start gap-3 mb-4">
+                  {!ad.image && (
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${ad.color} text-white flex-shrink-0`}>
+                      <ad.icon className="w-6 h-6" />
+                    </div>
+                  )}
+                  <div className="flex-1">
+                    <div className="text-sm font-semibold text-muted-foreground">
+                      {ad.country}
+                    </div>
+                    <h3 className="text-2xl font-bold text-foreground">
+                      {ad.title}
+                    </h3>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-6 flex-1">
                   {ad.description}
                 </p>
 
@@ -93,7 +114,9 @@ export const PromotionalAds = () => {
                 </Button>
 
                 {/* Decorative element */}
-                <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-2xl" />
+                {!ad.image && (
+                  <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-2xl" />
+                )}
               </div>
             </motion.div>
           ))}
