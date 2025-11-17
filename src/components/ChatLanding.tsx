@@ -256,7 +256,7 @@ export default function ChatLanding() {
                   transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent"
                 >
-                  Visa Business
+                  Travel Business
                 </motion.span>
               </motion.h1>
 
@@ -269,8 +269,8 @@ export default function ChatLanding() {
                 One powerful platform for <span className="text-foreground font-semibold">visa applications</span>,{" "}
                 <span className="text-foreground font-semibold">travel insurance</span>,{" "}
                 <span className="text-foreground font-semibold">eSIM</span>, and{" "}
-                <span className="text-foreground font-semibold">VRI</span>. Grow your revenue while we handle the
-                complexity.
+                <span className="text-foreground font-semibold">Visa rejection Insurance</span>. Grow your revenue while
+                we handle the complexity.
               </motion.p>
             </div>
 
@@ -299,7 +299,7 @@ export default function ChatLanding() {
                   </svg>
                 </motion.div>
                 <h3 className="font-bold text-foreground mb-1 text-lg">Visa</h3>
-                <p className="text-sm text-muted-foreground">40+ countries</p>
+                <p className="text-sm text-muted-foreground">80+ countries</p>
               </motion.div>
 
               {/* Insurance */}
@@ -324,8 +324,8 @@ export default function ChatLanding() {
                     />
                   </svg>
                 </motion.div>
-                <h3 className="font-bold text-foreground mb-1 text-lg">Insurance</h3>
-                <p className="text-sm text-muted-foreground">Full coverage</p>
+                <h3 className="font-bold text-foreground mb-1 text-lg">Travel Insurance</h3>
+                <p className="text-sm text-muted-foreground">Trip coverage</p>
               </motion.div>
 
               {/* eSIM */}
@@ -351,7 +351,7 @@ export default function ChatLanding() {
                   </svg>
                 </motion.div>
                 <h3 className="font-bold text-foreground mb-1 text-lg">eSIM</h3>
-                <p className="text-sm text-muted-foreground">160+ countries</p>
+                <p className="text-sm text-muted-foreground">Available for 160+ countries</p>
               </motion.div>
 
               {/* VRI */}
@@ -377,7 +377,7 @@ export default function ChatLanding() {
                   </svg>
                 </motion.div>
                 <h3 className="font-bold text-foreground mb-1 text-lg">VRI</h3>
-                <p className="text-sm text-muted-foreground">Refund guarantee</p>
+                <p className="text-sm text-muted-foreground">100% Visa fee refund*</p>
               </motion.div>
             </div>
           </motion.div>
