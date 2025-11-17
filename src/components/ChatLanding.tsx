@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Send, Check, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -102,6 +102,7 @@ export default function ChatLanding() {
   const [history, setHistory] = useState<Node[]>([FLOW.start]);
   const [input, setInput] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
 
   function pushNode(nodeId: string) {
     const node = FLOW[nodeId];
@@ -403,8 +404,8 @@ export default function ChatLanding() {
                 </div>
               </div>
 
-              <div className="p-5 h-80 overflow-y-auto bg-secondary/30 scroll-smooth">
-                <ChatWindow history={history} onReplyClick={handleReplyClick} />
+              <div ref={chatScrollRef} className="p-5 h-80 overflow-y-auto bg-secondary/30 scroll-smooth">
+                <ChatWindow history={history} onReplyClick={handleReplyClick} scrollContainerRef={chatScrollRef} />
               </div>
 
               <div className="px-5 py-4 border-t border-chat-border bg-chat-bg">
@@ -625,12 +626,11 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
   );
 }
 
-function ChatWindow({ history, onReplyClick }: { history: Node[]; onReplyClick: (r: Reply) => void }) {
-  const messagesEndRef = React.useRef<HTMLDivElement>(null);
-
+function ChatWindow({ history, onReplyClick, scrollContainerRef }: { history: Node[]; onReplyClick: (r: Reply) => void; scrollContainerRef?: React.RefObject<HTMLDivElement>; }) {
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [history]);
+    const el = scrollContainerRef?.current;
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+  }, [history, scrollContainerRef]);
 
   return (
     <div className="flex flex-col gap-4">
@@ -671,7 +671,7 @@ function ChatWindow({ history, onReplyClick }: { history: Node[]; onReplyClick: 
           )}
         </motion.div>
       ))}
-      <div ref={messagesEndRef} />
+      
     </div>
   );
 }
