@@ -197,14 +197,14 @@ export default function ChatLanding() {
             variant="ghost"
             size="sm"
             className="hidden sm:flex"
-            onClick={() => (window.location.href = "https://stampmyvisa.com/home/login")}
+            onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
           >
             Login
           </Button>
           <Button
             size="sm"
             className="font-medium"
-            onClick={() => (window.location.href = "https://stampmyvisa.com/home/login")}
+            onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
           >
             Get Started
           </Button>
@@ -590,10 +590,19 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button size="lg" className="font-medium shadow-lg hover:shadow-xl transition-shadow">
+              <Button 
+                size="lg" 
+                className="font-medium shadow-lg hover:shadow-xl transition-shadow"
+                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
+              >
                 Get Started for Free
               </Button>
-              <Button variant="outline" size="lg" className="font-medium">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="font-medium"
+                onClick={() => (window.location.href = "https://stampmyvisa.com/contact-us")}
+              >
                 Contact Us
               </Button>
             </div>
