@@ -403,7 +403,7 @@ export default function ChatLanding() {
                 </div>
               </div>
 
-              <div className="p-5 h-80 overflow-y-auto bg-secondary/30">
+              <div className="p-5 h-80 overflow-y-auto bg-secondary/30 scroll-smooth">
                 <ChatWindow history={history} onReplyClick={handleReplyClick} />
               </div>
 
