@@ -50,7 +50,7 @@ const FLOW: Record<string, Node> = {
   esim_info: {
     id: "esim_info",
     from: "bot",
-    text: "Get connected instantly with our international eSIM plans:\n\n• 160+ countries coverage\n• Instant activation\n• Data plans from $4.99\n• No physical SIM needed\n• Works in 160+ destinations worldwide\n\nReady to purchase your eSIM?",
+    text: "Get connected instantly with our international eSIM plans:\n\n• 160+ countries coverage\n• Instant activation\n• Data plans from ₹225\n• No physical SIM needed\n• Works in 160+ destinations worldwide\n\nReady to purchase your eSIM?",
     replies: [
       { id: "esim_buy", text: "Buy eSIM now", next: "redirect_esim" },
       { id: "back", text: "Back to main menu", next: "start" },
@@ -78,7 +78,7 @@ const FLOW: Record<string, Node> = {
   visa_rejection_info: {
     id: "visa_rejection_info",
     from: "bot",
-    text: "Visa Rejection Insurance protects your investment:\n\n• Full refund of visa fees if rejected\n• Available for Schengen, USA, UK, Canada and other country visas\n• Instant claim processing\n• Quick refund within 5-7 business days\n\nStarting from only ₹299 per application\n\nProtect your visa application today!",
+    text: "Visa Rejection Insurance protects your investment:\n\n• Full refund of visa fees if rejected\n• Available for Schengen, USA, UK, Canada and other country visas\n• Instant claim processing\n• Quick refund within 10-15 business days\n\nStarting from only ₹299 per application\n\nProtect your visa application today!",
     replies: [
       { id: "rejection_buy", text: "Get VRI now", next: "redirect_vri" },
       { id: "back", text: "Back to main menu", next: "start" },
