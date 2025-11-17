@@ -495,7 +495,7 @@ export default function ChatLanding() {
               </div>
             </motion.div>
 
-            <div className="w-full max-w-2xl bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden relative z-10">
+            <div className="w-full max-w-lg bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden relative z-10">
               <div className="px-5 py-4 border-b border-chat-border bg-gradient-to-r from-primary/5 to-accent/5">
                 <div className="flex items-center justify-between">
                   <div>
@@ -509,7 +509,7 @@ export default function ChatLanding() {
                 </div>
               </div>
 
-              <div ref={chatScrollRef} className="p-5 h-96 overflow-y-auto bg-secondary/30 scroll-smooth">
+              <div ref={chatScrollRef} className="p-5 h-[480px] overflow-y-auto bg-secondary/30 scroll-smooth">
                 <ChatWindow history={history} onReplyClick={handleReplyClick} scrollContainerRef={chatScrollRef} />
               </div>
 
