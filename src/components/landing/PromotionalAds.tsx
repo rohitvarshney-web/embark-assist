@@ -15,6 +15,7 @@ export const PromotionalAds = () => {
       highlight: "Limited Slots",
       color: "from-blue-600 to-indigo-600",
       action: "Book Now",
+      link: "/usa-early-appointment", // Add your link URL here
     },
     {
       id: "vietnam-express",
@@ -26,6 +27,7 @@ export const PromotionalAds = () => {
       highlight: "Express Processing",
       color: "from-emerald-600 to-teal-600",
       action: "Apply Now",
+      link: "/vietnam-express", // Add your link URL here
     },
   ];
 
@@ -112,6 +114,7 @@ export const PromotionalAds = () => {
                 <Button 
                   className={`w-full bg-gradient-to-r ${ad.color} hover:opacity-90 text-white group/btn`}
                   size="lg"
+                  onClick={() => window.location.href = ad.link}
                 >
                   {ad.action}
                   <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
