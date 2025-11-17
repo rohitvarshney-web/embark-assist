@@ -79,7 +79,7 @@ export const PromotionalAds = () => {
               )}
               
               {/* Highlight badge - positioned outside image container for proper placement */}
-              <div className={`absolute ${ad.image ? 'top-4 right-4' : 'top-8 right-8'} px-3 py-1 rounded-full bg-gradient-to-r ${ad.color} text-white text-xs font-semibold animate-pulse z-10`}>
+              <div className={`absolute ${ad.image ? 'top-2 right-2 md:top-4 md:right-4' : 'top-4 right-4 md:top-8 md:right-8'} px-2 py-1 md:px-3 rounded-full bg-gradient-to-r ${ad.color} text-white text-[10px] md:text-xs font-semibold animate-pulse z-10`}>
                 {ad.highlight}
               </div>
               
