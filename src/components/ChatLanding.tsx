@@ -217,103 +217,9 @@ export default function ChatLanding() {
 
       {/* Main content */}
       <main className="relative flex-1 flex items-center justify-center px-6 lg:px-12 py-20 lg:py-28 overflow-hidden">
-        {/* Premium background effects */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.06, scale: 1 }}
-            transition={{ duration: 1.5 }}
-            className="absolute top-0 -right-48 w-[600px] h-[600px] bg-primary rounded-full blur-[120px]"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.04, scale: 1 }}
-            transition={{ duration: 1.5, delay: 0.3 }}
-            className="absolute bottom-0 -left-48 w-[500px] h-[500px] bg-purple-500 rounded-full blur-[100px]"
-          />
-          
-          {/* Visa & Travel themed decorative elements */}
-          <motion.div
-            animate={{ 
-              y: [0, -20, 0],
-              rotate: [0, 5, 0]
-            }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-32 right-[15%] w-64 h-64 opacity-[0.03]"
-          >
-            <svg viewBox="0 0 200 200" className="w-full h-full">
-              <rect x="20" y="40" width="160" height="100" rx="8" fill="currentColor" className="text-primary" />
-              <circle cx="60" cy="70" r="15" fill="currentColor" className="text-foreground" />
-              <rect x="90" y="60" width="80" height="8" rx="4" fill="currentColor" className="text-foreground" />
-              <rect x="90" y="80" width="60" height="6" rx="3" fill="currentColor" className="text-foreground" />
-              <rect x="30" y="110" width="140" height="4" rx="2" fill="currentColor" className="text-muted-foreground" />
-              <rect x="30" y="120" width="100" height="4" rx="2" fill="currentColor" className="text-muted-foreground" />
-            </svg>
-          </motion.div>
-          
-          <motion.div
-            animate={{ 
-              y: [0, 30, 0],
-              rotate: [0, -8, 0]
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-[60%] left-[8%] w-48 h-48 opacity-[0.04]"
-          >
-            <svg viewBox="0 0 200 200" className="w-full h-full">
-              <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="3" className="text-primary" />
-              <path d="M 100 40 L 120 90 L 170 100 L 120 110 L 100 160 L 80 110 L 30 100 L 80 90 Z" fill="currentColor" className="text-primary" />
-              <circle cx="100" cy="100" r="15" fill="currentColor" className="text-foreground" />
-            </svg>
-          </motion.div>
-          
-          <motion.div
-            animate={{ 
-              y: [0, -25, 0],
-              x: [0, 15, 0]
-            }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute bottom-[20%] right-[10%] w-56 h-56 opacity-[0.03]"
-          >
-            <svg viewBox="0 0 200 200" className="w-full h-full">
-              <rect x="40" y="30" width="120" height="140" rx="12" fill="currentColor" className="text-primary" />
-              <circle cx="100" cy="80" r="25" fill="currentColor" className="text-background" />
-              <rect x="60" y="120" width="80" height="8" rx="4" fill="currentColor" className="text-background" />
-              <rect x="70" y="140" width="60" height="6" rx="3" fill="currentColor" className="text-background" />
-              <path d="M 50 50 L 65 65 L 50 80" stroke="currentColor" strokeWidth="4" fill="none" className="text-background" />
-            </svg>
-          </motion.div>
-          
-          <motion.div
-            animate={{ 
-              rotate: [0, 360],
-              scale: [1, 1.1, 1]
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[25%] left-[20%] w-40 h-40 opacity-[0.02]"
-          >
-            <svg viewBox="0 0 200 200" className="w-full h-full">
-              <path d="M 100 20 Q 150 50 150 100 Q 150 150 100 180 Q 50 150 50 100 Q 50 50 100 20 Z" fill="currentColor" className="text-primary" />
-              <circle cx="100" cy="100" r="30" fill="currentColor" className="text-foreground" />
-              <path d="M 85 95 L 95 105 L 115 85" stroke="currentColor" strokeWidth="4" fill="none" className="text-background" />
-            </svg>
-          </motion.div>
-          
-          <motion.div
-            animate={{ 
-              y: [0, 20, 0],
-              opacity: [0.02, 0.04, 0.02]
-            }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute bottom-[40%] left-[25%] w-52 h-52 opacity-[0.03]"
-          >
-            <svg viewBox="0 0 200 200" className="w-full h-full">
-              <rect x="30" y="50" width="140" height="100" rx="10" fill="currentColor" className="text-primary" />
-              <rect x="50" y="70" width="40" height="30" rx="5" fill="currentColor" className="text-background" />
-              <rect x="110" y="70" width="40" height="30" rx="5" fill="currentColor" className="text-background" />
-              <path d="M 70 120 Q 100 140 130 120" stroke="currentColor" strokeWidth="4" fill="none" className="text-background" />
-            </svg>
-          </motion.div>
-        </div>
+        {/* Textured gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 via-blue-50/20 to-cyan-100/30 dark:from-purple-950/20 dark:via-blue-950/10 dark:to-cyan-950/20"></div>
+        <div className="absolute inset-0 opacity-[0.015] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNSIgLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiAvPjwvc3ZnPg==')]"></div>
 
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
           {/* Left: Hero Content */}
@@ -470,9 +376,72 @@ export default function ChatLanding() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-start justify-center"
+            className="flex items-start justify-center relative"
           >
-            <div className="w-full max-w-md bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden">
+            {/* Animated decorative elements around chat */}
+            <motion.div
+              animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-8 -left-12 w-20 h-20 opacity-20 pointer-events-none"
+            >
+              <svg viewBox="0 0 100 100" className="w-full h-full text-primary">
+                <rect x="10" y="20" width="80" height="50" rx="4" fill="currentColor" opacity="0.3" />
+                <circle cx="30" cy="35" r="8" fill="currentColor" />
+                <rect x="45" y="30" width="40" height="4" rx="2" fill="currentColor" />
+                <rect x="45" y="40" width="30" height="3" rx="1.5" fill="currentColor" />
+              </svg>
+            </motion.div>
+            
+            <motion.div
+              animate={{ y: [0, 20, 0], x: [0, -5, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute top-16 -right-16 w-24 h-24 opacity-15 pointer-events-none"
+            >
+              <svg viewBox="0 0 100 100" className="w-full h-full text-blue-500">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="2" />
+                <path d="M 50 20 L 55 40 L 75 45 L 55 50 L 50 70 L 45 50 L 25 45 L 45 40 Z" fill="currentColor" />
+              </svg>
+            </motion.div>
+            
+            <motion.div
+              animate={{ y: [0, -12, 0], rotate: [0, -8, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              className="absolute -bottom-6 -left-8 w-16 h-16 opacity-20 pointer-events-none"
+            >
+              <svg viewBox="0 0 100 100" className="w-full h-full text-purple-500">
+                <path d="M 50 10 Q 70 25 70 50 Q 70 75 50 90 Q 30 75 30 50 Q 30 25 50 10 Z" fill="currentColor" opacity="0.4" />
+                <circle cx="50" cy="50" r="15" fill="currentColor" />
+                <path d="M 43 48 L 47 53 L 57 43" stroke="white" strokeWidth="3" fill="none" />
+              </svg>
+            </motion.div>
+            
+            <motion.div
+              animate={{ y: [0, 18, 0], x: [0, 8, 0] }}
+              transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute bottom-20 -right-12 w-18 h-18 opacity-15 pointer-events-none"
+            >
+              <svg viewBox="0 0 100 100" className="w-full h-full text-pink-500">
+                <rect x="20" y="25" width="60" height="50" rx="5" fill="currentColor" opacity="0.4" />
+                <circle cx="50" cy="40" r="10" fill="white" opacity="0.8" />
+                <rect x="35" y="55" width="30" height="3" rx="1.5" fill="white" opacity="0.8" />
+                <rect x="40" y="62" width="20" height="2" rx="1" fill="white" opacity="0.8" />
+              </svg>
+            </motion.div>
+            
+            <motion.div
+              animate={{ scale: [1, 1.1, 1], rotate: [0, 180, 360] }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute top-32 -left-16 w-14 h-14 opacity-10 pointer-events-none"
+            >
+              <svg viewBox="0 0 100 100" className="w-full h-full text-cyan-500">
+                <rect x="15" y="25" width="70" height="50" rx="6" fill="currentColor" opacity="0.3" />
+                <rect x="25" y="35" width="20" height="15" rx="3" fill="white" opacity="0.6" />
+                <rect x="55" y="35" width="20" height="15" rx="3" fill="white" opacity="0.6" />
+                <path d="M 35 60 Q 50 70 65 60" stroke="white" strokeWidth="3" fill="none" opacity="0.6" />
+              </svg>
+            </motion.div>
+
+            <div className="w-full max-w-md bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden relative z-10">
               <div className="px-5 py-4 border-b border-chat-border bg-gradient-to-r from-primary/5 to-accent/5">
                 <div className="flex items-center justify-between">
                   <div>
