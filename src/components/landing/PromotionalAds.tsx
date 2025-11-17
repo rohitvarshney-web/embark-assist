@@ -70,21 +70,18 @@ export const PromotionalAds = () => {
                     className="w-full h-full object-cover object-center"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${ad.color} opacity-10`} />
-                  <div className={`absolute top-4 right-4 px-3 py-1 rounded-full bg-gradient-to-r ${ad.color} text-white text-xs font-semibold animate-pulse`}>
-                    {ad.highlight}
-                  </div>
                 </div>
               ) : (
                 <>
                   {/* Gradient overlay for non-image cards */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${ad.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
-                  <div className="absolute top-8 right-8">
-                    <div className={`px-3 py-1 rounded-full bg-gradient-to-r ${ad.color} text-white text-xs font-semibold animate-pulse`}>
-                      {ad.highlight}
-                    </div>
-                  </div>
                 </>
               )}
+              
+              {/* Highlight badge - positioned outside image container for proper placement */}
+              <div className={`absolute ${ad.image ? 'top-4 right-4' : 'top-8 right-8'} px-3 py-1 rounded-full bg-gradient-to-r ${ad.color} text-white text-xs font-semibold animate-pulse z-10`}>
+                {ad.highlight}
+              </div>
               
               {/* Content */}
               <div className="relative p-6 flex-1 flex flex-col">
