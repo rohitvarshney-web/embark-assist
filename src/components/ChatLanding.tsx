@@ -295,7 +295,7 @@ export default function ChatLanding() {
             </div>
 
             {/* Product Cards */}
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
               {/* Visa */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -398,6 +398,25 @@ export default function ChatLanding() {
                 </motion.div>
                 <h3 className="font-bold text-foreground mb-1 text-lg">VRI</h3>
                 <p className="text-sm text-muted-foreground">100% Visa fee refund*</p>
+              </motion.div>
+
+              {/* Whitelabel PG */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 border border-orange-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="w-14 h-14 rounded-xl bg-orange-500/20 flex items-center justify-center mb-4"
+                >
+                  <CreditCard className="w-7 h-7 text-orange-500" />
+                </motion.div>
+                <h3 className="font-bold text-foreground mb-1 text-lg">Whitelabel PG</h3>
+                <p className="text-sm text-muted-foreground">Enterprise payment solution</p>
               </motion.div>
             </div>
           </motion.div>
