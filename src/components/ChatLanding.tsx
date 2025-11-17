@@ -511,9 +511,9 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
-                  className="relative aspect-[16/10] w-full"
+                  className="relative aspect-[1200/628] w-full"
                 >
-                  <img src={images[idx].src} alt={images[idx].title} className="w-full h-full object-cover" />
+                  <img src={images[idx].src} alt={images[idx].title} width={1200} height={628} loading="lazy" decoding="async" className="w-full h-full object-cover object-center" />
 
                   {/* Gradient overlay for better visual hierarchy */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

@@ -57,11 +57,15 @@ export const PromotionalAds = () => {
             >
               {/* Image Section - Fixed aspect ratio container */}
               {ad.image ? (
-                <div className="relative w-full aspect-[1.91/1] overflow-hidden">
-                  <img 
-                    src={ad.image} 
+                <div className="relative w-full aspect-[1200/628] overflow-hidden">
+                  <img
+                    src={ad.image}
                     alt={ad.title}
-                    className="w-full h-full object-cover"
+                    width={1200}
+                    height={628}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-center"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${ad.color} opacity-10`} />
                   <div className={`absolute top-4 right-4 px-3 py-1 rounded-full bg-gradient-to-r ${ad.color} text-white text-xs font-semibold animate-pulse`}>
