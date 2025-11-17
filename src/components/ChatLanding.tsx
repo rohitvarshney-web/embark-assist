@@ -82,7 +82,7 @@ const AD_IMAGES = [
     subtitle: "Your hassle-free visa journey starts here with StampMyVisa.",
   },
   {
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80",
+    src: "https://ik.imagekit.io/9pjdbdyeq/Website%20Images/US%20appointment%20(1200%20x%20628%20px)%20(1).jpg?updatedAt=1763366149942",
     title: "Seamless Visa Experience",
     subtitle: "Get end-to-end support for Schengen, USA, and Malaysia visas.",
   },
