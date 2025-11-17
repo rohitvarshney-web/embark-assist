@@ -509,7 +509,7 @@ export default function ChatLanding() {
                 </div>
               </div>
 
-              <div ref={chatScrollRef} className="p-5 h-[560px] overflow-y-auto bg-secondary/30 scroll-smooth">
+              <div ref={chatScrollRef} className="p-5 h-[476px] overflow-y-auto bg-secondary/30 scroll-smooth">
                 <ChatWindow history={history} onReplyClick={handleReplyClick} scrollContainerRef={chatScrollRef} />
               </div>
 
