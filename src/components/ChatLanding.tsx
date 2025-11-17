@@ -77,8 +77,8 @@ const FLOW: Record<string, Node> = {
 
 const AD_IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=80",
-    title: "Apply Faster, Travel Smarter",
+    src: "https://ik.imagekit.io/9pjdbdyeq/Website%20Images/US%20appointment%20(1200%20x%20628%20px).jpg",
+    title: "Get USA Appointment SUperfast!",
     subtitle: "Your hassle-free visa journey starts here with StampMyVisa.",
   },
   {
