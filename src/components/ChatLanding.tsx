@@ -40,6 +40,7 @@ const FLOW: Record<string, Node> = {
       { id: "esim", text: "Buy eSIM", next: "esim_info" },
       { id: "travel_insurance", text: "Travel Insurance", next: "travel_insurance_info" },
       { id: "visa_rejection", text: "Visa Rejection Insurance", next: "visa_rejection_info" },
+      { id: "whitelabel_pg", text: "Whitelabel Payment Gateway", next: "whitelabel_pg_info" },
     ],
   },
   redirect_visa_apply: {
@@ -88,6 +89,20 @@ const FLOW: Record<string, Node> = {
     id: "redirect_vri",
     from: "bot",
     text: "Redirecting you to protect your visa application...",
+  },
+  whitelabel_pg_info: {
+    id: "whitelabel_pg_info",
+    from: "bot",
+    text: "Launch your own branded payment gateway:\n\n• Enterprise-grade payment infrastructure\n• Your brand, your rules\n• Multi-currency support\n• Advanced fraud detection\n• Seamless integration\n• 24/7 technical support\n\nScale your business with a payment solution that grows with you.\n\nReady to launch your payment gateway?",
+    replies: [
+      { id: "pg_learn", text: "Learn more", next: "redirect_whitelabel_pg" },
+      { id: "back", text: "Back to main menu", next: "start" },
+    ],
+  },
+  redirect_whitelabel_pg: {
+    id: "redirect_whitelabel_pg",
+    from: "bot",
+    text: "Redirecting you to explore our whitelabel payment gateway...",
   },
 };
 
