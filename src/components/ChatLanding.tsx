@@ -378,111 +378,121 @@ export default function ChatLanding() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-start justify-center relative"
           >
-            {/* Animated interactive decorative elements - Symmetrical arrangement */}
+            {/* Subtle shadow-like decorative elements */}
             
             {/* Top Left Corner */}
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              whileHover={{ scale: 1.4, rotate: 15, transition: { duration: 0.3 } }}
-              className="absolute -top-16 left-4 w-16 h-16 bg-gradient-to-br from-blue-500/30 to-blue-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-blue-500/30 shadow-lg hover:shadow-2xl hover:border-blue-400/50 z-20 transition-all"
+              className="absolute -top-16 left-4 w-16 h-16 opacity-[0.08] pointer-events-none"
             >
-              <Plane className="w-8 h-8 text-blue-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 backdrop-blur-sm flex items-center justify-center">
+                <Plane className="w-8 h-8 text-blue-500/40" />
+              </div>
             </motion.div>
             
             {/* Top Right Corner */}
             <motion.div
               animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              whileHover={{ scale: 1.4, rotate: -15, transition: { duration: 0.3 } }}
-              className="absolute -top-16 right-4 w-16 h-16 bg-gradient-to-br from-purple-500/30 to-purple-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-purple-500/30 shadow-lg hover:shadow-2xl hover:border-purple-400/50 z-20 transition-all"
+              className="absolute -top-16 right-4 w-16 h-16 opacity-[0.08] pointer-events-none"
             >
-              <Globe className="w-8 h-8 text-purple-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 backdrop-blur-sm flex items-center justify-center">
+                <Globe className="w-8 h-8 text-purple-500/40" />
+              </div>
             </motion.div>
             
             {/* Left Side - Top */}
             <motion.div
               animate={{ x: [0, -8, 0], rotate: [0, -8, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              whileHover={{ scale: 1.4, x: -10, transition: { duration: 0.3 } }}
-              className="absolute top-20 -left-20 w-14 h-14 bg-gradient-to-br from-cyan-500/30 to-cyan-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-cyan-500/30 shadow-lg hover:shadow-2xl hover:border-cyan-400/50 z-20 transition-all"
+              className="absolute top-20 -left-20 w-14 h-14 opacity-[0.06] pointer-events-none"
             >
-              <Ticket className="w-7 h-7 text-cyan-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-cyan-500/15 to-cyan-600/10 backdrop-blur-sm flex items-center justify-center">
+                <Ticket className="w-7 h-7 text-cyan-500/40" />
+              </div>
             </motion.div>
             
             {/* Left Side - Middle */}
             <motion.div
               animate={{ x: [0, -10, 0] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-              whileHover={{ scale: 1.4, x: -12, transition: { duration: 0.3 } }}
-              className="absolute top-1/2 -translate-y-1/2 -left-20 w-14 h-14 bg-gradient-to-br from-green-500/30 to-green-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-green-500/30 shadow-lg hover:shadow-2xl hover:border-green-400/50 z-20 transition-all"
+              className="absolute top-1/2 -translate-y-1/2 -left-20 w-14 h-14 opacity-[0.06] pointer-events-none"
             >
-              <Shield className="w-7 h-7 text-green-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-green-500/15 to-green-600/10 backdrop-blur-sm flex items-center justify-center">
+                <Shield className="w-7 h-7 text-green-500/40" />
+              </div>
             </motion.div>
             
             {/* Left Side - Bottom */}
             <motion.div
               animate={{ x: [0, -8, 0], rotate: [0, 8, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              whileHover={{ scale: 1.4, x: -10, transition: { duration: 0.3 } }}
-              className="absolute bottom-20 -left-20 w-14 h-14 bg-gradient-to-br from-yellow-500/30 to-yellow-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-yellow-500/30 shadow-lg hover:shadow-2xl hover:border-yellow-400/50 z-20 transition-all"
+              className="absolute bottom-20 -left-20 w-14 h-14 opacity-[0.06] pointer-events-none"
             >
-              <MapPin className="w-7 h-7 text-yellow-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-yellow-500/15 to-yellow-600/10 backdrop-blur-sm flex items-center justify-center">
+                <MapPin className="w-7 h-7 text-yellow-500/40" />
+              </div>
             </motion.div>
             
             {/* Right Side - Top */}
             <motion.div
               animate={{ x: [0, 8, 0], rotate: [0, 8, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              whileHover={{ scale: 1.4, x: 10, transition: { duration: 0.3 } }}
-              className="absolute top-20 -right-20 w-14 h-14 bg-gradient-to-br from-pink-500/30 to-pink-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-pink-500/30 shadow-lg hover:shadow-2xl hover:border-pink-400/50 z-20 transition-all"
+              className="absolute top-20 -right-20 w-14 h-14 opacity-[0.06] pointer-events-none"
             >
-              <CreditCard className="w-7 h-7 text-pink-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-pink-500/15 to-pink-600/10 backdrop-blur-sm flex items-center justify-center">
+                <CreditCard className="w-7 h-7 text-pink-500/40" />
+              </div>
             </motion.div>
             
             {/* Right Side - Middle */}
             <motion.div
               animate={{ x: [0, 10, 0] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2.2 }}
-              whileHover={{ scale: 1.4, x: 12, transition: { duration: 0.3 } }}
-              className="absolute top-1/2 -translate-y-1/2 -right-20 w-14 h-14 bg-gradient-to-br from-orange-500/30 to-orange-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-orange-500/30 shadow-lg hover:shadow-2xl hover:border-orange-400/50 z-20 transition-all"
+              className="absolute top-1/2 -translate-y-1/2 -right-20 w-14 h-14 opacity-[0.06] pointer-events-none"
             >
-              <Luggage className="w-7 h-7 text-orange-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-orange-500/15 to-orange-600/10 backdrop-blur-sm flex items-center justify-center">
+                <Luggage className="w-7 h-7 text-orange-500/40" />
+              </div>
             </motion.div>
             
             {/* Right Side - Bottom */}
             <motion.div
               animate={{ x: [0, 8, 0], rotate: [0, -8, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
-              whileHover={{ scale: 1.4, x: 10, transition: { duration: 0.3 } }}
-              className="absolute bottom-20 -right-20 w-14 h-14 bg-gradient-to-br from-teal-500/30 to-teal-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-teal-500/30 shadow-lg hover:shadow-2xl hover:border-teal-400/50 z-20 transition-all"
+              className="absolute bottom-20 -right-20 w-14 h-14 opacity-[0.06] pointer-events-none"
             >
-              <Navigation className="w-7 h-7 text-teal-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-teal-500/15 to-teal-600/10 backdrop-blur-sm flex items-center justify-center">
+                <Navigation className="w-7 h-7 text-teal-500/40" />
+              </div>
             </motion.div>
             
             {/* Bottom Left Corner */}
             <motion.div
               animate={{ y: [0, 12, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-              whileHover={{ scale: 1.4, rotate: -15, transition: { duration: 0.3 } }}
-              className="absolute -bottom-16 left-4 w-16 h-16 bg-gradient-to-br from-rose-500/30 to-rose-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-rose-500/30 shadow-lg hover:shadow-2xl hover:border-rose-400/50 z-20 transition-all"
+              className="absolute -bottom-16 left-4 w-16 h-16 opacity-[0.08] pointer-events-none"
             >
-              <Map className="w-8 h-8 text-rose-400" />
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/10 backdrop-blur-sm flex items-center justify-center">
+                <Map className="w-8 h-8 text-rose-500/40" />
+              </div>
             </motion.div>
             
             {/* Bottom Right Corner with rotating Compass */}
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-              whileHover={{ scale: 1.4, transition: { duration: 0.3 } }}
-              className="absolute -bottom-16 right-4 w-16 h-16 bg-gradient-to-br from-indigo-500/30 to-indigo-600/40 rounded-2xl flex items-center justify-center cursor-pointer backdrop-blur-md border-2 border-indigo-500/30 shadow-lg hover:shadow-2xl hover:border-indigo-400/50 z-20 transition-all"
+              className="absolute -bottom-16 right-4 w-16 h-16 opacity-[0.08] pointer-events-none"
             >
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              >
-                <Compass className="w-8 h-8 text-indigo-400" />
-              </motion.div>
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 backdrop-blur-sm flex items-center justify-center">
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                >
+                  <Compass className="w-8 h-8 text-indigo-500/40" />
+                </motion.div>
+              </div>
             </motion.div>
 
             <div className="w-full max-w-md bg-chat-bg border border-chat-border rounded-2xl shadow-xl overflow-hidden relative z-10">
