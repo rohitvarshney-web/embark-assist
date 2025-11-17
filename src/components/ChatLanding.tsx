@@ -626,6 +626,12 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
 }
 
 function ChatWindow({ history, onReplyClick }: { history: Node[]; onReplyClick: (r: Reply) => void }) {
+  const messagesEndRef = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [history]);
+
   return (
     <div className="flex flex-col gap-4">
       {history.map((m, i) => (
@@ -665,6 +671,7 @@ function ChatWindow({ history, onReplyClick }: { history: Node[]; onReplyClick: 
           )}
         </motion.div>
       ))}
+      <div ref={messagesEndRef} />
     </div>
   );
 }
