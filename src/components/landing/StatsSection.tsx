@@ -5,9 +5,9 @@ import easemytripLogo from "@/assets/brands/easemytrip.svg";
 import pickyourtrailLogo from "@/assets/brands/pickyourtrail.svg";
 
 const stats = [
-  { label: "Visa Applications", value: "500K+", trend: "+23% this month" },
+  { label: "Visas Processed Successfully", value: "500K+", trend: "+23% this month" },
   { label: "Travel Partners", value: "5000+", trend: "Growing daily" },
-  { label: "Approval Rate", value: "99.3%", trend: "Industry leading" },
+  { label: "Visa Approval Rate", value: "99.3%", trend: "Industry leading" },
   { label: "Countries Covered", value: "80+", trend: "Expanding" },
 ];
 
