@@ -1,6 +1,22 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { Send, Check, ChevronLeft, ChevronRight, Sparkles, Plane, MapPin, Shield, Globe, CreditCard, Ticket, Luggage, Compass, Navigation, Map } from "lucide-react";
+import {
+  Send,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles,
+  Plane,
+  MapPin,
+  Shield,
+  Globe,
+  CreditCard,
+  Ticket,
+  Luggage,
+  Compass,
+  Navigation,
+  Map,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StatsSection } from "./landing/StatsSection";
 import { HowItWorks } from "./landing/HowItWorks";
@@ -255,10 +271,10 @@ export default function ChatLanding() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl"
               >
-                One powerful platform for <span className="text-foreground font-semibold">visa applications</span>,{" "}
+                One powerful platform for <span className="text-foreground font-semibold">visa</span>,{" "}
                 <span className="text-foreground font-semibold">travel insurance</span>,{" "}
                 <span className="text-foreground font-semibold">eSIM</span>, and{" "}
-                <span className="text-foreground font-semibold">Visa rejection Insurance</span>. Grow your revenue while
+                <span className="text-foreground font-semibold">visa rejection insurance</span>. Grow your revenue while
                 we handle the complexity.
               </motion.p>
             </div>
@@ -379,7 +395,7 @@ export default function ChatLanding() {
             className="flex items-start justify-center relative"
           >
             {/* Subtle shadow-like decorative elements */}
-            
+
             {/* Top Left Corner */}
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
@@ -390,7 +406,7 @@ export default function ChatLanding() {
                 <Plane className="w-8 h-8 text-blue-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Top Right Corner */}
             <motion.div
               animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
@@ -401,7 +417,7 @@ export default function ChatLanding() {
                 <Globe className="w-8 h-8 text-purple-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Left Side - Top */}
             <motion.div
               animate={{ x: [0, -8, 0], rotate: [0, -8, 0] }}
@@ -412,7 +428,7 @@ export default function ChatLanding() {
                 <Ticket className="w-7 h-7 text-cyan-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Left Side - Middle */}
             <motion.div
               animate={{ x: [0, -10, 0] }}
@@ -423,7 +439,7 @@ export default function ChatLanding() {
                 <Shield className="w-7 h-7 text-green-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Left Side - Bottom */}
             <motion.div
               animate={{ x: [0, -8, 0], rotate: [0, 8, 0] }}
@@ -434,7 +450,7 @@ export default function ChatLanding() {
                 <MapPin className="w-7 h-7 text-yellow-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Right Side - Top */}
             <motion.div
               animate={{ x: [0, 8, 0], rotate: [0, 8, 0] }}
@@ -445,7 +461,7 @@ export default function ChatLanding() {
                 <CreditCard className="w-7 h-7 text-pink-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Right Side - Middle */}
             <motion.div
               animate={{ x: [0, 10, 0] }}
@@ -456,7 +472,7 @@ export default function ChatLanding() {
                 <Luggage className="w-7 h-7 text-orange-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Right Side - Bottom */}
             <motion.div
               animate={{ x: [0, 8, 0], rotate: [0, -8, 0] }}
@@ -467,7 +483,7 @@ export default function ChatLanding() {
                 <Navigation className="w-7 h-7 text-teal-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Bottom Left Corner */}
             <motion.div
               animate={{ y: [0, 12, 0], rotate: [0, -5, 0] }}
@@ -478,7 +494,7 @@ export default function ChatLanding() {
                 <Map className="w-8 h-8 text-rose-500/40" />
               </div>
             </motion.div>
-            
+
             {/* Bottom Right Corner with rotating Compass */}
             <motion.div
               animate={{ y: [0, 10, 0] }}
@@ -731,10 +747,18 @@ function AdCarousel({ images }: { images: { src: string; title?: string; subtitl
   );
 }
 
-function ChatWindow({ history, onReplyClick, scrollContainerRef }: { history: Node[]; onReplyClick: (r: Reply) => void; scrollContainerRef?: React.RefObject<HTMLDivElement>; }) {
+function ChatWindow({
+  history,
+  onReplyClick,
+  scrollContainerRef,
+}: {
+  history: Node[];
+  onReplyClick: (r: Reply) => void;
+  scrollContainerRef?: React.RefObject<HTMLDivElement>;
+}) {
   useEffect(() => {
     const el = scrollContainerRef?.current;
-    if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
   }, [history, scrollContainerRef]);
 
   return (
@@ -776,7 +800,6 @@ function ChatWindow({ history, onReplyClick, scrollContainerRef }: { history: No
           )}
         </motion.div>
       ))}
-      
     </div>
   );
 }
