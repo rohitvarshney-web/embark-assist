@@ -231,6 +231,88 @@ export default function ChatLanding() {
             transition={{ duration: 1.5, delay: 0.3 }}
             className="absolute bottom-0 -left-48 w-[500px] h-[500px] bg-purple-500 rounded-full blur-[100px]"
           />
+          
+          {/* Visa & Travel themed decorative elements */}
+          <motion.div
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 5, 0]
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-32 right-[15%] w-64 h-64 opacity-[0.03]"
+          >
+            <svg viewBox="0 0 200 200" className="w-full h-full">
+              <rect x="20" y="40" width="160" height="100" rx="8" fill="currentColor" className="text-primary" />
+              <circle cx="60" cy="70" r="15" fill="currentColor" className="text-foreground" />
+              <rect x="90" y="60" width="80" height="8" rx="4" fill="currentColor" className="text-foreground" />
+              <rect x="90" y="80" width="60" height="6" rx="3" fill="currentColor" className="text-foreground" />
+              <rect x="30" y="110" width="140" height="4" rx="2" fill="currentColor" className="text-muted-foreground" />
+              <rect x="30" y="120" width="100" height="4" rx="2" fill="currentColor" className="text-muted-foreground" />
+            </svg>
+          </motion.div>
+          
+          <motion.div
+            animate={{ 
+              y: [0, 30, 0],
+              rotate: [0, -8, 0]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute top-[60%] left-[8%] w-48 h-48 opacity-[0.04]"
+          >
+            <svg viewBox="0 0 200 200" className="w-full h-full">
+              <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="3" className="text-primary" />
+              <path d="M 100 40 L 120 90 L 170 100 L 120 110 L 100 160 L 80 110 L 30 100 L 80 90 Z" fill="currentColor" className="text-primary" />
+              <circle cx="100" cy="100" r="15" fill="currentColor" className="text-foreground" />
+            </svg>
+          </motion.div>
+          
+          <motion.div
+            animate={{ 
+              y: [0, -25, 0],
+              x: [0, 15, 0]
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute bottom-[20%] right-[10%] w-56 h-56 opacity-[0.03]"
+          >
+            <svg viewBox="0 0 200 200" className="w-full h-full">
+              <rect x="40" y="30" width="120" height="140" rx="12" fill="currentColor" className="text-primary" />
+              <circle cx="100" cy="80" r="25" fill="currentColor" className="text-background" />
+              <rect x="60" y="120" width="80" height="8" rx="4" fill="currentColor" className="text-background" />
+              <rect x="70" y="140" width="60" height="6" rx="3" fill="currentColor" className="text-background" />
+              <path d="M 50 50 L 65 65 L 50 80" stroke="currentColor" strokeWidth="4" fill="none" className="text-background" />
+            </svg>
+          </motion.div>
+          
+          <motion.div
+            animate={{ 
+              rotate: [0, 360],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[25%] left-[20%] w-40 h-40 opacity-[0.02]"
+          >
+            <svg viewBox="0 0 200 200" className="w-full h-full">
+              <path d="M 100 20 Q 150 50 150 100 Q 150 150 100 180 Q 50 150 50 100 Q 50 50 100 20 Z" fill="currentColor" className="text-primary" />
+              <circle cx="100" cy="100" r="30" fill="currentColor" className="text-foreground" />
+              <path d="M 85 95 L 95 105 L 115 85" stroke="currentColor" strokeWidth="4" fill="none" className="text-background" />
+            </svg>
+          </motion.div>
+          
+          <motion.div
+            animate={{ 
+              y: [0, 20, 0],
+              opacity: [0.02, 0.04, 0.02]
+            }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute bottom-[40%] left-[25%] w-52 h-52 opacity-[0.03]"
+          >
+            <svg viewBox="0 0 200 200" className="w-full h-full">
+              <rect x="30" y="50" width="140" height="100" rx="10" fill="currentColor" className="text-primary" />
+              <rect x="50" y="70" width="40" height="30" rx="5" fill="currentColor" className="text-background" />
+              <rect x="110" y="70" width="40" height="30" rx="5" fill="currentColor" className="text-background" />
+              <path d="M 70 120 Q 100 140 130 120" stroke="currentColor" strokeWidth="4" fill="none" className="text-background" />
+            </svg>
+          </motion.div>
         </div>
 
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
