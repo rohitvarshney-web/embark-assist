@@ -85,29 +85,27 @@ const Conversion = () => {
       </header>
 
       {/* Hero Section - High Urgency */}
-      <section className="pt-32 pb-12 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
-        <div className="container mx-auto max-w-5xl relative z-10">
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-100/40 via-purple-100/30 to-background" />
+        <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <Badge className="mb-6 text-base px-4 py-2 bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20">
+            <Badge variant="outline" className="mb-8 text-base px-6 py-2 bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 font-semibold">
               <Clock className="w-4 h-4 mr-2" />
-              Limited Time Offer - Winter Season 2024
+              LIMITED TIME OFFER
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Ready to transform your{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                visa service?
-              </span>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
+              <span className="text-foreground">Stop leaving </span>
+              <span className="bg-gradient-to-r from-amber-600 via-primary to-purple-600 bg-clip-text text-transparent">money on the table</span>
               <br />
-              Start your agent account in minutes
+              <span className="text-foreground">this holiday season</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Everything you need to handle the holiday rush — with zero setup hassle
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
+              Your competitors are already booking. Don't let outdated workflows hold you back. <span className="font-semibold text-foreground">There's a better way.</span>
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button 
