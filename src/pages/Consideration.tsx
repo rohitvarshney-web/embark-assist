@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Footer } from "@/components/landing/Footer";
 
 const Consideration = () => {
@@ -86,23 +87,24 @@ const Consideration = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-        <div className="container mx-auto max-w-5xl relative z-10 text-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-100/30 to-background" />
+        <div className="container mx-auto max-w-6xl relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Streamline your visa workflow.
+            <Badge variant="outline" className="mb-8 text-base px-6 py-2 bg-primary/5 border-primary/20 text-primary font-semibold">
+              FOR WARM AGENCIES
+            </Badge>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
+              <span className="text-foreground">Quit juggling </span>
+              <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">spreadsheets & emails</span>
               <br />
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Reduce rejection risk.
-              </span>
-              <br />
-              Impress your clients.
+              <span className="text-foreground">when you could be </span>
+              <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">closing deals</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
               Everything your travel agency needs to process visas faster, safer, and more profitably.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
