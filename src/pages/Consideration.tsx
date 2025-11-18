@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Footer } from "@/components/landing/Footer";
+import { StatsSection } from "@/components/landing/StatsSection";
 
 const Consideration = () => {
   return (
@@ -849,6 +850,9 @@ const Consideration = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Stats Section */}
+      <StatsSection />
 
       {/* CTA Section */}
       <section className="py-20 px-4">
