@@ -29,12 +29,10 @@ const Conversion = () => {
       <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <motion.img
+            <img
               src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
               alt="StampMyVisa Logo"
               className="h-10 w-auto"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
             <span className="font-bold text-xl text-foreground">StampMyVisa</span>
           </Link>
