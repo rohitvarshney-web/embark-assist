@@ -224,8 +224,26 @@ export default function ChatLanding() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex items-center gap-3 text-sm"
+          className="flex items-center gap-2 text-sm"
         >
+          <Link 
+            to="/awareness"
+            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+          >
+            Getting Started
+          </Link>
+          <Link 
+            to="/consideration"
+            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+          >
+            Features
+          </Link>
+          <Link 
+            to="/conversion"
+            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+          >
+            For Agencies
+          </Link>
           <Link 
             to="/marketing"
             className="hidden md:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
