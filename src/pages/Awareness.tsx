@@ -91,14 +91,6 @@ const Awareness = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-16"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block px-6 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold mb-8 text-sm tracking-wide"
-            >
-              FOR TRAVEL AGENCIES
-            </motion.div>
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight">
               Still wasting hours on{" "}
               <span className="relative inline-block">

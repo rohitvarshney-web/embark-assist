@@ -94,9 +94,6 @@ const Consideration = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Badge variant="outline" className="mb-8 text-base px-6 py-2 bg-primary/5 border-primary/20 text-primary font-semibold">
-              FOR WARM AGENCIES
-            </Badge>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
               <span className="text-foreground">Quit juggling </span>
               <span className="relative inline-block">
