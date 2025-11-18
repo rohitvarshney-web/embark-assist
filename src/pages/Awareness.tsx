@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Footer } from "@/components/landing/Footer";
+import { StatsSection } from "@/components/landing/StatsSection";
 
 const Awareness = () => {
   return (
@@ -511,28 +512,8 @@ const Awareness = () => {
         </div>
       </section>
 
-      {/* Social Proof Light */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-sm text-muted-foreground mb-6">Trusted by travel agencies across India</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-              <Users className="w-12 h-12" />
-              <Users className="w-12 h-12" />
-              <Users className="w-12 h-12" />
-              <Users className="w-12 h-12" />
-            </div>
-            <p className="text-muted-foreground mt-8">
-              Join 500+ agencies who've simplified their visa processing
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Stats Section */}
+      <StatsSection />
 
       {/* Footer */}
       <Footer />
