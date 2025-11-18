@@ -38,23 +38,51 @@ const Consideration = () => {
             />
             <span className="font-bold text-xl text-foreground">StampMyVisa</span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Home
-            </Link>
-            <Link to="/awareness" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <motion.nav
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex items-center gap-2 text-sm"
+          >
+            <Link 
+              to="/awareness"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               Getting Started
             </Link>
-            <Link to="/consideration" className="text-sm text-foreground font-medium">
+            <Link 
+              to="/consideration"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               Features
             </Link>
-            <Link to="/conversion" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link 
+              to="/conversion"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               For Agencies
             </Link>
-            <Button size="sm" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
-              Request Demo
+            <Link 
+              to="/marketing"
+              className="hidden md:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
+              Products
+            </Link>
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="hidden md:flex"
+              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+            >
+              Login
             </Button>
-          </nav>
+            <Button 
+              size="sm"
+              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
+            >
+              Get Started
+            </Button>
+          </motion.nav>
         </div>
       </header>
 

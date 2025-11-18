@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -19,18 +19,10 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Footer } from "@/components/landing/Footer";
 
 const Conversion = () => {
-  const [email, setEmail] = useState("");
-
-  const handleReactivation = (e: React.FormEvent) => {
-    e.preventDefault();
-    window.location.href = "https://stampmyvisa.com/auth/sign-up";
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -46,23 +38,51 @@ const Conversion = () => {
             />
             <span className="font-bold text-xl text-foreground">StampMyVisa</span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Home
-            </Link>
-            <Link to="/awareness" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <motion.nav
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex items-center gap-2 text-sm"
+          >
+            <Link 
+              to="/awareness"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               Getting Started
             </Link>
-            <Link to="/consideration" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link 
+              to="/consideration"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               Features
             </Link>
-            <Link to="/conversion" className="text-sm text-foreground font-medium">
+            <Link 
+              to="/conversion"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               For Agencies
             </Link>
-            <Button size="sm" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}>
+            <Link 
+              to="/marketing"
+              className="hidden md:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
+              Products
+            </Link>
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="hidden md:flex"
+              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+            >
               Login
             </Button>
-          </nav>
+            <Button 
+              size="sm"
+              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
+            >
+              Get Started
+            </Button>
+          </motion.nav>
         </div>
       </header>
 
@@ -523,35 +543,35 @@ const Conversion = () => {
                   </div>
                 </div>
 
-                {/* CTA Form */}
+                {/* CTA Buttons */}
                 <div className="bg-background rounded-xl p-8 border border-border">
-                  <form onSubmit={handleReactivation} className="space-y-6">
-                    <div className="text-center mb-6">
-                      <p className="text-2xl font-bold text-foreground mb-2">
-                        Reactivate Your Account Now
-                      </p>
-                      <p className="text-muted-foreground">
-                        Get instant access. Start processing visas in minutes.
-                      </p>
-                    </div>
-                    <div className="max-w-md mx-auto">
-                      <Input
-                        type="email"
-                        placeholder="Enter your registered email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        className="w-full mb-4"
-                        size={50}
-                      />
-                      <Button type="submit" size="lg" className="w-full gap-2 text-lg">
+                  <div className="text-center mb-6">
+                    <p className="text-2xl font-bold text-foreground mb-2">
+                      Reactivate Your Account Now
+                    </p>
+                    <p className="text-muted-foreground mb-6">
+                      Get instant access. Start processing visas in minutes.
+                    </p>
+                    <div className="flex flex-wrap gap-4 justify-center max-w-md mx-auto">
+                      <Button 
+                        size="lg" 
+                        className="gap-2 text-lg flex-1"
+                        onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
+                      >
                         Reactivate Now & Start Booking <ArrowRight className="w-5 h-5" />
                       </Button>
-                      <p className="text-xs text-center text-muted-foreground mt-4">
-                        No credit card required • Instant access • Cancel anytime
-                      </p>
+                      <Button 
+                        size="lg" 
+                        variant="outline"
+                        onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+                      >
+                        Login
+                      </Button>
                     </div>
-                  </form>
+                    <p className="text-xs text-center text-muted-foreground mt-4">
+                      No credit card required • Instant access • Cancel anytime
+                    </p>
+                  </div>
                 </div>
 
                 {/* Urgency Indicators */}

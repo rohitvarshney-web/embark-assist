@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -15,18 +15,9 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Footer } from "@/components/landing/Footer";
 
 const Awareness = () => {
-  const [email, setEmail] = useState("");
-
-  const handleChecklistDownload = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle checklist download
-    console.log("Download checklist for:", email);
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -42,20 +33,51 @@ const Awareness = () => {
             />
             <span className="font-bold text-xl text-foreground">StampMyVisa</span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Home
-            </Link>
-            <Link to="/awareness" className="text-sm text-foreground font-medium">
+          <motion.nav
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex items-center gap-2 text-sm"
+          >
+            <Link 
+              to="/awareness"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               Getting Started
             </Link>
-            <Link to="/consideration" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link 
+              to="/consideration"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               Features
             </Link>
-            <Link to="/conversion" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link 
+              to="/conversion"
+              className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
               For Agencies
             </Link>
-          </nav>
+            <Link 
+              to="/marketing"
+              className="hidden md:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+            >
+              Products
+            </Link>
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="hidden md:flex"
+              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+            >
+              Login
+            </Button>
+            <Button 
+              size="sm"
+              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
+            >
+              Get Started
+            </Button>
+          </motion.nav>
         </div>
       </header>
 
@@ -411,37 +433,30 @@ const Awareness = () => {
                 </ul>
               </div>
 
-              <div>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Download className="w-5 h-5 text-primary" />
-                      Download Free Checklist
-                    </CardTitle>
-                    <CardDescription>No credit card required. Instant access.</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleChecklistDownload} className="space-y-4">
-                      <div>
-                        <Input
-                          type="email"
-                          placeholder="Enter your work email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                          className="w-full"
-                        />
-                      </div>
-                      <Button type="submit" className="w-full gap-2">
-                        Get My Free Checklist
-                        <ArrowRight className="w-4 h-4" />
-                      </Button>
-                      <p className="text-xs text-muted-foreground text-center">
-                        Plus: Get invited to our monthly visa updates webinar
-                      </p>
-                    </form>
-                  </CardContent>
-                </Card>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Ready to Transform Your Visa Process?
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Join hundreds of agencies already handling peak season stress-free
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    className="gap-2"
+                    onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
+                  >
+                    Get Started Free
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+                  >
+                    Login to Your Account
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>
