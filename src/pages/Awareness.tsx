@@ -80,43 +80,59 @@ const Awareness = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-        <div className="container mx-auto max-w-5xl relative z-10">
+      <section className="pt-32 pb-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--accent)/0.1),transparent_50%)]" />
+        <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block px-6 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary font-semibold mb-8 text-sm tracking-wide"
+            >
+              FOR TRAVEL AGENCIES
+            </motion.div>
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight">
               Still wasting hours on{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
                 visa paperwork
               </span>
               <br />
-              when you could be selling more tours?
+              when you could be{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10">selling more tours?</span>
+                <span className="absolute bottom-2 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Travel agencies lose thousands in revenue every holiday season juggling visa applications. There's a better way.
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
+              Travel agencies lose <span className="font-semibold text-foreground">thousands in revenue</span> every holiday season juggling visa applications.{" "}
+              <span className="text-primary font-medium">There's a better way.</span>
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Problem Deep Dive */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-24 px-4 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              The Hidden Cost of Manual Visa Processing
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
+              The Hidden Cost of{" "}
+              <span className="text-destructive">Manual Visa Processing</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Every holiday season brings the same nightmare for travel agencies
             </p>
           </motion.div>
@@ -129,18 +145,20 @@ const Awareness = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Card className="h-full border-destructive/20 bg-destructive/5">
-                <CardHeader>
-                  <Clock className="w-12 h-12 text-destructive mb-4" />
-                  <CardTitle className="text-xl">Holiday Chaos</CardTitle>
+              <Card className="h-full border-destructive/30 bg-gradient-to-br from-destructive/5 to-destructive/10 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-destructive/10 flex items-center justify-center mb-4">
+                    <Clock className="w-9 h-9 text-destructive" />
+                  </div>
+                  <CardTitle className="text-2xl font-bold">Holiday Chaos</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground text-base leading-relaxed">
                     December-January rush overwhelms your team. 50+ visa applications pile up. Clients get anxious. Your staff works overtime.
                   </p>
-                  <div className="mt-4 p-3 bg-background rounded-lg">
-                    <div className="text-2xl font-bold text-destructive">40+ hours</div>
-                    <div className="text-sm text-muted-foreground">wasted per week during peak season</div>
+                  <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-destructive/20">
+                    <div className="text-4xl font-bold text-destructive mb-1">40+ hours</div>
+                    <div className="text-sm text-muted-foreground font-medium">wasted per week during peak season</div>
                   </div>
                 </CardContent>
               </Card>
@@ -153,18 +171,20 @@ const Awareness = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <Card className="h-full border-amber-500/20 bg-amber-500/5">
-                <CardHeader>
-                  <AlertTriangle className="w-12 h-12 text-amber-500 mb-4" />
-                  <CardTitle className="text-xl">Ever-Changing Rules</CardTitle>
+              <Card className="h-full border-amber-500/30 bg-gradient-to-br from-amber-500/5 to-amber-500/10 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-4">
+                    <AlertTriangle className="w-9 h-9 text-amber-500" />
+                  </div>
+                  <CardTitle className="text-2xl font-bold">Ever-Changing Rules</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground text-base leading-relaxed">
                     Visa requirements change without warning. Your team scrambles through government websites. One missed update = rejected application.
                   </p>
-                  <div className="mt-4 p-3 bg-background rounded-lg">
-                    <div className="text-2xl font-bold text-amber-500">15%</div>
-                    <div className="text-sm text-muted-foreground">rejection rate from outdated information</div>
+                  <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-amber-500/20">
+                    <div className="text-4xl font-bold text-amber-500 mb-1">15%</div>
+                    <div className="text-sm text-muted-foreground font-medium">rejection rate from outdated information</div>
                   </div>
                 </CardContent>
               </Card>
@@ -177,18 +197,20 @@ const Awareness = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <Card className="h-full border-red-500/20 bg-red-500/5">
-                <CardHeader>
-                  <FileQuestion className="w-12 h-12 text-red-500 mb-4" />
-                  <CardTitle className="text-xl">Rejection Fears</CardTitle>
+              <Card className="h-full border-red-500/30 bg-gradient-to-br from-red-500/5 to-red-500/10 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-red-500/10 flex items-center justify-center mb-4">
+                    <FileQuestion className="w-9 h-9 text-red-500" />
+                  </div>
+                  <CardTitle className="text-2xl font-bold">Rejection Fears</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground text-base leading-relaxed">
                     Missing documents. Incorrect formats. Booking confirmations incomplete. Each rejection damages client trust and your reputation.
                   </p>
-                  <div className="mt-4 p-3 bg-background rounded-lg">
-                    <div className="text-2xl font-bold text-red-500">₹25,000+</div>
-                    <div className="text-sm text-muted-foreground">average loss per rejected group visa</div>
+                  <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-red-500/20">
+                    <div className="text-4xl font-bold text-red-500 mb-1">₹25,000+</div>
+                    <div className="text-sm text-muted-foreground font-medium">average loss per rejected group visa</div>
                   </div>
                 </CardContent>
               </Card>
@@ -214,28 +236,36 @@ const Awareness = () => {
       </section>
 
       {/* Soft Introduction to StampMyVisa */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-5xl">
+      <section className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-background" />
+        <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary font-medium mb-6">
-              There's a Better Way
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-full text-primary font-semibold mb-8 text-sm tracking-wide"
+            >
+              ✨ There's a Better Way
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 tracking-tight leading-tight">
               Introducing Your{" "}
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 Visa Desk in a Box
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Imagine having an expert visa team working 24/7 for your agency — without the overhead, training headaches, or peak-season chaos.
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-6 leading-relaxed font-light">
+              Imagine having an expert visa team working <span className="text-foreground font-semibold">24/7</span> for your agency — without the overhead, training headaches, or peak-season chaos.
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              That's StampMyVisa. Not just software. A complete visa processing system built specifically for travel agencies.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              That's <span className="text-primary font-semibold">StampMyVisa</span>. Not just software.{" "}
+              <span className="text-foreground font-medium">A complete visa processing system built specifically for travel agencies.</span>
             </p>
           </motion.div>
 
@@ -336,16 +366,16 @@ const Awareness = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Card className="h-full text-center">
+              <Card className="h-full text-center shadow-lg hover:shadow-xl transition-all duration-300 border-primary/20 bg-gradient-to-br from-primary/5 to-background">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Zap className="w-8 h-8 text-primary" />
+                  <div className="mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-6 shadow-md">
+                    <Zap className="w-10 h-10 text-primary" />
                   </div>
-                  <CardTitle className="text-2xl">Clarity in One Click</CardTitle>
+                  <CardTitle className="text-2xl font-bold mb-2">Clarity in One Click</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    No more hunting through government websites. See exactly what each client needs — instantly updated, clearly organized.
+                  <p className="text-muted-foreground leading-relaxed">
+                    No more hunting through government websites. See exactly what each client needs — <span className="text-foreground font-medium">instantly updated, clearly organized.</span>
                   </p>
                 </CardContent>
               </Card>
@@ -358,16 +388,16 @@ const Awareness = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <Card className="h-full text-center">
+              <Card className="h-full text-center shadow-lg hover:shadow-xl transition-all duration-300 border-primary/20 bg-gradient-to-br from-accent/5 to-background">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Clock className="w-8 h-8 text-primary" />
+                  <div className="mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center mb-6 shadow-md">
+                    <Clock className="w-10 h-10 text-accent" />
                   </div>
-                  <CardTitle className="text-2xl">2-Minute Booking</CardTitle>
+                  <CardTitle className="text-2xl font-bold mb-2">2-Minute Booking</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    Stop the endless back-and-forth. Clients upload documents directly. Your team reviews once. Done.
+                  <p className="text-muted-foreground leading-relaxed">
+                    Stop the endless back-and-forth. Clients upload documents directly. Your team reviews once. <span className="text-foreground font-medium">Done.</span>
                   </p>
                 </CardContent>
               </Card>
@@ -380,16 +410,16 @@ const Awareness = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <Card className="h-full text-center">
+              <Card className="h-full text-center shadow-lg hover:shadow-xl transition-all duration-300 border-primary/20 bg-gradient-to-br from-primary/5 to-background">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Shield className="w-8 h-8 text-primary" />
+                  <div className="mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-6 shadow-md">
+                    <Shield className="w-10 h-10 text-primary" />
                   </div>
-                  <CardTitle className="text-2xl">Expert QA</CardTitle>
+                  <CardTitle className="text-2xl font-bold mb-2">Expert QA</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    Sleep better knowing trained visa experts double-check every application before submission.
+                  <p className="text-muted-foreground leading-relaxed">
+                    Sleep better knowing <span className="text-foreground font-medium">trained visa experts</span> double-check every application before submission.
                   </p>
                 </CardContent>
               </Card>
@@ -399,14 +429,17 @@ const Awareness = () => {
       </section>
 
       {/* Soft CTA - Lead Capture */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
+      <section className="py-24 px-4">
+        <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-12"
+            className="bg-gradient-to-br from-primary/15 via-accent/10 to-primary/5 border-2 border-primary/30 rounded-3xl p-12 md:p-16 shadow-2xl relative overflow-hidden"
           >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+            <div className="relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold text-foreground mb-4">
@@ -456,6 +489,7 @@ const Awareness = () => {
                   </Button>
                 </div>
               </div>
+            </div>
             </div>
           </motion.div>
 
