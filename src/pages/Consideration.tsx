@@ -99,10 +99,16 @@ const Consideration = () => {
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
               <span className="text-foreground">Quit juggling </span>
-              <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">spreadsheets & emails</span>
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">spreadsheets & emails</span>
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -z-10 rounded" />
+              </span>
               <br />
               <span className="text-foreground">when you could be </span>
-              <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">closing deals</span>
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">closing deals</span>
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
               Everything your travel agency needs to process visas faster, safer, and more profitably.

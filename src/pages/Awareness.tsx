@@ -101,14 +101,17 @@ const Awareness = () => {
             </motion.div>
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight">
               Still wasting hours on{" "}
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
-                visa paperwork
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
+                  visa paperwork
+                </span>
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -z-10 rounded" />
               </span>
               <br />
               when you could be{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">selling more tours?</span>
-                <span className="absolute bottom-2 left-0 w-full h-3 bg-accent/20 -rotate-1"></span>
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">

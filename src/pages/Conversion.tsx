@@ -100,9 +100,16 @@ const Conversion = () => {
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
               <span className="text-foreground">Stop leaving </span>
-              <span className="bg-gradient-to-r from-amber-600 via-primary to-purple-600 bg-clip-text text-transparent">money on the table</span>
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-amber-600 via-primary to-purple-600 bg-clip-text text-transparent">money on the table</span>
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-amber-400/30 -z-10 rounded" />
+              </span>
               <br />
-              <span className="text-foreground">this holiday season</span>
+              <span className="text-foreground">this </span>
+              <span className="relative inline-block">
+                <span className="text-foreground">holiday season</span>
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
               Your competitors are already booking. Don't let outdated workflows hold you back. <span className="font-semibold text-foreground">There's a better way.</span>
