@@ -60,13 +60,7 @@ const Conversion = () => {
             >
               For Agencies
             </Link>
-            <Link 
-              to="/marketing"
-              className="hidden md:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
-            >
-              Products
-            </Link>
-            <Button 
+            <Button
               variant="outline" 
               size="sm"
               className="hidden md:flex"
