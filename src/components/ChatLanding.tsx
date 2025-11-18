@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Send,
   Check,
@@ -225,6 +226,12 @@ export default function ChatLanding() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex items-center gap-3 text-sm"
         >
+          <Link 
+            to="/marketing"
+            className="hidden md:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
+          >
+            Products
+          </Link>
           <Button
             variant="ghost"
             size="sm"
