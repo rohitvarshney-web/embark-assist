@@ -212,13 +212,14 @@ export default function ChatLanding() {
           transition={{ duration: 0.6 }}
           className="flex items-center"
         >
-          <img
-            width={207}
-            height={32}
-            className="cursor-pointer h-8 w-auto"
-            src="https://stampmyvisa.com/assets/images/logo-with-name.svg"
-            alt="SMV logo"
-          />
+          <div className="flex items-center gap-3">
+            <img
+              src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
+              alt="StampMyVisa Logo"
+              className="h-10 w-auto"
+            />
+            <span className="font-bold text-xl text-foreground">StampMyVisa</span>
+          </div>
         </motion.div>
         <motion.nav
           initial={{ opacity: 0, x: 20 }}
