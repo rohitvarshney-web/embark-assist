@@ -332,10 +332,10 @@ export default function Esim() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="https://stampmyvisa.com/auth/sign-up">Get Started</a>
+                <a href="https://stampmyvisa.com/home/travel-esim">Buy eSIM Now</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="https://calendly.com/b2b-support-stampmyvisa/demo">Request Demo</a>
+                <a href="https://stampmyvisa.com/home/travel-esim">View Plans</a>
               </Button>
             </div>
           </motion.div>
