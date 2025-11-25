@@ -520,7 +520,7 @@ const Awareness = () => {
               <Button 
                 size="lg" 
                 className="gap-2 text-lg px-8" 
-                onClick={() => (window.location.href = "https://stampmyvisa.com")}
+                onClick={() => (window.location.href = "https://calendly.com/b2b-support-stampmyvisa/demo")}
               >
                 Request Demo <ArrowRight className="w-5 h-5" />
               </Button>
