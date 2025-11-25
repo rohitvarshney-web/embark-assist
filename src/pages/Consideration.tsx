@@ -47,16 +47,13 @@ const Consideration = () => {
           </motion.div>
           <div className="flex items-center gap-3">
             <Button
-              variant="outline" 
+              variant="outline"
               size="sm"
-              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+              onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
             >
               Login
             </Button>
-            <Button 
-              size="sm"
-              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
-            >
+            <Button size="sm" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
               Get Started
             </Button>
           </div>
@@ -67,35 +64,27 @@ const Consideration = () => {
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-100/30 to-background" />
         <div className="container mx-auto max-w-6xl relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
               <span className="text-foreground">Quit juggling </span>
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">spreadsheets & emails</span>
+                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
+                  spreadsheets & emails
+                </span>
                 <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -z-10 rounded" />
               </span>
               <br />
               <span className="text-foreground">when you could be </span>
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">closing deals</span>
+                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
+                  closing deals
+                </span>
                 <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
               Everything your travel agency needs to process visas faster, safer, and more profitably.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="gap-2" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
-                Request Demo <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
-                Get Started
-              </Button>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -234,7 +223,9 @@ const Consideration = () => {
                         <Upload className="w-5 h-5 text-amber-500" />
                         <span className="text-sm font-medium">Bank statement (6 months)</span>
                       </div>
-                      <Button size="sm" variant="outline">Upload</Button>
+                      <Button size="sm" variant="outline">
+                        Upload
+                      </Button>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
                       <div className="flex items-center gap-3 opacity-50">
@@ -276,9 +267,7 @@ const Consideration = () => {
                 <Card className="bg-primary/5 border-primary/20">
                   <CardContent className="pt-6">
                     <p className="text-sm text-muted-foreground mb-2">Result:</p>
-                    <p className="font-semibold text-foreground">
-                      Save 10+ hours per week on document collection.
-                    </p>
+                    <p className="font-semibold text-foreground">Save 10+ hours per week on document collection.</p>
                   </CardContent>
                 </Card>
               </div>
@@ -322,9 +311,7 @@ const Consideration = () => {
                 <Card className="bg-primary/5 border-primary/20">
                   <CardContent className="pt-6">
                     <p className="text-sm text-muted-foreground mb-2">Result:</p>
-                    <p className="font-semibold text-foreground">
-                      85% reduction in rejections due to document errors.
-                    </p>
+                    <p className="font-semibold text-foreground">85% reduction in rejections due to document errors.</p>
                   </CardContent>
                 </Card>
               </div>
@@ -371,7 +358,9 @@ const Consideration = () => {
                         </div>
                       </div>
                     </div>
-                    <Button className="w-full" variant="outline">Ready for Submission</Button>
+                    <Button className="w-full" variant="outline">
+                      Ready for Submission
+                    </Button>
                   </CardContent>
                 </Card>
               </div>
@@ -442,9 +431,7 @@ const Consideration = () => {
                 <Card className="bg-primary/5 border-primary/20">
                   <CardContent className="pt-6">
                     <p className="text-sm text-muted-foreground mb-2">Result:</p>
-                    <p className="font-semibold text-foreground">
-                      Human backup when you need it most.
-                    </p>
+                    <p className="font-semibold text-foreground">Human backup when you need it most.</p>
                   </CardContent>
                 </Card>
               </div>
@@ -462,9 +449,7 @@ const Consideration = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Your Complete Workflow, Simplified
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Your Complete Workflow, Simplified</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               From client inquiry to visa approval — see exactly how it works
             </p>
@@ -601,9 +586,7 @@ const Consideration = () => {
           >
             <Card className="inline-block max-w-2xl">
               <CardContent className="pt-6">
-                <p className="text-lg font-semibold text-foreground mb-2">
-                  Average time from inquiry to submission:
-                </p>
+                <p className="text-lg font-semibold text-foreground mb-2">Average time from inquiry to submission:</p>
                 <p className="text-4xl font-bold text-primary">2 hours</p>
                 <p className="text-sm text-muted-foreground mt-2">vs. 2-3 days manually</p>
               </CardContent>
@@ -621,9 +604,7 @@ const Consideration = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Your Questions, Answered
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Your Questions, Answered</h2>
           </motion.div>
 
           <div className="space-y-6">
@@ -639,11 +620,10 @@ const Consideration = () => {
                   <div className="flex items-start gap-4">
                     <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-xl mb-2">
-                        "What happens when visa rules change suddenly?"
-                      </CardTitle>
+                      <CardTitle className="text-xl mb-2">"What happens when visa rules change suddenly?"</CardTitle>
                       <p className="text-muted-foreground">
-                        Our team monitors embassy updates daily. When rules change, your portal updates automatically — and we notify you immediately. You'll never submit outdated applications again.
+                        Our team monitors embassy updates daily. When rules change, your portal updates automatically —
+                        and we notify you immediately. You'll never submit outdated applications again.
                       </p>
                     </div>
                   </div>
@@ -663,11 +643,10 @@ const Consideration = () => {
                   <div className="flex items-start gap-4">
                     <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-xl mb-2">
-                        "Can it handle big group visas (20-30 people)?"
-                      </CardTitle>
+                      <CardTitle className="text-xl mb-2">"Can it handle big group visas (20-30 people)?"</CardTitle>
                       <p className="text-muted-foreground">
-                        Yes. Bulk upload features let clients submit multiple applications at once. Your team reviews in batch. Perfect for corporate groups, wedding parties, or tour groups.
+                        Yes. Bulk upload features let clients submit multiple applications at once. Your team reviews in
+                        batch. Perfect for corporate groups, wedding parties, or tour groups.
                       </p>
                     </div>
                   </div>
@@ -687,11 +666,10 @@ const Consideration = () => {
                   <div className="flex items-start gap-4">
                     <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-xl mb-2">
-                        "What if a visa still gets rejected?"
-                      </CardTitle>
+                      <CardTitle className="text-xl mb-2">"What if a visa still gets rejected?"</CardTitle>
                       <p className="text-muted-foreground">
-                        Our expert QA catches 85% of issues before submission. For the rest, we offer optional Visa Rejection Insurance — clients get full refunds if rejected. Zero risk for you or them.
+                        Our expert QA catches 85% of issues before submission. For the rest, we offer optional Visa
+                        Rejection Insurance — clients get full refunds if rejected. Zero risk for you or them.
                       </p>
                     </div>
                   </div>
@@ -711,12 +689,8 @@ const Consideration = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Trusted by Top Travel Agencies
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Real results from agencies like yours
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Trusted by Top Travel Agencies</h2>
+            <p className="text-lg text-muted-foreground">Real results from agencies like yours</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -797,11 +771,7 @@ const Consideration = () => {
           </div>
 
           {/* Case Study Highlight */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
@@ -828,7 +798,10 @@ const Consideration = () => {
                   </div>
                 </div>
                 <p className="text-muted-foreground mb-4">
-                  "Before StampMyVisa, December meant chaos. Staff working 12-hour days, clients calling constantly, errors everywhere. This year? Smooth sailing. The guided upload portal meant clients knew exactly what to do. Expert QA caught every issue. We actually closed more deals because we weren't buried in paperwork."
+                  "Before StampMyVisa, December meant chaos. Staff working 12-hour days, clients calling constantly,
+                  errors everywhere. This year? Smooth sailing. The guided upload portal meant clients knew exactly what
+                  to do. Expert QA caught every issue. We actually closed more deals because we weren't buried in
+                  paperwork."
                 </p>
                 <p className="font-semibold text-foreground">— Neha Singh, Wanderlust Travel</p>
               </CardContent>
@@ -840,22 +813,24 @@ const Consideration = () => {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-foreground mb-6">
-              Ready to Transform Your Visa Service?
-            </h2>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-4xl font-bold text-foreground mb-6">Ready to Transform Your Visa Service?</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               See StampMyVisa in action. Book a personalized demo or start your free trial today.
             </p>
             <div className="flex flex-wrap gap-4 justify-center mb-8">
-              <Button size="lg" className="gap-2" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
+              <Button
+                size="lg"
+                className="gap-2"
+                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
+              >
                 Request Demo <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
+              >
                 Get Started
               </Button>
             </div>
