@@ -92,8 +92,8 @@ const Consideration = () => {
               <Button size="lg" className="gap-2" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
                 Request Demo <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline">
-                Start Free Trial
+              <Button size="lg" variant="outline" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
+                Get Started
               </Button>
             </div>
           </motion.div>
@@ -855,8 +855,8 @@ const Consideration = () => {
               <Button size="lg" className="gap-2" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
                 Request Demo <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline">
-                Start Free Trial
+              <Button size="lg" variant="outline" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
+                Get Started
               </Button>
             </div>
             <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground">
