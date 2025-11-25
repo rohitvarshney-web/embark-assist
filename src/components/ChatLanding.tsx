@@ -267,26 +267,26 @@ export default function ChatLanding() {
       <AdCarousel images={AD_IMAGES} />
 
       {/* Main content */}
-      <main className="relative flex-1 flex items-center justify-center px-6 lg:px-12 py-20 lg:py-28 overflow-hidden">
+      <main className="relative flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-28 overflow-hidden">
         {/* Textured gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 via-blue-50/20 to-cyan-100/30 dark:from-purple-950/20 dark:via-blue-950/10 dark:to-cyan-950/20"></div>
         <div className="absolute inset-0 opacity-[0.015] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNSIgLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiAvPjwvc3ZnPg==')]"></div>
 
-        <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
+        <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-center relative z-10">
           {/* Left: Hero Content */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-10"
+            className="space-y-8 sm:space-y-10"
           >
             {/* Headline */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] tracking-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] tracking-tight"
               >
                 <span className="text-foreground">Transform Your</span>
                 <br />
@@ -304,7 +304,7 @@ export default function ChatLanding() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl"
+                className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl"
               >
                 One powerful platform for <span className="text-foreground font-semibold">visa</span>,{" "}
                 <span className="text-foreground font-semibold">travel insurance</span>,{" "}
@@ -315,16 +315,19 @@ export default function ChatLanding() {
             </div>
 
             {/* Product Cards - Inverted Triangle Layout */}
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               {/* Top Row - 3 Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
                 {/* Visa */}
-                <motion.div
+                <motion.a
+                  href="https://stampmyvisa.com/home/create-visa"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+                  className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-500/20 rounded-2xl p-5 sm:p-6 hover:shadow-xl transition-all group cursor-pointer"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
@@ -340,17 +343,20 @@ export default function ChatLanding() {
                       />
                     </svg>
                   </motion.div>
-                  <h3 className="font-bold text-foreground mb-1 text-lg">Visa</h3>
-                  <p className="text-sm text-muted-foreground">80+ countries</p>
-                </motion.div>
+                  <h3 className="font-bold text-foreground mb-1 text-base sm:text-lg">Visa</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">80+ countries</p>
+                </motion.a>
 
                 {/* Insurance */}
-                <motion.div
+                <motion.a
+                  href="https://stampmyvisa.com/home/insure"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  className="bg-gradient-to-br from-green-500/10 to-green-500/5 border border-green-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+                  className="bg-gradient-to-br from-green-500/10 to-green-500/5 border border-green-500/20 rounded-2xl p-5 sm:p-6 hover:shadow-xl transition-all group cursor-pointer"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: -5 }}
@@ -366,17 +372,20 @@ export default function ChatLanding() {
                       />
                     </svg>
                   </motion.div>
-                  <h3 className="font-bold text-foreground mb-1 text-lg">Travel Insurance</h3>
-                  <p className="text-sm text-muted-foreground">Trip coverage</p>
-                </motion.div>
+                  <h3 className="font-bold text-foreground mb-1 text-base sm:text-lg">Travel Insurance</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Trip coverage</p>
+                </motion.a>
 
                 {/* eSIM */}
-                <motion.div
+                <motion.a
+                  href="https://stampmyvisa.com/home/travel-esim"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+                  className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/20 rounded-2xl p-5 sm:p-6 hover:shadow-xl transition-all group cursor-pointer"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
@@ -392,20 +401,23 @@ export default function ChatLanding() {
                       />
                     </svg>
                   </motion.div>
-                  <h3 className="font-bold text-foreground mb-1 text-lg">eSIM</h3>
-                  <p className="text-sm text-muted-foreground">Available for 160+ countries</p>
-                </motion.div>
+                  <h3 className="font-bold text-foreground mb-1 text-base sm:text-lg">eSIM</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Available for 160+ countries</p>
+                </motion.a>
               </div>
 
               {/* Bottom Row - 2 Cards Centered */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-2xl mx-auto">
                 {/* VRI */}
-                <motion.div
+                <motion.a
+                  href="https://stampmyvisa.com/home/create-visa"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  className="bg-gradient-to-br from-pink-500/10 to-pink-500/5 border border-pink-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+                  className="bg-gradient-to-br from-pink-500/10 to-pink-500/5 border border-pink-500/20 rounded-2xl p-5 sm:p-6 hover:shadow-xl transition-all group cursor-pointer"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: -5 }}
@@ -421,17 +433,20 @@ export default function ChatLanding() {
                       />
                     </svg>
                   </motion.div>
-                  <h3 className="font-bold text-foreground mb-1 text-lg">VRI</h3>
-                  <p className="text-sm text-muted-foreground">100% Visa fee refund*</p>
-                </motion.div>
+                  <h3 className="font-bold text-foreground mb-1 text-base sm:text-lg">VRI</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">100% Visa fee refund*</p>
+                </motion.a>
 
                 {/* Whitelabel PG */}
-                <motion.div
+                <motion.a
+                  href="https://stampmyvisa.com/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 border border-orange-500/20 rounded-2xl p-6 hover:shadow-xl transition-all group cursor-pointer"
+                  className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 border border-orange-500/20 rounded-2xl p-5 sm:p-6 hover:shadow-xl transition-all group cursor-pointer"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
@@ -440,19 +455,19 @@ export default function ChatLanding() {
                   >
                     <CreditCard className="w-7 h-7 text-orange-500" />
                   </motion.div>
-                  <h3 className="font-bold text-foreground mb-1 text-lg">Whitelabel PG</h3>
-                  <p className="text-sm text-muted-foreground">Enterprise payment solution</p>
-                </motion.div>
+                  <h3 className="font-bold text-foreground mb-1 text-base sm:text-lg">Whitelabel PG</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Enterprise payment solution</p>
+                </motion.a>
               </div>
             </div>
           </motion.div>
 
-          {/* Right: chat widget */}
+          {/* Right: chat widget - Hidden on mobile */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-start justify-center relative"
+            className="hidden lg:flex items-start justify-center relative"
           >
             {/* Subtle shadow-like decorative elements */}
 
