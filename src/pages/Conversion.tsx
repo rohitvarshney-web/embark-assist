@@ -46,16 +46,13 @@ const Conversion = () => {
           </motion.div>
           <div className="flex items-center gap-3">
             <Button
-              variant="outline" 
+              variant="outline"
               size="sm"
-              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+              onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
             >
               Login
             </Button>
-            <Button 
-              size="sm"
-              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
-            >
+            <Button size="sm" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
               Get Started
             </Button>
           </div>
@@ -75,7 +72,9 @@ const Conversion = () => {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
               <span className="text-foreground">Stop leaving </span>
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-amber-600 via-primary to-purple-600 bg-clip-text text-transparent">money on the table</span>
+                <span className="bg-gradient-to-r from-amber-600 via-primary to-purple-600 bg-clip-text text-transparent">
+                  money on the table
+                </span>
                 <span className="absolute bottom-2 left-0 w-full h-4 bg-amber-400/30 -z-10 rounded" />
               </span>
               <br />
@@ -86,7 +85,8 @@ const Conversion = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Your competitors are already booking. Don't let outdated workflows hold you back. <span className="font-semibold text-foreground">There's a better way.</span>
+              Your competitors are already booking. Don't let outdated workflows hold you back.{" "}
+              <span className="font-semibold text-foreground">There's a better way.</span>
             </p>
           </motion.div>
         </div>
@@ -104,9 +104,7 @@ const Conversion = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Agencies Are Returning Now
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Agencies Are Returning Now</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We've solved the problems that made visa processing painful
             </p>
@@ -135,7 +133,8 @@ const Conversion = () => {
                       <h3 className="font-bold text-lg">Now</h3>
                     </div>
                     <p className="text-muted-foreground">
-                      <span className="font-semibold text-foreground">Predictable processing.</span> Automated workflows. Clients self-serve.
+                      <span className="font-semibold text-foreground">Predictable processing.</span> Automated
+                      workflows. Clients self-serve.
                     </p>
                   </div>
                 </CardContent>
@@ -164,7 +163,8 @@ const Conversion = () => {
                       <h3 className="font-bold text-lg">Now</h3>
                     </div>
                     <p className="text-muted-foreground">
-                      <span className="font-semibold text-foreground">Expert QA every time.</span> Zero format errors. 99% approval rate.
+                      <span className="font-semibold text-foreground">Expert QA every time.</span> Zero format errors.
+                      99% approval rate.
                     </p>
                   </div>
                 </CardContent>
@@ -193,7 +193,8 @@ const Conversion = () => {
                       <h3 className="font-bold text-lg">Now</h3>
                     </div>
                     <p className="text-muted-foreground">
-                      <span className="font-semibold text-foreground">Always-updated portal.</span> Daily embassy monitoring. Total confidence.
+                      <span className="font-semibold text-foreground">Always-updated portal.</span> Daily embassy
+                      monitoring. Total confidence.
                     </p>
                   </div>
                 </CardContent>
@@ -323,9 +324,7 @@ const Conversion = () => {
                     <Zap className="w-7 h-7 text-primary" />
                   </div>
                   <CardTitle className="text-xl mb-2">Instant Pricing</CardTitle>
-                  <CardDescription>
-                    Quote any visa in seconds. Real-time rates for 180+ countries.
-                  </CardDescription>
+                  <CardDescription>Quote any visa in seconds. Real-time rates for 180+ countries.</CardDescription>
                 </CardHeader>
               </Card>
             </motion.div>
@@ -343,9 +342,7 @@ const Conversion = () => {
                     <Upload className="w-7 h-7 text-primary" />
                   </div>
                   <CardTitle className="text-xl mb-2">Guided Uploads</CardTitle>
-                  <CardDescription>
-                    Clients see exactly what docs to upload. Zero back-and-forth.
-                  </CardDescription>
+                  <CardDescription>Clients see exactly what docs to upload. Zero back-and-forth.</CardDescription>
                 </CardHeader>
               </Card>
             </motion.div>
@@ -363,9 +360,7 @@ const Conversion = () => {
                     <User className="w-7 h-7 text-primary" />
                   </div>
                   <CardTitle className="text-xl mb-2">Dedicated RM</CardTitle>
-                  <CardDescription>
-                    Human backup for urgent cases. WhatsApp support included.
-                  </CardDescription>
+                  <CardDescription>Human backup for urgent cases. WhatsApp support included.</CardDescription>
                 </CardHeader>
               </Card>
             </motion.div>
@@ -383,9 +378,7 @@ const Conversion = () => {
                     <Bell className="w-7 h-7 text-primary" />
                   </div>
                   <CardTitle className="text-xl mb-2">Updated Advisories</CardTitle>
-                  <CardDescription>
-                    Never miss rule changes. Daily embassy monitoring.
-                  </CardDescription>
+                  <CardDescription>Never miss rule changes. Daily embassy monitoring.</CardDescription>
                 </CardHeader>
               </Card>
             </motion.div>
@@ -402,12 +395,8 @@ const Conversion = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Agencies Are Coming Back
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              And they're thriving this season
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Agencies Are Coming Back</h2>
+            <p className="text-lg text-muted-foreground">And they're thriving this season</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -426,7 +415,8 @@ const Conversion = () => {
                     ))}
                   </div>
                   <CardDescription className="text-base italic">
-                    "Came back after 8 months. The improvements are amazing. Processed 40 visas in 2 weeks without stress."
+                    "Came back after 8 months. The improvements are amazing. Processed 40 visas in 2 weeks without
+                    stress."
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -492,11 +482,7 @@ const Conversion = () => {
       {/* Conversion Offer - High Urgency */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary shadow-2xl">
               <CardHeader className="text-center pb-8">
                 <Badge className="mx-auto mb-4 text-base px-4 py-2 bg-amber-500 text-white">
@@ -581,27 +567,25 @@ const Conversion = () => {
                 {/* CTA Buttons */}
                 <div className="bg-background rounded-xl p-8 border border-border">
                   <div className="text-center mb-6">
-                    <p className="text-2xl font-bold text-foreground mb-2">
-                      Ready to Transform Your Visa Service?
-                    </p>
+                    <p className="text-2xl font-bold text-foreground mb-2">Ready to Transform Your Visa Service?</p>
                     <p className="text-muted-foreground mb-6">
                       See StampMyVisa in action. Book a personalized demo or start your free trial today.
                     </p>
                     <div className="flex flex-wrap gap-4 justify-center">
-                      <Button 
-                        size="lg" 
+                      <Button
+                        size="lg"
                         className="gap-2 text-lg px-8"
-                        onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
+                        onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
                       >
                         Request Demo <ArrowRight className="w-5 h-5" />
                       </Button>
-                      <Button 
-                        size="lg" 
+                      <Button
+                        size="lg"
                         variant="outline"
                         className="text-lg px-8"
-                        onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
+                        onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
                       >
-                        Start Free Trial
+                        Get Started
                       </Button>
                     </div>
                     <div className="mt-6 flex items-center justify-center gap-6 text-sm text-muted-foreground flex-wrap">
@@ -651,9 +635,7 @@ const Conversion = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Questions About Reactivation?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Questions About Reactivation?</h2>
           </motion.div>
 
           <div className="space-y-6">
@@ -669,11 +651,10 @@ const Conversion = () => {
                   <div className="flex items-start gap-4">
                     <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-xl mb-2">
-                        How do visa rules stay updated?
-                      </CardTitle>
+                      <CardTitle className="text-xl mb-2">How do visa rules stay updated?</CardTitle>
                       <p className="text-muted-foreground">
-                        Our team monitors embassy websites daily. When requirements change, your portal updates automatically within 24 hours. You'll also get WhatsApp notifications for major changes.
+                        Our team monitors embassy websites daily. When requirements change, your portal updates
+                        automatically within 24 hours. You'll also get WhatsApp notifications for major changes.
                       </p>
                     </div>
                   </div>
@@ -693,11 +674,10 @@ const Conversion = () => {
                   <div className="flex items-start gap-4">
                     <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-xl mb-2">
-                        Can it handle group bookings (20-30 people)?
-                      </CardTitle>
+                      <CardTitle className="text-xl mb-2">Can it handle group bookings (20-30 people)?</CardTitle>
                       <p className="text-muted-foreground">
-                        Absolutely. Our bulk upload feature handles groups of any size. Upload all passports at once, and we'll process them together. Perfect for corporate groups, weddings, and tours.
+                        Absolutely. Our bulk upload feature handles groups of any size. Upload all passports at once,
+                        and we'll process them together. Perfect for corporate groups, weddings, and tours.
                       </p>
                     </div>
                   </div>
@@ -717,11 +697,10 @@ const Conversion = () => {
                   <div className="flex items-start gap-4">
                     <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-xl mb-2">
-                        Will my old account data still be there?
-                      </CardTitle>
+                      <CardTitle className="text-xl mb-2">Will my old account data still be there?</CardTitle>
                       <p className="text-muted-foreground">
-                        Yes! All your previous clients, applications, and settings are preserved. Just log in and pick up where you left off. Nothing lost.
+                        Yes! All your previous clients, applications, and settings are preserved. Just log in and pick
+                        up where you left off. Nothing lost.
                       </p>
                     </div>
                   </div>
@@ -741,11 +720,10 @@ const Conversion = () => {
                   <div className="flex items-start gap-4">
                     <HelpCircle className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
-                      <CardTitle className="text-xl mb-2">
-                        What if I need help getting started again?
-                      </CardTitle>
+                      <CardTitle className="text-xl mb-2">What if I need help getting started again?</CardTitle>
                       <p className="text-muted-foreground">
-                        Your dedicated RM will reach out within 1 hour of reactivation. They'll help you refresh on new features and answer any questions. Plus, you get access to our priority onboarding webinar.
+                        Your dedicated RM will reach out within 1 hour of reactivation. They'll help you refresh on new
+                        features and answer any questions. Plus, you get access to our priority onboarding webinar.
                       </p>
                     </div>
                   </div>
@@ -772,20 +750,20 @@ const Conversion = () => {
               See StampMyVisa in action. Book a personalized demo or start your free trial today.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="gap-2 text-lg px-8"
                 onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
               >
                 Request Demo <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
                 className="text-lg px-8"
                 onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
               >
-                Start Free Trial
+                Get Started
               </Button>
             </div>
             <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground flex-wrap">
