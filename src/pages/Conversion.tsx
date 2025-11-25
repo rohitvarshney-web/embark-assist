@@ -85,20 +85,8 @@ const Conversion = () => {
                 <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Your competitors are already booking. Don't let outdated workflows hold you back. <span className="font-semibold text-foreground">There's a better way.</span>
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="gap-2 text-lg px-8 py-6" 
-                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
-              >
-                Reactivate Now & Start Booking <ArrowRight className="w-5 h-5" />
-              </Button>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              ✓ No credit card required ✓ Instant access ✓ Cancel anytime
             </p>
           </motion.div>
         </div>
@@ -212,6 +200,98 @@ const Conversion = () => {
               </Card>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Process Flow Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Get Back to Processing in 3 Simple Steps
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Reactivate your account and start processing visas in under 15 minutes
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative"
+            >
+              <div className="text-center">
+                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 relative">
+                  <span className="text-3xl font-bold text-primary">1</span>
+                  <div className="hidden md:block absolute top-1/2 left-full w-full h-0.5 bg-border transform -translate-y-1/2" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">Log Back In</h3>
+                <p className="text-muted-foreground">
+                  Use your existing credentials or reset your password. All your data is still there.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Step 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative"
+            >
+              <div className="text-center">
+                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 relative">
+                  <span className="text-3xl font-bold text-primary">2</span>
+                  <div className="hidden md:block absolute top-1/2 left-full w-full h-0.5 bg-border transform -translate-y-1/2" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">Quick Refresh</h3>
+                <p className="text-muted-foreground">
+                  Your RM will walk you through new features in a 10-minute call. Schedule at your convenience.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Step 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="text-center">
+                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <span className="text-3xl font-bold text-primary">3</span>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">Start Processing</h3>
+                <p className="text-muted-foreground">
+                  Create your first visa application. Your clients get instant quotes and guided uploads.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-12 text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-muted">
+              <Clock className="w-5 h-5 text-primary" />
+              <span className="text-sm font-medium text-foreground">Average setup time: 12 minutes</span>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -673,34 +753,41 @@ const Conversion = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-6">
-              Don't Miss the Holiday Rush
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Ready to Transform Your Visa Service?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Agencies processing with StampMyVisa are already booking tours. Join them today.
+              See StampMyVisa in action. Book a personalized demo or start your free trial today.
             </p>
-            <Button 
-              size="lg" 
-              className="gap-2 text-lg px-8 py-6 shadow-xl" 
-              onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
-            >
-              Reactivate Your Account Now <ArrowRight className="w-5 h-5" />
-            </Button>
-            <p className="text-sm text-muted-foreground mt-6">
-              Start processing visas in 15 minutes • No credit card • No commitment
-            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="gap-2 text-lg px-8"
+                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
+              >
+                Request Demo <ArrowRight className="w-5 h-5" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="text-lg px-8"
+                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
+              >
+                Start Free Trial
+              </Button>
+            </div>
             <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground flex-wrap">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary" />
-                <span>99.2% Success Rate</span>
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span>No credit card required</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-primary" />
-                <span>24/7 Support</span>
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span>14-day free trial</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-primary" />
-                <span>500+ Active Agencies</span>
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span>Setup in 15 minutes</span>
               </div>
             </div>
           </motion.div>
