@@ -223,6 +223,91 @@ export default function Esim() {
         </div>
       </section>
 
+      {/* Device Compatibility */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Compatible with All Major Devices
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Works seamlessly with iPhone, Samsung, Google Pixel, and more
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { name: "iPhone", models: "iPhone XS and newer", compatible: true },
+              { name: "Samsung", models: "Galaxy S20 and newer", compatible: true },
+              { name: "Google Pixel", models: "Pixel 3 and newer", compatible: true },
+              { name: "Other Brands", models: "Most eSIM-capable devices", compatible: true }
+            ].map((device, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 text-center"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Smartphone className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-2">{device.name}</h3>
+                <p className="text-sm text-muted-foreground">{device.models}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Destinations */}
+      <section className="py-20 bg-accent/5">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Popular Travel Destinations
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Trusted coverage in the world's most visited locations
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[
+              { region: "Europe", countries: "40+ countries", speed: "4G/5G" },
+              { region: "Asia Pacific", countries: "35+ countries", speed: "4G/5G" },
+              { region: "Americas", countries: "25+ countries", speed: "4G/5G" },
+              { region: "Middle East & Africa", countries: "50+ countries", speed: "4G/5G" }
+            ].map((destination, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6"
+              >
+                <Globe className="w-8 h-8 text-primary mb-3" />
+                <h3 className="font-semibold text-lg mb-2">{destination.region}</h3>
+                <p className="text-sm text-muted-foreground mb-1">{destination.countries}</p>
+                <p className="text-xs text-primary font-medium">{destination.speed} Available</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <TestimonialsSection />
 

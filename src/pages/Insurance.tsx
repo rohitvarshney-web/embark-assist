@@ -243,6 +243,108 @@ export default function Insurance() {
         </div>
       </section>
 
+      {/* Real Scenarios */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Real Situations, Real Protection
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              See how our insurance helps travelers like you
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                scenario: "Medical Emergency in Bali",
+                coverage: "Hospital stay + evacuation",
+                amount: "$45,000 covered",
+                icon: Heart
+              },
+              {
+                scenario: "Flight Cancelled in London",
+                coverage: "Hotel + rebooking costs",
+                amount: "$2,500 covered",
+                icon: Plane
+              },
+              {
+                scenario: "Lost Luggage in Paris",
+                coverage: "Essential items + reimbursement",
+                amount: "$3,000 covered",
+                icon: Shield
+              }
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6"
+                >
+                  <Icon className="w-10 h-10 text-primary mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">{item.scenario}</h3>
+                  <p className="text-sm text-muted-foreground mb-2">{item.coverage}</p>
+                  <p className="text-primary font-semibold">{item.amount}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Claims Process */}
+      <section className="py-20 bg-accent/5">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Simple Claims Process
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Get your claims processed quickly with our dedicated support
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { step: "1", title: "Report Incident", desc: "Contact us 24/7 via app or phone" },
+              { step: "2", title: "Submit Documents", desc: "Upload required documentation online" },
+              { step: "3", title: "Quick Review", desc: "Expert team reviews within 48 hours" },
+              { step: "4", title: "Get Reimbursed", desc: "Receive payment directly to your account" }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">
+                  {item.step}
+                </div>
+                <h3 className="font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <TestimonialsSection />
 
