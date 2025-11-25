@@ -26,25 +26,19 @@ const Awareness = () => {
       <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.1 }}
-            className="flex items-center gap-2"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center"
           >
-            <motion.div
-              animate={{
-                rotate: [0, 5, -5, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center"
-            >
-              <span className="text-white font-bold text-sm">S</span>
-            </motion.div>
-            <span className="font-bold text-lg">StampMyVisa</span>
+            <Link to="/" className="flex items-center gap-3">
+              <img
+                src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
+                alt="StampMyVisa Logo"
+                className="h-10 w-auto"
+              />
+              <span className="font-bold text-xl text-foreground">StampMyVisa</span>
+            </Link>
           </motion.div>
           <div className="flex items-center gap-3">
             <Button
