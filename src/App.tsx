@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Awareness from "./pages/Awareness";
 import Consideration from "./pages/Consideration";
 import Conversion from "./pages/Conversion";
+import Esim from "./pages/Esim";
+import Insurance from "./pages/Insurance";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/awareness" element={<Awareness />} />
           <Route path="/consideration" element={<Consideration />} />
           <Route path="/conversion" element={<Conversion />} />
+          <Route path="/esim" element={<Esim />} />
+          <Route path="/insurance" element={<Insurance />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
