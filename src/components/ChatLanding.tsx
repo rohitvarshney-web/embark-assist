@@ -207,19 +207,25 @@ export default function ChatLanding() {
       {/* Header */}
       <header className="flex items-center justify-between px-6 lg:px-12 py-5 border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-20">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.1 }}
+          className="flex items-center gap-2"
         >
-          <div className="flex items-center gap-3">
-            <img
-              src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
-              alt="StampMyVisa Logo"
-              className="h-10 w-auto"
-            />
-            <span className="font-bold text-xl text-foreground">StampMyVisa</span>
-          </div>
+          <motion.div
+            animate={{
+              rotate: [0, 5, -5, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center"
+          >
+            <span className="text-white font-bold text-sm">S</span>
+          </motion.div>
+          <span className="font-bold text-lg">StampMyVisa</span>
         </motion.div>
         <motion.nav
           initial={{ opacity: 0, x: 20 }}
