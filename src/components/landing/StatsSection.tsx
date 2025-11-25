@@ -55,11 +55,31 @@ export function StatsSection() {
           ))}
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-30 grayscale hover:opacity-50 transition-opacity duration-300">
-          <img src={makemytripLogo} alt="MakeMyTrip" className="h-8 md:h-10" />
-          <img src={travclanLogo} alt="TravClan" className="h-8 md:h-10" />
-          <img src={easemytripLogo} alt="EaseMyTrip" className="h-8 md:h-10" />
-          <img src={pickyourtrailLogo} alt="pickyourtrail" className="h-8 md:h-10" />
+        {/* Horizontal scrolling logos */}
+        <div className="relative overflow-hidden">
+          <motion.div 
+            className="flex items-center gap-12 md:gap-16"
+            animate={{
+              x: [0, -1000],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 20,
+                ease: "linear",
+              },
+            }}
+          >
+            {[...Array(3)].map((_, setIndex) => (
+              <div key={setIndex} className="flex items-center gap-12 md:gap-16 shrink-0">
+                <img src={makemytripLogo} alt="MakeMyTrip" className="h-8 md:h-10 opacity-40 grayscale" />
+                <img src={travclanLogo} alt="TravClan" className="h-8 md:h-10 opacity-40 grayscale" />
+                <img src={easemytripLogo} alt="EaseMyTrip" className="h-8 md:h-10 opacity-40 grayscale" />
+                <img src={pickyourtrailLogo} alt="pickyourtrail" className="h-8 md:h-10 opacity-40 grayscale" />
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
