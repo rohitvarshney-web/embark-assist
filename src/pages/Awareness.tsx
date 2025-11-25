@@ -58,37 +58,74 @@ const Awareness = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--accent)/0.1),transparent_50%)]" />
+      {/* Hero Section - Emotional & Scenic */}
+      <section className="relative pt-20 pb-32 px-4 overflow-hidden min-h-[90vh] flex items-center">
+        {/* Scenic Background with Imagery */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-amber-50 dark:from-blue-950/20 dark:via-purple-950/20 dark:to-amber-950/20" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.15),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent)/0.15),transparent_60%)]" />
+          {/* Decorative Elements */}
+          <motion.div
+            animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+          />
+        </div>
+
         <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center mb-16"
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-center"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight">
-              Still wasting hours on{" "}
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
-                  visa paperwork
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="mb-12"
+            >
+              <h1 className="text-6xl md:text-8xl font-bold text-foreground mb-8 leading-[1.05] tracking-tight">
+                Still wasting hours on{" "}
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                    visa paperwork?
+                  </span>
                 </span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -z-10 rounded" />
-              </span>
-              <br />
-              when you could be{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10">selling more tours?</span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
-              Travel agencies lose <span className="font-semibold text-foreground">thousands in revenue</span> every holiday season juggling visa applications.{" "}
-              <span className="text-primary font-medium">There's a better way.</span>
-            </p>
+              </h1>
+              <p className="text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+                There's a <span className="text-primary font-medium">better way</span>.
+              </p>
+            </motion.div>
+
+            {/* Visual storytelling element */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mt-16"
+            >
+              {[
+                { icon: Clock, label: "Hours Saved" },
+                { icon: Users, label: "Happy Clients" },
+                { icon: CheckCircle, label: "Easy Process" }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-background/60 backdrop-blur-sm border border-border/50"
+                >
+                  <item.icon className="w-10 h-10 text-primary" />
+                  <span className="text-sm font-medium text-muted-foreground">{item.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -103,14 +140,13 @@ const Awareness = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              The Hidden Cost of{" "}
-              <span className="text-destructive">Manual Visa Processing</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+              The <span className="text-destructive">Hidden Costs</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Every holiday season brings the same nightmare for travel agencies
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Every holiday season brings the same challenges
             </p>
           </motion.div>
 
@@ -130,12 +166,12 @@ const Awareness = () => {
                   <CardTitle className="text-2xl font-bold">Holiday Chaos</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-base leading-relaxed">
-                    December-January rush overwhelms your team. 50+ visa applications pile up. Clients get anxious. Your staff works overtime.
+                  <p className="text-muted-foreground leading-relaxed">
+                    Peak season chaos. Endless applications. Stressed teams.
                   </p>
                   <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-destructive/20">
                     <div className="text-4xl font-bold text-destructive mb-1">40+ hours</div>
-                    <div className="text-sm text-muted-foreground font-medium">wasted per week during peak season</div>
+                    <div className="text-sm text-muted-foreground font-medium">wasted weekly</div>
                   </div>
                 </CardContent>
               </Card>
@@ -156,12 +192,12 @@ const Awareness = () => {
                   <CardTitle className="text-2xl font-bold">Ever-Changing Rules</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-base leading-relaxed">
-                    Visa requirements change without warning. Your team scrambles through government websites. One missed update = rejected application.
+                  <p className="text-muted-foreground leading-relaxed">
+                    Rules change constantly. Information gets outdated. Rejections happen.
                   </p>
                   <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-amber-500/20">
                     <div className="text-4xl font-bold text-amber-500 mb-1">15%</div>
-                    <div className="text-sm text-muted-foreground font-medium">rejection rate from outdated information</div>
+                    <div className="text-sm text-muted-foreground font-medium">rejection rate</div>
                   </div>
                 </CardContent>
               </Card>
@@ -182,12 +218,12 @@ const Awareness = () => {
                   <CardTitle className="text-2xl font-bold">Rejection Fears</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-base leading-relaxed">
-                    Missing documents. Incorrect formats. Booking confirmations incomplete. Each rejection damages client trust and your reputation.
+                  <p className="text-muted-foreground leading-relaxed">
+                    Missing docs. Wrong formats. Client frustration.
                   </p>
                   <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-red-500/20">
                     <div className="text-4xl font-bold text-red-500 mb-1">₹25,000+</div>
-                    <div className="text-sm text-muted-foreground font-medium">average loss per rejected group visa</div>
+                    <div className="text-sm text-muted-foreground font-medium">lost per rejection</div>
                   </div>
                 </CardContent>
               </Card>
