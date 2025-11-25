@@ -624,8 +624,10 @@ export default function ChatLanding() {
         </div>
       </main>
 
-      {/* Modular sections */}
+      {/* Trusted Partners Section */}
       <StatsSection />
+
+      {/* Modular sections */}
       <PromotionalAds />
       <HowItWorks />
       <FeaturesGrid />
