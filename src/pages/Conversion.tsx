@@ -582,30 +582,42 @@ const Conversion = () => {
                 <div className="bg-background rounded-xl p-8 border border-border">
                   <div className="text-center mb-6">
                     <p className="text-2xl font-bold text-foreground mb-2">
-                      Reactivate Your Account Now
+                      Ready to Transform Your Visa Service?
                     </p>
                     <p className="text-muted-foreground mb-6">
-                      Get instant access. Start processing visas in minutes.
+                      See StampMyVisa in action. Book a personalized demo or start your free trial today.
                     </p>
-                    <div className="flex flex-wrap gap-4 justify-center max-w-md mx-auto">
+                    <div className="flex flex-wrap gap-4 justify-center">
                       <Button 
                         size="lg" 
-                        className="gap-2 text-lg flex-1"
+                        className="gap-2 text-lg px-8"
                         onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
                       >
-                        Reactivate Now & Start Booking <ArrowRight className="w-5 h-5" />
+                        Request Demo <ArrowRight className="w-5 h-5" />
                       </Button>
                       <Button 
                         size="lg" 
                         variant="outline"
-                        onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+                        className="text-lg px-8"
+                        onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
                       >
-                        Login
+                        Start Free Trial
                       </Button>
                     </div>
-                    <p className="text-xs text-center text-muted-foreground mt-4">
-                      No credit card required • Instant access • Cancel anytime
-                    </p>
+                    <div className="mt-6 flex items-center justify-center gap-6 text-sm text-muted-foreground flex-wrap">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary" />
+                        <span>No credit card required</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary" />
+                        <span>14-day free trial</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary" />
+                        <span>Setup in 15 minutes</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
