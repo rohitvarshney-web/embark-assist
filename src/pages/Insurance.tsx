@@ -14,38 +14,38 @@ export default function Insurance() {
       icon: Shield,
       title: "Comprehensive Coverage",
       desc: "Medical emergencies, trip cancellations, lost baggage & more",
-      color: "text-blue-500"
+      color: "text-blue-500",
     },
     {
       icon: Heart,
       title: "Medical Protection",
       desc: "Up to $500K medical coverage for overseas emergencies",
-      color: "text-red-500"
+      color: "text-red-500",
     },
     {
       icon: Plane,
       title: "Trip Coverage",
       desc: "Protection against flight delays, cancellations & interruptions",
-      color: "text-purple-500"
+      color: "text-purple-500",
     },
     {
       icon: Clock,
       title: "Instant Issuance",
       desc: "Get your policy certificate within minutes of purchase",
-      color: "text-green-500"
+      color: "text-green-500",
     },
     {
       icon: FileText,
       title: "Easy Claims",
       desc: "Simplified claim process with dedicated support team",
-      color: "text-orange-500"
+      color: "text-orange-500",
     },
     {
       icon: Headphones,
       title: "24/7 Assistance",
       desc: "Round-the-clock emergency assistance wherever you are",
-      color: "text-cyan-500"
-    }
+      color: "text-cyan-500",
+    },
   ];
 
   return (
@@ -102,7 +102,7 @@ export default function Insurance() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-background pointer-events-none" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -130,7 +130,8 @@ export default function Insurance() {
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Travel confidently with comprehensive insurance coverage. From medical emergencies to trip cancellations, we've got you covered.
+              Travel confidently with comprehensive insurance coverage. From medical emergencies to trip cancellations,
+              we've got you covered.
             </p>
           </motion.div>
         </div>
@@ -148,9 +149,7 @@ export default function Insurance() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Complete Travel Protection
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Complete Travel Protection</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Everything you need to travel worry-free, all in one comprehensive policy
             </p>
@@ -169,7 +168,9 @@ export default function Insurance() {
                   whileHover={{ y: -5, scale: 1.02 }}
                   className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} from-primary/10 to-primary/5 flex items-center justify-center mb-4`}>
+                  <div
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} from-primary/10 to-primary/5 flex items-center justify-center mb-4`}
+                  >
                     <Icon className={`w-6 h-6 ${feature.color}`} />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
@@ -190,32 +191,28 @@ export default function Insurance() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              What's Covered?
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Comprehensive protection for all aspects of your travel
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">What's Covered?</h2>
+            <p className="text-muted-foreground text-lg">Comprehensive protection for all aspects of your travel</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
                 title: "Medical Emergencies",
-                items: ["Emergency medical treatment", "Hospital stays", "Emergency dental care", "Medical evacuation"]
+                items: ["Emergency medical treatment", "Hospital stays", "Emergency dental care", "Medical evacuation"],
               },
               {
                 title: "Trip Disruptions",
-                items: ["Trip cancellations", "Flight delays", "Missed connections", "Trip interruptions"]
+                items: ["Trip cancellations", "Flight delays", "Missed connections", "Trip interruptions"],
               },
               {
                 title: "Personal Belongings",
-                items: ["Lost baggage", "Stolen items", "Damaged luggage", "Travel documents"]
+                items: ["Lost baggage", "Stolen items", "Damaged luggage", "Travel documents"],
               },
               {
                 title: "Additional Benefits",
-                items: ["Personal liability", "Legal assistance", "Emergency cash", "Concierge services"]
-              }
+                items: ["Personal liability", "Legal assistance", "Emergency cash", "Concierge services"],
+              },
             ].map((section, idx) => (
               <motion.div
                 key={idx}
@@ -252,12 +249,8 @@ export default function Insurance() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Real Situations, Real Protection
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              See how our insurance helps travelers like you
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Real Situations, Real Protection</h2>
+            <p className="text-muted-foreground text-lg">See how our insurance helps travelers like you</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -266,20 +259,20 @@ export default function Insurance() {
                 scenario: "Medical Emergency in Bali",
                 coverage: "Hospital stay + evacuation",
                 amount: "$45,000 covered",
-                icon: Heart
+                icon: Heart,
               },
               {
                 scenario: "Flight Cancelled in London",
                 coverage: "Hotel + rebooking costs",
                 amount: "$2,500 covered",
-                icon: Plane
+                icon: Plane,
               },
               {
                 scenario: "Lost Luggage in Paris",
                 coverage: "Essential items + reimbursement",
                 amount: "$3,000 covered",
-                icon: Shield
-              }
+                icon: Shield,
+              },
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
@@ -311,9 +304,7 @@ export default function Insurance() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Simple Claims Process
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Simple Claims Process</h2>
             <p className="text-muted-foreground text-lg">
               Get your claims processed quickly with our dedicated support
             </p>
@@ -324,7 +315,7 @@ export default function Insurance() {
               { step: "1", title: "Report Incident", desc: "Contact us 24/7 via app or phone" },
               { step: "2", title: "Submit Documents", desc: "Upload required documentation online" },
               { step: "3", title: "Quick Review", desc: "Expert team reviews within 48 hours" },
-              { step: "4", title: "Get Reimbursed", desc: "Receive payment directly to your account" }
+              { step: "4", title: "Get Reimbursed", desc: "Receive payment directly to your account" },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -361,9 +352,7 @@ export default function Insurance() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Protect Your Journey Today
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Protect Your Journey Today</h2>
             <p className="text-muted-foreground text-lg mb-8">
               Don't leave your travel plans to chance. Get comprehensive coverage in minutes
             </p>
@@ -372,7 +361,7 @@ export default function Insurance() {
                 <a href="https://stampmyvisa.com/home/insure">Get Insurance Now</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="https://stampmyvisa.com/home/insure">Compare Plans</a>
+                <a href="https://stampmyvisa.com/home/insure/countries">Compare Plans</a>
               </Button>
             </div>
           </motion.div>

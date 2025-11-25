@@ -14,38 +14,38 @@ export default function Esim() {
       icon: Globe,
       title: "Global Coverage",
       desc: "Stay connected in 150+ countries with reliable data plans",
-      color: "text-blue-500"
+      color: "text-blue-500",
     },
     {
       icon: Clock,
       title: "Instant Activation",
       desc: "Get your eSIM activated within minutes of purchase",
-      color: "text-green-500"
+      color: "text-green-500",
     },
     {
       icon: CreditCard,
       title: "Transparent Pricing",
       desc: "No hidden fees, no bill shocks - pay only for what you use",
-      color: "text-purple-500"
+      color: "text-purple-500",
     },
     {
       icon: Shield,
       title: "Secure Connection",
       desc: "Bank-grade encryption keeps your data safe while traveling",
-      color: "text-orange-500"
+      color: "text-orange-500",
     },
     {
       icon: Smartphone,
       title: "Easy Setup",
       desc: "Simple QR code installation - no physical SIM card needed",
-      color: "text-pink-500"
+      color: "text-pink-500",
     },
     {
       icon: Wifi,
       title: "High-Speed Data",
       desc: "Access 4G/5G networks for fast, reliable internet everywhere",
-      color: "text-cyan-500"
-    }
+      color: "text-cyan-500",
+    },
   ];
 
   return (
@@ -102,7 +102,7 @@ export default function Esim() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-background pointer-events-none" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -148,9 +148,7 @@ export default function Esim() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Why Choose Our eSIM?
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why Choose Our eSIM?</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Experience seamless connectivity with features designed for modern travelers
             </p>
@@ -169,7 +167,9 @@ export default function Esim() {
                   whileHover={{ y: -5, scale: 1.02 }}
                   className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} from-primary/10 to-primary/5 flex items-center justify-center mb-4`}>
+                  <div
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} from-primary/10 to-primary/5 flex items-center justify-center mb-4`}
+                  >
                     <Icon className={`w-6 h-6 ${feature.color}`} />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
@@ -190,19 +190,15 @@ export default function Esim() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Get Connected in 3 Simple Steps
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Start using your eSIM in minutes
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get Connected in 3 Simple Steps</h2>
+            <p className="text-muted-foreground text-lg">Start using your eSIM in minutes</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
               { step: "1", title: "Choose Your Plan", desc: "Select a data plan for your destination country" },
               { step: "2", title: "Scan QR Code", desc: "Install your eSIM by scanning the QR code" },
-              { step: "3", title: "Stay Connected", desc: "Activate and enjoy high-speed data anywhere" }
+              { step: "3", title: "Stay Connected", desc: "Activate and enjoy high-speed data anywhere" },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -232,9 +228,7 @@ export default function Esim() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Compatible with All Major Devices
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Compatible with All Major Devices</h2>
             <p className="text-muted-foreground text-lg">
               Works seamlessly with iPhone, Samsung, Google Pixel, and more
             </p>
@@ -245,7 +239,7 @@ export default function Esim() {
               { name: "iPhone", models: "iPhone XS and newer", compatible: true },
               { name: "Samsung", models: "Galaxy S20 and newer", compatible: true },
               { name: "Google Pixel", models: "Pixel 3 and newer", compatible: true },
-              { name: "Other Brands", models: "Most eSIM-capable devices", compatible: true }
+              { name: "Other Brands", models: "Most eSIM-capable devices", compatible: true },
             ].map((device, idx) => (
               <motion.div
                 key={idx}
@@ -275,12 +269,8 @@ export default function Esim() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Popular Travel Destinations
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Trusted coverage in the world's most visited locations
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Popular Travel Destinations</h2>
+            <p className="text-muted-foreground text-lg">Trusted coverage in the world's most visited locations</p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
@@ -288,7 +278,7 @@ export default function Esim() {
               { region: "Europe", countries: "40+ countries", speed: "4G/5G" },
               { region: "Asia Pacific", countries: "35+ countries", speed: "4G/5G" },
               { region: "Americas", countries: "25+ countries", speed: "4G/5G" },
-              { region: "Middle East & Africa", countries: "50+ countries", speed: "4G/5G" }
+              { region: "Middle East & Africa", countries: "50+ countries", speed: "4G/5G" },
             ].map((destination, idx) => (
               <motion.div
                 key={idx}
@@ -324,9 +314,7 @@ export default function Esim() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to Travel Smart?
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Travel Smart?</h2>
             <p className="text-muted-foreground text-lg mb-8">
               Get your eSIM today and stay connected wherever your journey takes you
             </p>
@@ -335,7 +323,7 @@ export default function Esim() {
                 <a href="https://stampmyvisa.com/home/travel-esim">Buy eSIM Now</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="https://stampmyvisa.com/home/travel-esim">View Plans</a>
+                <a href="https://stampmyvisa.com/home/travel-esim/countries">View Plans</a>
               </Button>
             </div>
           </motion.div>
