@@ -38,8 +38,8 @@ export function FloatingCTA() {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-4 sm:bottom-8 left-4 right-4 sm:left-1/2 sm:-translate-x-1/2 z-50 sm:w-full sm:max-w-md"
         >
-          <div className="bg-card/95 backdrop-blur-xl border-2 border-primary/20 rounded-2xl shadow-2xl p-4 sm:flex sm:items-center sm:gap-4">
-            <div className="flex items-start justify-between sm:flex-1 sm:justify-start gap-3">
+          <div className="bg-card/95 backdrop-blur-xl border-2 border-primary/20 rounded-2xl shadow-2xl p-4 flex flex-col sm:flex-row sm:items-center sm:gap-4">
+            <div className="flex items-start justify-between sm:flex-1 gap-3 mb-3 sm:mb-0">
               <div className="flex-1 min-w-0">
                 <div className="font-semibold text-foreground mb-1 text-sm sm:text-base">
                   Ready to get started?
@@ -58,7 +58,7 @@ export function FloatingCTA() {
               </button>
             </div>
             
-            <div className="flex items-center gap-2 mt-3 sm:mt-0">
+            <div className="flex items-center gap-2">
               <Button 
                 size="sm"
                 className="gap-2 whitespace-nowrap shadow-lg hover:shadow-xl transition-shadow w-full sm:w-auto"
