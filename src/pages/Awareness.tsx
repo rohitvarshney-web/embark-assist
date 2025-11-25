@@ -520,16 +520,16 @@ const Awareness = () => {
               <Button 
                 size="lg" 
                 className="gap-2 text-lg px-8" 
-                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
+                onClick={() => (window.location.href = "https://stampmyvisa.com")}
               >
-                Get Started Free <ArrowRight className="w-5 h-5" />
+                Request Demo <ArrowRight className="w-5 h-5" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
+                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
               >
-                Login to Your Account
+                Get Started
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">
