@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import heroSky from "@/assets/hero-sky-conversion.jpg";
 import {
   Zap,
   Upload,
@@ -60,33 +61,38 @@ const Conversion = () => {
       </header>
 
       {/* Hero Section - High Urgency */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-100/40 via-purple-100/30 to-background" />
-        <div className="container mx-auto max-w-6xl relative z-10">
+      <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroSky})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10 text-center py-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-              <span className="text-foreground">Stop leaving </span>
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-amber-600 via-primary to-purple-600 bg-clip-text text-transparent">
-                  money on the table
-                </span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-amber-400/30 -z-10 rounded" />
-              </span>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8"
+            >
+              <TrendingUp className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Join 500+ Agencies Growing with Us</span>
+            </motion.div>
+
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+              Stop leaving money on the table
               <br />
-              <span className="text-foreground">this </span>
-              <span className="relative inline-block">
-                <span className="text-foreground">holiday season</span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
-              </span>
+              this holiday season
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Your competitors are already booking. Don't let outdated workflows hold you back.{" "}
-              <span className="font-semibold text-foreground">There's a better way.</span>
+            
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+              Your competitors are already booking. Don't let outdated workflows hold you back.
+              There's a better way.
             </p>
           </motion.div>
         </div>

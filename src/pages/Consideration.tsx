@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import heroSky from "@/assets/hero-sky-consideration.jpg";
 import {
   Search,
   DollarSign,
@@ -61,28 +62,36 @@ const Consideration = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-100/30 to-background" />
-        <div className="container mx-auto max-w-6xl relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-              <span className="text-foreground">Quit juggling </span>
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
-                  spreadsheets & emails
-                </span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -z-10 rounded" />
-              </span>
+      <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroSky})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10 text-center py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8"
+            >
+              <Shield className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Trusted by 500+ Travel Agencies</span>
+            </motion.div>
+
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+              Quit juggling spreadsheets & emails
               <br />
-              <span className="text-foreground">when you could be </span>
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
-                  closing deals
-                </span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
-              </span>
+              when you could be closing deals
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
+            
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
               Everything your travel agency needs to process visas faster, safer, and more profitably.
             </p>
           </motion.div>

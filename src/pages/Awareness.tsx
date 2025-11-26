@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import heroSky from "@/assets/hero-sky-awareness.jpg";
 import {
   Clock,
   AlertTriangle,
@@ -59,35 +60,38 @@ const Awareness = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--accent)/0.1),transparent_50%)]" />
-        <div className="container mx-auto max-w-6xl relative z-10">
+      <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroSky})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10 text-center py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-[1.1] tracking-tight">
-              Still wasting hours on{" "}
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
-                  visa paperwork
-                </span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -z-10 rounded" />
-              </span>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8"
+            >
+              <CheckCircle className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">99.3% Visa Approval Rate</span>
+            </motion.div>
+
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+              Still wasting hours on visa paperwork
               <br />
-              when you could be{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10">selling more tours?</span>
-                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
-              </span>
+              when you could be selling more tours?
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
-              Travel agencies lose <span className="font-semibold text-foreground">thousands in revenue</span> every holiday season juggling visa applications.{" "}
-              <span className="text-primary font-medium">There's a better way.</span>
+            
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+              Travel agencies lose thousands in revenue every holiday season juggling visa applications.
+              There's a better way.
             </p>
           </motion.div>
         </div>
