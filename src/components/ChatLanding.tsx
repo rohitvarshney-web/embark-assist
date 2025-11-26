@@ -27,6 +27,8 @@ import { FAQSection } from "./landing/FAQSection";
 import { Footer } from "./landing/Footer";
 import { FloatingCTA } from "./landing/FloatingCTA";
 import { PromotionalAds } from "./landing/PromotionalAds";
+import { DestinationsShowcase } from "./landing/DestinationsShowcase";
+import destinationsBg from "@/assets/backgrounds/destinations-chatlanding.jpg";
 
 type Reply = { id: string; text: string; next?: string };
 type Node = { id: string; from: "bot" | "user"; text?: string; replies?: Reply[] };
@@ -659,6 +661,7 @@ export default function ChatLanding() {
       <HowItWorks />
       <FeaturesGrid />
       <TestimonialsSection />
+      <DestinationsShowcase backgroundImage={destinationsBg} />
       <FAQSection />
       <Footer />
       <FloatingCTA />

@@ -23,6 +23,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Footer } from "@/components/landing/Footer";
 import { StatsSection } from "@/components/landing/StatsSection";
+import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
+import destinationsBg from "@/assets/backgrounds/destinations-consideration.jpg";
 
 const Consideration = () => {
   return (
@@ -809,6 +811,9 @@ const Consideration = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Destinations Showcase */}
+      <DestinationsShowcase backgroundImage={destinationsBg} />
 
       {/* CTA Section */}
       <section className="py-20 px-4">
