@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Shield, Heart, Plane, Clock, FileText, Headphones } from "lucide-react";
+import heroSky from "@/assets/hero-sky-insurance.jpg";
 import { Button } from "@/components/ui/button";
 import { StatsSection } from "@/components/landing/StatsSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
@@ -95,39 +96,47 @@ export default function Insurance() {
       </motion.header>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-background pointer-events-none" />
-
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroSky})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10 text-center py-20">
           <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring" }}
-              className="inline-block mb-6"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8"
             >
-              <div className="bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-medium">
-                Travel with Peace of Mind
-              </div>
+              <Shield className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Trusted by 100,000+ Travelers</span>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
               Comprehensive Protection
               <br />
-              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                for Every Journey
-              </span>
+              for Every Journey
             </h1>
-
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Travel confidently with comprehensive insurance coverage. From medical emergencies to trip cancellations,
-              we've got you covered.
+            
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+              Travel confidently with comprehensive insurance coverage. From medical emergencies to trip cancellations, we've got you covered.
             </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
+                <a href="https://stampmyvisa.com/home/insure">Get Insurance Now</a>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+                <a href="https://stampmyvisa.com/home/insure/countries">Compare Plans</a>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
