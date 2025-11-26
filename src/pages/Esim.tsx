@@ -55,9 +55,9 @@ export default function Esim() {
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="absolute top-0 left-0 right-0 z-50 px-6 lg:px-12 py-5 bg-transparent"
+        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50"
       >
-        <div className="container mx-auto flex items-center justify-between">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -68,62 +68,65 @@ export default function Esim() {
               <img
                 src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
                 alt="StampMyVisa Logo"
-                className="h-10 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
-              <span className="font-bold text-xl text-white">StampMyVisa</span>
+              <span className="font-bold text-xl text-foreground">StampMyVisa</span>
             </Link>
           </motion.div>
 
+          <nav className="hidden md:flex items-center gap-6">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/awareness">Awareness</NavLink>
+            <NavLink to="/consideration">Consideration</NavLink>
+            <NavLink to="/conversion">Conversion</NavLink>
+            <NavLink to="/esim">eSIM</NavLink>
+            <NavLink to="/insurance">Insurance</NavLink>
+          </nav>
+
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="border-white/20 text-white hover:bg-white/10 hover:text-white" asChild>
+            <Button variant="ghost" size="sm" asChild>
               <a href="https://stampmyvisa.com/auth/login">Login</a>
             </Button>
-            <Button size="sm" className="bg-white text-primary hover:bg-white/90" asChild>
-              <a href="https://stampmyvisa.com/auth/sign-up">Get Started</a>
+            <Button size="sm" asChild>
+              <a href="https://stampmyvisa.com/auth/sign-up">Sign Up</a>
             </Button>
           </div>
         </div>
       </motion.header>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]" />
-        
-        <div className="container mx-auto max-w-6xl relative z-10 text-center py-20">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-background pointer-events-none" />
+
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-block mb-6"
             >
-              <Globe className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">190+ Countries Covered</span>
+              <div className="bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-medium">
+                Global Connectivity Made Simple
+              </div>
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
-              Global Connectivity
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+              Stay Connected Anywhere
               <br />
-              Without the Hassle
+              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                with Travel eSIM
+              </span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
-              Travel smart with instant eSIM activation. Stay connected in 190+ countries without changing SIM cards or worrying about roaming charges.
-            </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-                <a href="https://stampmyvisa.com/home/travel-esim">Buy eSIM Now</a>
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
-                <a href="https://stampmyvisa.com/home/travel-esim">View Plans</a>
-              </Button>
-            </div>
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+              Ditch expensive roaming charges. Get instant data plans for 150+ countries with our travel eSIM solutions.
+            </p>
           </motion.div>
         </div>
       </section>

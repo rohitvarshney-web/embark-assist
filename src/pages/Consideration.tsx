@@ -28,8 +28,8 @@ const Consideration = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 z-50 px-6 lg:px-12 py-5 bg-transparent">
-        <div className="container mx-auto flex items-center justify-between">
+      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -40,25 +40,20 @@ const Consideration = () => {
               <img
                 src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
                 alt="StampMyVisa Logo"
-                className="h-10 w-auto brightness-0 invert"
+                className="h-10 w-auto"
               />
-              <span className="font-bold text-xl text-white">StampMyVisa</span>
+              <span className="font-bold text-xl text-foreground">StampMyVisa</span>
             </Link>
           </motion.div>
           <div className="flex items-center gap-3">
             <Button
               variant="outline"
               size="sm"
-              className="border-white/20 text-white hover:bg-white/10 hover:text-white"
               onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
             >
               Login
             </Button>
-            <Button 
-              size="sm"
-              className="bg-white text-primary hover:bg-white/90"
-              onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
-            >
+            <Button size="sm" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
               Get Started
             </Button>
           </div>
@@ -66,33 +61,28 @@ const Consideration = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]" />
-        
-        <div className="container mx-auto max-w-6xl relative z-10 text-center py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8"
-            >
-              <Shield className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Trusted by 500+ Travel Agencies</span>
-            </motion.div>
-
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
-              Quit juggling spreadsheets & emails
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-100/30 to-background" />
+        <div className="container mx-auto max-w-6xl relative z-10 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
+              <span className="text-foreground">Quit juggling </span>
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
+                  spreadsheets & emails
+                </span>
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -z-10 rounded" />
+              </span>
               <br />
-              when you could be closing deals
+              <span className="text-foreground">when you could be </span>
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
+                  closing deals
+                </span>
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
+              </span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
               Everything your travel agency needs to process visas faster, safer, and more profitably.
             </p>
           </motion.div>
