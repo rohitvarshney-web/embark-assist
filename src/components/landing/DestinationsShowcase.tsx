@@ -53,7 +53,7 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
   backgroundImage,
 }) => {
   return (
-    <section className="relative py-10 px-4 overflow-hidden">
+    <section className="relative py-20 px-4 overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -68,7 +68,7 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-left mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
             We provide Visas to{" "}
@@ -91,7 +91,7 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative overflow-hidden"
+          className="relative overflow-hidden py-8"
         >
           <motion.div
             className="flex gap-4"
@@ -118,7 +118,7 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
                 }}
                 className="group cursor-pointer flex-shrink-0 w-48"
               >
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                   <img
                     src={destination.image}
                     alt={destination.name}
