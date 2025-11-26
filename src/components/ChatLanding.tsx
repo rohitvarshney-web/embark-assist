@@ -181,7 +181,7 @@ export default function ChatLanding() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-12 py-5 bg-transparent">
+      <header className="sticky top-0 z-50 flex items-center justify-between px-6 lg:px-12 py-5 bg-background/80 backdrop-blur-lg border-b border-border/50">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -192,9 +192,9 @@ export default function ChatLanding() {
             <img
               src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
               alt="StampMyVisa Logo"
-              className="h-10 w-auto brightness-0 invert"
+              className="h-10 w-auto"
             />
-            <span className="font-bold text-xl text-white">StampMyVisa</span>
+            <span className="font-bold text-xl text-foreground">StampMyVisa</span>
           </div>
         </motion.div>
         <motion.nav
@@ -205,40 +205,48 @@ export default function ChatLanding() {
         >
           <Link 
             to="/awareness"
-            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
           >
             Getting Started
           </Link>
           <Link 
             to="/consideration"
-            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
           >
             Features
           </Link>
           <Link 
             to="/conversion"
-            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
           >
             For Agencies
           </Link>
           <Link 
             to="/esim"
-            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
           >
             eSIM
           </Link>
           <Link 
             to="/insurance"
-            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
           >
             Insurance
           </Link>
           <Button
             size="sm"
-            className="font-medium bg-white text-primary hover:bg-white/90"
+            variant="outline"
+            className="font-medium"
+            onClick={() => (window.location.href = "https://stampmyvisa.com/auth/login")}
+          >
+            Login
+          </Button>
+          <Button
+            size="sm"
+            className="font-medium"
             onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
           >
-            Sign Up
+            Get Started
           </Button>
         </motion.nav>
       </header>
