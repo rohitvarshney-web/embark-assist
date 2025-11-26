@@ -46,7 +46,7 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             We provide Visas to{" "}
             <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
               80+ Countries
@@ -61,41 +61,43 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
           </Button>
         </motion.div>
 
-        {/* Destination Cards */}
+        {/* Destination Cards - Horizontal Scroll */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          className="max-w-3xl mx-auto"
         >
-          {DESTINATIONS.map((destination, index) => (
-            <motion.div
-              key={destination.name}
-              initial={{ opacity: 0, y: 20, rotate: -2 }}
-              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              whileHover={{ 
-                y: -12, 
-                rotate: 2,
-                transition: { duration: 0.3 } 
-              }}
-              className="group cursor-pointer"
-            >
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src={destination.image}
-                  alt={destination.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-foreground font-bold text-lg">{destination.name}</h3>
+          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+            {DESTINATIONS.map((destination, index) => (
+              <motion.div
+                key={destination.name}
+                initial={{ opacity: 0, y: 20, rotate: -2 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                whileHover={{ 
+                  y: -12, 
+                  rotate: 2,
+                  transition: { duration: 0.3 } 
+                }}
+                className="group cursor-pointer flex-shrink-0"
+              >
+                <div className="relative w-[200px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src={destination.image}
+                    alt={destination.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white font-bold text-lg">{destination.name}</h3>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
