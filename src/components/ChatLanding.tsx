@@ -5,8 +5,6 @@ import heroSky from "@/assets/hero-sky-landing.jpg";
 import {
   Send,
   Check,
-  ChevronLeft,
-  ChevronRight,
   Sparkles,
   Plane,
   MapPin,
@@ -107,29 +105,6 @@ const FLOW: Record<string, Node> = {
     text: "Redirecting you to explore our whitelabel payment gateway...",
   },
 };
-
-const AD_IMAGES = [
-  {
-    src: "https://ik.imagekit.io/9pjdbdyeq/Website%20Images/US%20appointment%20(1200%20x%20628%20px).jpg",
-    title: "Get USA Appointment SUperfast!",
-    subtitle: "Your hassle-free visa journey starts here with StampMyVisa.",
-  },
-  {
-    src: "https://ik.imagekit.io/9pjdbdyeq/Website%20Images/US%20appointment%20(1200%20x%20628%20px)%20(1).jpg?updatedAt=1763366149942",
-    title: "Seamless Visa Experience",
-    subtitle: "Get end-to-end support for Schengen, USA, and Malaysia visas.",
-  },
-  {
-    src: "https://ik.imagekit.io/9pjdbdyeq/Website%20Images/VN%20Express%20visa%20(1200%20x%20628%20px).jpg",
-    title: "Partner with Us",
-    subtitle: "Empower your travel business with automated visa tools.",
-  },
-  {
-    src: "https://ik.imagekit.io/9pjdbdyeq/Website%20Images/Indonesia%20(1200%20x%20628%20px).jpg",
-    title: "Trusted by 10,000+ Agents",
-    subtitle: "Experience reliability and transparency with every application.",
-  },
-];
 
 export default function ChatLanding() {
   const [history, setHistory] = useState<Node[]>([FLOW.start]);
@@ -267,9 +242,6 @@ export default function ChatLanding() {
           </Button>
         </motion.nav>
       </header>
-
-      {/* Ads carousel */}
-      <AdCarousel images={AD_IMAGES} />
 
       {/* Main content */}
       <main className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 py-24 sm:py-32 lg:py-40 overflow-hidden">
@@ -673,155 +645,6 @@ export default function ChatLanding() {
         )}
       </AnimatePresence>
     </div>
-  );
-}
-
-function AdCarousel({ images }: { images: { src: string; title?: string; subtitle?: string }[] }) {
-  const [idx, setIdx] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (isPaused) return;
-    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 6000);
-    return () => clearInterval(t);
-  }, [images.length, isPaused]);
-
-  if (!images || images.length === 0) return null;
-
-  return (
-    <section className="relative bg-gradient-to-br from-secondary/20 via-background to-secondary/10 border-b border-border py-12 px-4 overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-
-      <div className="max-w-7xl mx-auto relative">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center">
-          {/* Left: Image carousel with modern cards */}
-          <div
-            className="lg:col-span-3 relative"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.7, ease: "easeInOut" }}
-                  className="relative aspect-[1200/628] w-full"
-                >
-                  <img
-                    src={images[idx].src}
-                    alt={images[idx].title}
-                    width={1200}
-                    height={628}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover object-center"
-                  />
-
-                  {/* Gradient overlay for better visual hierarchy */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-
-                  {/* Floating badge */}
-                  <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md shadow-lg">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                      <span className="text-sm font-semibold text-foreground">Live Offers</span>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Navigation controls */}
-              <button
-                onClick={() => setIdx((i) => (i - 1 + images.length) % images.length)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/95 backdrop-blur-md shadow-lg border border-border hover:bg-background hover:scale-110 transition-all"
-                aria-label="Previous slide"
-              >
-                <ChevronLeft className="w-5 h-5 text-foreground" />
-              </button>
-              <button
-                onClick={() => setIdx((i) => (i + 1) % images.length)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/95 backdrop-blur-md shadow-lg border border-border hover:bg-background hover:scale-110 transition-all"
-                aria-label="Next slide"
-              >
-                <ChevronRight className="w-5 h-5 text-foreground" />
-              </button>
-            </div>
-
-            {/* Progress indicators - moved from content section */}
-            <div className="flex gap-2 mt-4">
-              {images.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setIdx(i)}
-                  className="group relative h-1.5 flex-1 rounded-full bg-secondary overflow-hidden"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: i === idx ? 1 : 0 }}
-                    transition={{ duration: i === idx && !isPaused ? 6 : 0.3 }}
-                    style={{ transformOrigin: "left" }}
-                  />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Hero content */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-badge-bg text-badge-text text-sm font-medium">
-              <span className="w-2 h-2 rounded-full bg-badge-text animate-pulse"></span>
-              Trusted by 5000+ travel agents
-            </div>
-
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground leading-tight">
-              India's #1 Visa Partner for Travel Planners
-            </h2>
-
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Trusted by thousands of travel planners — we handle visa applications, document checklists, and
-              appointment bookings so you can focus on your business.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button
-                size="lg"
-                className="font-medium shadow-lg hover:shadow-xl transition-shadow"
-                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
-              >
-                Get Started for Free
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="font-medium"
-                onClick={() => (window.location.href = "https://stampmyvisa.com/contact-us")}
-              >
-                Contact Us
-              </Button>
-            </div>
-
-            <div className="flex items-center gap-6 text-sm text-muted-foreground pt-2">
-              <div className="flex items-center gap-1">
-                <span className="text-lg">⭐</span>
-                <span className="font-semibold text-foreground">4.8</span>
-                <span>/5 rating</span>
-              </div>
-              <div className="h-4 w-px bg-border"></div>
-              <div>
-                <span className="font-semibold text-foreground">99.3%</span> visa approval rate
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
