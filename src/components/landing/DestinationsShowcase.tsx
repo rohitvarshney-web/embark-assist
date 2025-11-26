@@ -53,7 +53,7 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
   backgroundImage,
 }) => {
   return (
-    <section className="relative py-16 px-4 overflow-hidden">
+    <section className="relative py-10 px-4 overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -94,9 +94,9 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
           className="relative overflow-hidden"
         >
           <motion.div
-            className="flex gap-6"
+            className="flex gap-4"
             animate={{
-              x: [0, -2880],
+              x: [0, -2160],
             }}
             transition={{
               x: {
@@ -116,7 +116,7 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
                   rotate: 2,
                   transition: { duration: 0.3 } 
                 }}
-                className="group cursor-pointer flex-shrink-0 w-64"
+                className="group cursor-pointer flex-shrink-0 w-48"
               >
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <img
@@ -125,8 +125,8 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-bold text-lg">{destination.name}</h3>
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <h3 className="text-white font-bold text-base">{destination.name}</h3>
                   </div>
                 </div>
               </motion.div>

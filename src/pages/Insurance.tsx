@@ -60,21 +60,14 @@ export default function Insurance() {
         className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50"
       >
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center"
-          >
-            <Link to="/" className="flex items-center gap-3">
-              <img
-                src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
-                alt="StampMyVisa Logo"
-                className="h-10 w-auto"
-              />
-              <span className="font-bold text-xl text-foreground">StampMyVisa</span>
-            </Link>
-          </motion.div>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
+              alt="StampMyVisa Logo"
+              className="h-10 w-auto"
+            />
+            <span className="font-bold text-xl text-foreground">StampMyVisa</span>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-6">
             <NavLink to="/">Home</NavLink>
