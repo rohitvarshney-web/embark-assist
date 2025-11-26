@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Wifi, Globe, CreditCard, Clock, Shield, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { StatsSection } from "@/components/landing/StatsSection";
+
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { Footer } from "@/components/landing/Footer";
@@ -90,7 +90,7 @@ export default function Esim() {
       </motion.header>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 md:pt-32 pb-12 md:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-background pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10">
@@ -111,7 +111,7 @@ export default function Esim() {
               </div>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent px-4">
               Stay Connected Anywhere
               <br />
               <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
@@ -119,18 +119,16 @@ export default function Esim() {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
               Ditch expensive roaming charges. Get instant data plans for 150+ countries with our travel eSIM solutions.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <StatsSection />
 
       {/* Features Grid */}
-      <section className="py-20 relative">
+      <section className="py-12 md:py-20 relative">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -138,8 +136,8 @@ export default function Esim() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why Choose Our eSIM?</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">Why Choose Our eSIM?</h2>
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto px-4">
               Experience seamless connectivity with features designed for modern travelers
             </p>
           </motion.div>
@@ -172,7 +170,7 @@ export default function Esim() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-accent/5">
+      <section className="py-12 md:py-20 bg-accent/5">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -210,7 +208,7 @@ export default function Esim() {
       </section>
 
       {/* Device Compatibility */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -251,7 +249,7 @@ export default function Esim() {
       </section>
 
       {/* Popular Destinations */}
-      <section className="py-20 bg-accent/5">
+      <section className="py-12 md:py-20 bg-accent/5">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -298,7 +296,7 @@ export default function Esim() {
       <FAQSection />
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/10 to-background" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
