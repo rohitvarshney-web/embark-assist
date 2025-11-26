@@ -23,13 +23,37 @@ const DESTINATIONS = [
     image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500&h=600&fit=crop",
     name: "Paris",
   },
+  {
+    image: "https://images.unsplash.com/photo-1549144511-f099e773c147?w=500&h=600&fit=crop",
+    name: "Dubai",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?w=500&h=600&fit=crop",
+    name: "London",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=500&h=600&fit=crop",
+    name: "Thailand",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=500&h=600&fit=crop",
+    name: "Switzerland",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1529260830199-42c24126f198?w=500&h=600&fit=crop",
+    name: "Bali",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&h=600&fit=crop",
+    name: "Singapore",
+  },
 ];
 
 export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
   backgroundImage,
 }) => {
   return (
-    <section className="relative py-32 px-4 overflow-hidden">
+    <section className="relative py-16 px-4 overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -44,9 +68,9 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
             We provide Visas to{" "}
             <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
               80+ Countries
@@ -67,35 +91,37 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          className="relative"
         >
-          {DESTINATIONS.map((destination, index) => (
-            <motion.div
-              key={destination.name}
-              initial={{ opacity: 0, y: 20, rotate: -2 }}
-              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              whileHover={{ 
-                y: -12, 
-                rotate: 2,
-                transition: { duration: 0.3 } 
-              }}
-              className="group cursor-pointer"
-            >
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src={destination.image}
-                  alt={destination.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-foreground font-bold text-lg">{destination.name}</h3>
+          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+            {DESTINATIONS.map((destination, index) => (
+              <motion.div
+                key={destination.name}
+                initial={{ opacity: 0, y: 20, rotate: -2 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                whileHover={{ 
+                  y: -12, 
+                  rotate: 2,
+                  transition: { duration: 0.3 } 
+                }}
+                className="group cursor-pointer flex-shrink-0 w-64 snap-start"
+              >
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src={destination.image}
+                    alt={destination.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white font-bold text-lg">{destination.name}</h3>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
