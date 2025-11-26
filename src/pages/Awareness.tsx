@@ -18,6 +18,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Footer } from "@/components/landing/Footer";
 import { StatsSection } from "@/components/landing/StatsSection";
 import { FAQSection } from "@/components/landing/FAQSection";
+import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
+import destinationsBg from "@/assets/backgrounds/destinations-awareness.jpg";
 
 const Awareness = () => {
   return (
@@ -498,6 +500,9 @@ const Awareness = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Destinations Showcase */}
+      <DestinationsShowcase backgroundImage={destinationsBg} />
 
       {/* FAQs Section */}
       <FAQSection />

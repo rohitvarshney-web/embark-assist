@@ -8,6 +8,8 @@ import { FAQSection } from "@/components/landing/FAQSection";
 import { Footer } from "@/components/landing/Footer";
 import { FloatingCTA } from "@/components/landing/FloatingCTA";
 import { NavLink } from "@/components/NavLink";
+import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
+import destinationsBg from "@/assets/backgrounds/destinations-insurance.jpg";
 
 export default function Insurance() {
   const features = [
@@ -330,6 +332,9 @@ export default function Insurance() {
           </div>
         </div>
       </section>
+
+      {/* Destinations Showcase */}
+      <DestinationsShowcase backgroundImage={destinationsBg} />
 
       {/* Testimonials */}
       <TestimonialsSection />
