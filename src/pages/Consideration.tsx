@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroSky from "@/assets/hero-sky-consideration.jpg";
 import {
   Search,
   DollarSign,
@@ -29,8 +28,8 @@ const Consideration = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="absolute top-0 left-0 right-0 z-50 px-6 lg:px-12 py-5 bg-transparent">
+        <div className="container mx-auto flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -41,20 +40,25 @@ const Consideration = () => {
               <img
                 src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
                 alt="StampMyVisa Logo"
-                className="h-10 w-auto"
+                className="h-10 w-auto brightness-0 invert"
               />
-              <span className="font-bold text-xl text-foreground">StampMyVisa</span>
+              <span className="font-bold text-xl text-white">StampMyVisa</span>
             </Link>
           </motion.div>
           <div className="flex items-center gap-3">
             <Button
               variant="outline"
               size="sm"
+              className="border-white/20 text-white hover:bg-white/10 hover:text-white"
               onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
             >
               Login
             </Button>
-            <Button size="sm" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
+            <Button 
+              size="sm"
+              className="bg-white text-primary hover:bg-white/90"
+              onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
+            >
               Get Started
             </Button>
           </div>
@@ -63,11 +67,8 @@ const Consideration = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroSky})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]" />
         
         <div className="container mx-auto max-w-6xl relative z-10 text-center py-20">
           <motion.div

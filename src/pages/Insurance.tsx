@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Shield, Heart, Plane, Clock, FileText, Headphones } from "lucide-react";
-import heroSky from "@/assets/hero-sky-insurance.jpg";
 import { Button } from "@/components/ui/button";
 import { StatsSection } from "@/components/landing/StatsSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
@@ -56,9 +55,9 @@ export default function Insurance() {
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50"
+        className="absolute top-0 left-0 right-0 z-50 px-6 lg:px-12 py-5 bg-transparent"
       >
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="container mx-auto flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -69,27 +68,18 @@ export default function Insurance() {
               <img
                 src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
                 alt="StampMyVisa Logo"
-                className="h-10 w-auto"
+                className="h-10 w-auto brightness-0 invert"
               />
-              <span className="font-bold text-xl text-foreground">StampMyVisa</span>
+              <span className="font-bold text-xl text-white">StampMyVisa</span>
             </Link>
           </motion.div>
 
-          <nav className="hidden md:flex items-center gap-6">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/awareness">Awareness</NavLink>
-            <NavLink to="/consideration">Consideration</NavLink>
-            <NavLink to="/conversion">Conversion</NavLink>
-            <NavLink to="/esim">eSIM</NavLink>
-            <NavLink to="/insurance">Insurance</NavLink>
-          </nav>
-
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" asChild>
+            <Button variant="outline" size="sm" className="border-white/20 text-white hover:bg-white/10 hover:text-white" asChild>
               <a href="https://stampmyvisa.com/auth/login">Login</a>
             </Button>
-            <Button size="sm" asChild>
-              <a href="https://stampmyvisa.com/auth/sign-up">Sign Up</a>
+            <Button size="sm" className="bg-white text-primary hover:bg-white/90" asChild>
+              <a href="https://stampmyvisa.com/auth/sign-up">Get Started</a>
             </Button>
           </div>
         </div>
@@ -97,11 +87,8 @@ export default function Insurance() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroSky})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]" />
         
         <div className="container mx-auto max-w-6xl relative z-10 text-center py-20">
           <motion.div

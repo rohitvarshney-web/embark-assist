@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroSky from "@/assets/hero-sky-landing.jpg";
 import {
   Send,
   Check,
@@ -181,7 +180,7 @@ export default function ChatLanding() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-50 flex items-center justify-between px-6 lg:px-12 py-5 bg-background/80 backdrop-blur-lg border-b border-border/50">
+      <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-12 py-5 bg-transparent">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -192,9 +191,9 @@ export default function ChatLanding() {
             <img
               src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
               alt="StampMyVisa Logo"
-              className="h-10 w-auto"
+              className="h-10 w-auto brightness-0 invert"
             />
-            <span className="font-bold text-xl text-foreground">StampMyVisa</span>
+            <span className="font-bold text-xl text-white">StampMyVisa</span>
           </div>
         </motion.div>
         <motion.nav
@@ -205,45 +204,45 @@ export default function ChatLanding() {
         >
           <Link 
             to="/awareness"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
+            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
           >
             Getting Started
           </Link>
           <Link 
             to="/consideration"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
+            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
           >
             Features
           </Link>
           <Link 
             to="/conversion"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
+            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
           >
             For Agencies
           </Link>
           <Link 
             to="/esim"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
+            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
           >
             eSIM
           </Link>
           <Link 
             to="/insurance"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-muted"
+            className="hidden lg:flex text-white/80 hover:text-white transition-colors font-medium px-3 py-2 rounded-md hover:bg-white/10"
           >
             Insurance
           </Link>
           <Button
             size="sm"
             variant="outline"
-            className="font-medium"
+            className="font-medium border-white/20 text-white hover:bg-white/10 hover:text-white"
             onClick={() => (window.location.href = "https://stampmyvisa.com/auth/login")}
           >
             Login
           </Button>
           <Button
             size="sm"
-            className="font-medium"
+            className="font-medium bg-white text-primary hover:bg-white/90"
             onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
           >
             Get Started
@@ -253,12 +252,9 @@ export default function ChatLanding() {
 
       {/* Main content */}
       <main className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 py-24 sm:py-32 lg:py-40 overflow-hidden">
-        {/* Sky background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroSky})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]" />
 
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-center relative z-10">
           {/* Left: Hero Content */}
