@@ -91,22 +91,32 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+          className="relative overflow-hidden"
         >
-          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
-            {DESTINATIONS.map((destination, index) => (
+          <motion.div
+            className="flex gap-6"
+            animate={{
+              x: [0, -2880],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 40,
+                ease: "linear",
+              },
+            }}
+          >
+            {/* Render destinations twice for seamless loop */}
+            {[...DESTINATIONS, ...DESTINATIONS].map((destination, index) => (
               <motion.div
-                key={destination.name}
-                initial={{ opacity: 0, y: 20, rotate: -2 }}
-                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                key={`${destination.name}-${index}`}
                 whileHover={{ 
                   y: -12, 
                   rotate: 2,
                   transition: { duration: 0.3 } 
                 }}
-                className="group cursor-pointer flex-shrink-0 w-64 snap-start"
+                className="group cursor-pointer flex-shrink-0 w-64"
               >
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <img
@@ -121,7 +131,7 @@ export const DestinationsShowcase: React.FC<DestinationsShowcaseProps> = ({
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
