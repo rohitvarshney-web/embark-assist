@@ -500,7 +500,7 @@ export default function VisaRejectionInsurance() {
                     autoPlay
                     muted
                     loop
-                    className="w-full rounded-xl shadow-2xl border border-border/50"
+                    className="w-full rounded-xl shadow-2xl border border-border/50 scale-[1.2]"
                   >
                     Your browser does not support the video tag.
                   </video>
