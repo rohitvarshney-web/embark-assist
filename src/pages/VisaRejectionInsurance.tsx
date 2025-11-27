@@ -148,7 +148,8 @@ export default function VisaRejectionInsurance() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed px-4">
-              Get financial protection if your visa is denied. Cover visa fees up to USD 6,250 and trip cancellation costs with our comprehensive insurance.
+              Get financial protection if your visa is denied. Cover visa fees up to USD 6,250 and trip cancellation
+              costs with our comprehensive insurance.
             </p>
           </motion.div>
         </div>
@@ -163,7 +164,9 @@ export default function VisaRejectionInsurance() {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">Why Choose Our Visa Rejection Insurance?</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">
+              Why Choose Our Visa Rejection Insurance?
+            </h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto px-4">
               Comprehensive coverage designed to protect your investment in your travel dreams
             </p>
@@ -182,7 +185,9 @@ export default function VisaRejectionInsurance() {
                   whileHover={{ y: -5, scale: 1.02 }}
                   className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-4`}>
+                  <div
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-4`}
+                  >
                     <Icon className={`w-6 h-6 ${feature.color}`} />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
@@ -428,36 +433,6 @@ export default function VisaRejectionInsurance() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 max-w-3xl mx-auto"
-          >
-            <h3 className="font-semibold text-lg md:text-xl mb-4 flex items-center gap-2">
-              <Phone className="w-5 h-5 text-primary" />
-              Contact for Claims Support
-            </h3>
-            <div className="space-y-3 text-sm md:text-base">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <span className="font-medium min-w-[80px]">Call:</span>
-                <a href="tel:+918045685888" className="text-primary hover:underline">
-                  +91-8045685888
-                </a>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <span className="font-medium min-w-[80px]">Email:</span>
-                <a href="mailto:support.myavio@bimaplan.co" className="text-primary hover:underline break-all">
-                  support.myavio@bimaplan.co
-                </a>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <span className="font-medium min-w-[80px]">Channels:</span>
-                <span className="text-muted-foreground">Email, WhatsApp, Phone</span>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -480,7 +455,9 @@ export default function VisaRejectionInsurance() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">Protect Your Visa Application Today</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
+              Protect Your Visa Application Today
+            </h2>
             <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8 px-4">
               Don't let visa rejection risks stop your travel dreams. Get comprehensive coverage in minutes
             </p>
