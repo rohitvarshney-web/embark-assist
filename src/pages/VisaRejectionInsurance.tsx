@@ -455,7 +455,7 @@ export default function VisaRejectionInsurance() {
               viewport={{ once: true }}
               className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 mb-8"
             >
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="grid md:grid-cols-[1fr_1.4fr] gap-8 md:gap-12 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
@@ -493,14 +493,14 @@ export default function VisaRejectionInsurance() {
                     </li>
                   </ul>
                 </div>
-                <div className="order-first md:order-last">
+                <div className="order-first md:order-last overflow-hidden">
                   <video
                     src="https://ik.imagekit.io/9pjdbdyeq/Website%20Images/27.11.2025_16.37.58_REC.mp4"
                     controls
                     autoPlay
                     muted
                     loop
-                    className="w-full rounded-xl shadow-2xl border border-border/50 scale-[1.2]"
+                    className="w-full rounded-xl shadow-2xl border border-border/50"
                   >
                     Your browser does not support the video tag.
                   </video>
