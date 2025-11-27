@@ -10,7 +10,7 @@ import { FloatingCTA } from "@/components/landing/FloatingCTA";
 import { NavLink } from "@/components/NavLink";
 import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
 import destinationsBg from "@/assets/backgrounds/destinations-insurance.jpg";
-import vriOptInFlow from "@/assets/vri-opt-in-flow.png";
+
 
 export default function VisaRejectionInsurance() {
   const features = [
@@ -494,11 +494,16 @@ export default function VisaRejectionInsurance() {
                   </ul>
                 </div>
                 <div className="order-first md:order-last">
-                  <img
-                    src={vriOptInFlow}
-                    alt="Visa Rejection Insurance opt-in interface"
+                  <video
+                    src="https://ik.imagekit.io/9pjdbdyeq/Website%20Images/27.11.2025_16.37.58_REC.mp4"
+                    controls
+                    autoPlay
+                    muted
+                    loop
                     className="w-full rounded-xl shadow-2xl border border-border/50"
-                  />
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </motion.div>
