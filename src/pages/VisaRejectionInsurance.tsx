@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Shield, FileText, Clock, CheckCircle, AlertCircle, Phone } from "lucide-react";
+import { Shield, FileText, Clock, CheckCircle, AlertCircle, Phone, ToggleRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
@@ -10,6 +10,7 @@ import { FloatingCTA } from "@/components/landing/FloatingCTA";
 import { NavLink } from "@/components/NavLink";
 import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
 import destinationsBg from "@/assets/backgrounds/destinations-insurance.jpg";
+import vriOptInFlow from "@/assets/vri-opt-in-flow.png";
 
 export default function VisaRejectionInsurance() {
   const features = [
@@ -251,9 +252,6 @@ export default function VisaRejectionInsurance() {
                     <span className="font-bold text-lg text-primary">{option.priceIncl}</span>
                   </div>
                 </div>
-                <Button className="w-full" size="lg" variant={option.popular ? "default" : "outline"} asChild>
-                  <a href="https://stampmyvisa.com/home/insure">Get {option.name}</a>
-                </Button>
               </motion.div>
             ))}
           </div>
@@ -292,9 +290,6 @@ export default function VisaRejectionInsurance() {
                   <div className="font-bold text-2xl text-primary">{comprehensivePlan.priceIncl}</div>
                 </div>
               </div>
-              <Button className="w-full" size="lg" asChild>
-                <a href="https://stampmyvisa.com/home/insure">Get Comprehensive Coverage</a>
-              </Button>
             </div>
           </motion.div>
 
@@ -436,6 +431,108 @@ export default function VisaRejectionInsurance() {
         </div>
       </section>
 
+      {/* How to Opt for VRI */}
+      <section className="py-12 md:py-20 bg-accent/5">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">
+              How to Add Visa Rejection Insurance
+            </h2>
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto px-4">
+              Simply toggle the option during your visa application to get instant protection
+            </p>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 mb-8"
+            >
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                      <ToggleRight className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-bold text-xl md:text-2xl">Easy Opt-In Process</h3>
+                  </div>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-primary">1</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold mb-1">Start Your Visa Application</p>
+                        <p className="text-sm text-muted-foreground">Begin your visa application on StampMyVisa</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-primary">2</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold mb-1">Toggle VRI During Application</p>
+                        <p className="text-sm text-muted-foreground">Enable the Visa Rejection Insurance option in the application form</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-primary">3</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold mb-1">Instant Protection</p>
+                        <p className="text-sm text-muted-foreground">Coverage is added automatically to your visa application</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="order-first md:order-last">
+                  <img
+                    src={vriOptInFlow}
+                    alt="Visa Rejection Insurance opt-in interface"
+                    className="w-full rounded-xl shadow-2xl border border-border/50"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-br from-primary/5 to-purple-500/5 border border-primary/20 rounded-2xl p-6 md:p-8"
+            >
+              <h3 className="font-bold text-xl md:text-2xl mb-4 text-center">What You Get When You Opt In</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-card/50 backdrop-blur-sm rounded-xl p-4 text-center">
+                  <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />
+                  <p className="font-semibold mb-1">Fast Claim Approval</p>
+                  <p className="text-xs text-muted-foreground">Quick processing and settlement</p>
+                </div>
+                <div className="bg-card/50 backdrop-blur-sm rounded-xl p-4 text-center">
+                  <Shield className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                  <p className="font-semibold mb-1">Covers Visa Fee</p>
+                  <p className="text-xs text-muted-foreground">Get refunded for legitimate rejections</p>
+                </div>
+                <div className="bg-card/50 backdrop-blur-sm rounded-xl p-4 text-center">
+                  <Phone className="w-8 h-8 text-purple-500 mx-auto mb-2" />
+                  <p className="font-semibold mb-1">Dedicated Support</p>
+                  <p className="text-xs text-muted-foreground">WhatsApp support at 9004702232</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Destinations Showcase */}
       <DestinationsShowcase backgroundImage={destinationsBg} />
 
@@ -444,34 +541,6 @@ export default function VisaRejectionInsurance() {
 
       {/* FAQ */}
       <FAQSection />
-
-      {/* CTA Section */}
-      <section className="py-12 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/10 to-background" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-              Protect Your Visa Application Today
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8 px-4">
-              Don't let visa rejection risks stop your travel dreams. Get comprehensive coverage in minutes
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <a href="https://stampmyvisa.com/home/insure">Get Insurance Now</a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="mailto:support.myavio@bimaplan.co">Contact Support</a>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Footer */}
       <Footer />
