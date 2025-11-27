@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Shield, FileText, Clock, CheckCircle, AlertCircle, Phone, ToggleRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { VideoZoomPlayer } from "@/components/VideoZoomPlayer";
 
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { FAQSection } from "@/components/landing/FAQSection";
@@ -494,16 +495,10 @@ export default function VisaRejectionInsurance() {
                   </ul>
                 </div>
                 <div className="order-first md:order-last overflow-hidden">
-                  <video
+                  <VideoZoomPlayer
                     src="https://ik.imagekit.io/9pjdbdyeq/Website%20Images/27.11.2025_16.37.58_REC.mp4"
-                    controls
-                    autoPlay
-                    muted
-                    loop
                     className="w-full rounded-xl shadow-2xl border border-border/50"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
+                  />
                 </div>
               </div>
             </motion.div>
