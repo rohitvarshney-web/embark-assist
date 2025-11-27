@@ -17,8 +17,15 @@ import {
   Compass,
   Navigation,
   Map,
+  Menu,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { StatsSection } from "./landing/StatsSection";
 import { HowItWorks } from "./landing/HowItWorks";
 import { FeaturesGrid } from "./landing/FeaturesGrid";
@@ -222,36 +229,46 @@ export default function ChatLanding() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex items-center gap-2 text-sm"
         >
-          <Link 
-            to="/awareness"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
-          >
-            Getting Started
-          </Link>
-          <Link 
-            to="/consideration"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
-          >
-            Features
-          </Link>
-          <Link 
-            to="/conversion"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
-          >
-            For Agencies
-          </Link>
-          <Link 
-            to="/esim"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
-          >
-            eSIM
-          </Link>
-          <Link 
-            to="/insurance"
-            className="hidden lg:flex text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-2 rounded-md hover:bg-accent"
-          >
-            Insurance
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="flex gap-2">
+                <Menu className="w-4 h-4" />
+                <span className="hidden sm:inline">Explore</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56 bg-background border border-border shadow-lg z-50">
+              <DropdownMenuItem asChild>
+                <Link to="/awareness" className="w-full cursor-pointer">
+                  Getting Started
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/consideration" className="w-full cursor-pointer">
+                  Features
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/conversion" className="w-full cursor-pointer">
+                  For Agencies
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/esim" className="w-full cursor-pointer">
+                  eSIM
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/insurance" className="w-full cursor-pointer">
+                  Travel Insurance
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/visa-rejection-insurance" className="w-full cursor-pointer">
+                  Visa Rejection Insurance
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Button
             variant="ghost"
             size="sm"
