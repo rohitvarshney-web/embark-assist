@@ -123,9 +123,6 @@ const Awareness = () => {
         </div>
       </section>
 
-      {/* Stats Section - Trusted Partners */}
-      <StatsSection />
-
       {/* Trust Building Section */}
       <section className="py-16 px-4 bg-muted/20">
         <div className="container mx-auto max-w-6xl">
@@ -187,6 +184,9 @@ const Awareness = () => {
           </div>
         </div>
       </section>
+
+      {/* Stats Section - Trusted Partners */}
+      <StatsSection />
 
       {/* Problem Deep Dive */}
       <section className="py-24 px-4 bg-gradient-to-b from-muted/30 to-background">
