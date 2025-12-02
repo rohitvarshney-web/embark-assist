@@ -490,9 +490,9 @@ const Awareness = () => {
                 </Button>
               </CardContent>
             </Card>
-          </motion.div>
+          </motion.div> */}
         </div>
-      </section> */}
+      </section>
 
       {/* Destinations Showcase */}
       <DestinationsShowcase backgroundImage={destinationsBg} />
