@@ -37,16 +37,13 @@ const Awareness = () => {
           </Link>
           <div className="flex items-center gap-3">
             <Button
-              variant="outline" 
+              variant="outline"
               size="sm"
-              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-in"}
+              onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
             >
               Login
             </Button>
-            <Button 
-              size="sm"
-              onClick={() => window.location.href = "https://stampmyvisa.com/auth/sign-up"}
-            >
+            <Button size="sm" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
               Get Started
             </Button>
           </div>
@@ -81,7 +78,8 @@ const Awareness = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
-              Travel agencies lose <span className="font-semibold text-foreground">thousands in revenue</span> every holiday season juggling visa applications.{" "}
+              Travel agencies lose <span className="font-semibold text-foreground">thousands in revenue</span> every
+              holiday season juggling visa applications.{" "}
               <span className="text-primary font-medium">There's a better way.</span>
             </p>
           </motion.div>
@@ -101,8 +99,7 @@ const Awareness = () => {
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              The Hidden Cost of{" "}
-              <span className="text-destructive">Manual Visa Processing</span>
+              The Hidden Cost of <span className="text-destructive">Manual Visa Processing</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Every holiday season brings the same nightmare for travel agencies
@@ -126,7 +123,8 @@ const Awareness = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground text-base leading-relaxed">
-                    December-January rush overwhelms your team. 50+ visa applications pile up. Clients get anxious. Your staff works overtime.
+                    December-January rush overwhelms your team. 50+ visa applications pile up. Clients get anxious. Your
+                    staff works overtime.
                   </p>
                   <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-destructive/20">
                     <div className="text-4xl font-bold text-destructive mb-1">40+ hours</div>
@@ -152,11 +150,14 @@ const Awareness = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground text-base leading-relaxed">
-                    Visa requirements change without warning. Your team scrambles through government websites. One missed update = rejected application.
+                    Visa requirements change without warning. Your team scrambles through government websites. One
+                    missed update = rejected application.
                   </p>
                   <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-amber-500/20">
                     <div className="text-4xl font-bold text-amber-500 mb-1">15%</div>
-                    <div className="text-sm text-muted-foreground font-medium">rejection rate from outdated information</div>
+                    <div className="text-sm text-muted-foreground font-medium">
+                      rejection rate from outdated information
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -178,11 +179,14 @@ const Awareness = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground text-base leading-relaxed">
-                    Missing documents. Incorrect formats. Booking confirmations incomplete. Each rejection damages client trust and your reputation.
+                    Missing documents. Incorrect formats. Booking confirmations incomplete. Each rejection damages
+                    client trust and your reputation.
                   </p>
                   <div className="mt-6 p-5 bg-background/80 backdrop-blur rounded-xl border border-red-500/20">
                     <div className="text-4xl font-bold text-red-500 mb-1">₹25,000+</div>
-                    <div className="text-sm text-muted-foreground font-medium">average loss per rejected group visa</div>
+                    <div className="text-sm text-muted-foreground font-medium">
+                      average loss per rejected group visa
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -197,9 +201,7 @@ const Awareness = () => {
             className="bg-card border border-border rounded-xl p-8 text-center"
           >
             <p className="text-lg text-muted-foreground mb-2">During peak season, this chaos means:</p>
-            <p className="text-3xl font-bold text-foreground mb-4">
-              Lost tours. Frustrated clients. Burned-out staff.
-            </p>
+            <p className="text-3xl font-bold text-foreground mb-4">Lost tours. Frustrated clients. Burned-out staff.</p>
             <p className="text-muted-foreground">
               And while you're drowning in paperwork, your competitors are closing deals.
             </p>
@@ -233,22 +235,21 @@ const Awareness = () => {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-6 leading-relaxed font-light">
-              Imagine having an expert visa team working <span className="text-foreground font-semibold">24/7</span> for your agency — without the overhead, training headaches, or peak-season chaos.
+              Imagine having an expert visa team working <span className="text-foreground font-semibold">24/7</span> for
+              your agency — without the overhead, training headaches, or peak-season chaos.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               That's <span className="text-primary font-semibold">StampMyVisa</span>. Not just software.{" "}
-              <span className="text-foreground font-medium">A complete visa processing system built specifically for travel agencies.</span>
+              <span className="text-foreground font-medium">
+                A complete visa processing system built specifically for travel agencies.
+              </span>
             </p>
           </motion.div>
 
           {/* Visual Transformation */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Before */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <Card className="h-full border-muted">
                 <CardHeader>
                   <CardTitle className="text-xl text-muted-foreground">The Old Way</CardTitle>
@@ -279,11 +280,7 @@ const Awareness = () => {
             </motion.div>
 
             {/* After */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <Card className="h-full border-primary/50 bg-primary/5">
                 <CardHeader>
                   <CardTitle className="text-xl text-foreground">The StampMyVisa Way</CardTitle>
@@ -325,9 +322,7 @@ const Awareness = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What This Means for Your Agency
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What This Means for Your Agency</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -347,7 +342,8 @@ const Awareness = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground leading-relaxed">
-                    No more hunting through government websites. See exactly what each client needs — <span className="text-foreground font-medium">instantly updated, clearly organized.</span>
+                    No more hunting through government websites. See exactly what each client needs —{" "}
+                    <span className="text-foreground font-medium">instantly updated, clearly organized.</span>
                   </p>
                 </CardContent>
               </Card>
@@ -369,7 +365,8 @@ const Awareness = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground leading-relaxed">
-                    Stop the endless back-and-forth. Clients upload documents directly. Your team reviews once. <span className="text-foreground font-medium">Done.</span>
+                    Stop the endless back-and-forth. Clients upload documents directly. Your team reviews once.{" "}
+                    <span className="text-foreground font-medium">Done.</span>
                   </p>
                 </CardContent>
               </Card>
@@ -391,7 +388,8 @@ const Awareness = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground leading-relaxed">
-                    Sleep better knowing <span className="text-foreground font-medium">trained visa experts</span> double-check every application before submission.
+                    Sleep better knowing <span className="text-foreground font-medium">trained visa experts</span>{" "}
+                    double-check every application before submission.
                   </p>
                 </CardContent>
               </Card>
@@ -401,7 +399,7 @@ const Awareness = () => {
       </section>
 
       {/* Soft CTA - Lead Capture */}
-      <section className="py-24 px-4">
+      {/* <section className="py-24 px-4">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -463,10 +461,10 @@ const Awareness = () => {
               </div>
             </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
-          {/* Alternative CTA */}
-          {/* <motion.div
+      {/* Alternative CTA */}
+      {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -491,8 +489,8 @@ const Awareness = () => {
               </CardContent>
             </Card>
           </motion.div> */}
-        </div>
-      </section>
+      {/* </div>
+      </section> */}
 
       {/* Destinations Showcase */}
       <DestinationsShowcase backgroundImage={destinationsBg} />
@@ -503,11 +501,7 @@ const Awareness = () => {
       {/* Final CTA Section */}
       <section className="py-24 px-4 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Ready to Transform Your Visa Business?
             </h2>
@@ -515,15 +509,15 @@ const Awareness = () => {
               Join thousands of travel agencies who've streamlined their visa processing with StampMyVisa.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="gap-2 text-lg px-8" 
+              <Button
+                size="lg"
+                className="gap-2 text-lg px-8"
                 onClick={() => (window.location.href = "https://calendly.com/b2b-support-stampmyvisa/demo")}
               >
                 Request Demo <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
                 onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
               >
