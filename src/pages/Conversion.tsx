@@ -292,7 +292,7 @@ const Conversion = () => {
       </section>
 
       {/* Feature Highlights - Short & Punchy */}
-      <section className="py-20 px-4">
+      {/* <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -305,9 +305,9 @@ const Conversion = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Feature 1 */}
-            <motion.div
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"> */}
+      {/* Feature 1 */}
+      {/* <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -322,10 +322,10 @@ const Conversion = () => {
                   <CardDescription>Quote any visa in seconds. Real-time rates for 180+ countries.</CardDescription>
                 </CardHeader>
               </Card>
-            </motion.div>
+            </motion.div> */}
 
-            {/* Feature 2 */}
-            <motion.div
+      {/* Feature 2 */}
+      {/* <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -340,10 +340,10 @@ const Conversion = () => {
                   <CardDescription>Clients see exactly what docs to upload. Zero back-and-forth.</CardDescription>
                 </CardHeader>
               </Card>
-            </motion.div>
+            </motion.div> */}
 
-            {/* Feature 3 */}
-            <motion.div
+      {/* Feature 3 */}
+      {/* <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -358,10 +358,10 @@ const Conversion = () => {
                   <CardDescription>Human backup for urgent cases. WhatsApp support included.</CardDescription>
                 </CardHeader>
               </Card>
-            </motion.div>
+            </motion.div> */}
 
-            {/* Feature 4 */}
-            <motion.div
+      {/* Feature 4 */}
+      {/* <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -379,7 +379,7 @@ const Conversion = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Social Proof */}
       <section className="py-20 px-4 bg-muted/30">
