@@ -654,32 +654,36 @@ const Consideration = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Your Complete Workflow, Simplified</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From client inquiry to visa approval — see exactly how it works
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              How to apply for a visa in 30 seconds?
+            </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-6 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Step 1 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-center"
+              className="flex flex-col"
             >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Search className="w-8 h-8 text-primary" />
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
+                  <span className="text-primary-foreground font-bold text-lg">1</span>
+                </div>
+                <h4 className="font-semibold text-foreground text-lg leading-tight pt-1.5">
+                  Select your destination and travel dates
+                </h4>
               </div>
-              <h4 className="font-bold text-foreground mb-2">1. Search</h4>
-              <p className="text-sm text-muted-foreground">Client asks about visa</p>
+              <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden flex-1">
+                <img
+                  src="https://ik.imagekit.io/9pjdbdyeq/Website%20Images/Screenshot%202025-12-02%20at%206.23.38%E2%80%AFPM.png"
+                  alt="Select destination and travel dates"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </motion.div>
-
-            {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div>
 
             {/* Step 2 */}
             <motion.div
@@ -687,19 +691,24 @@ const Consideration = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-center"
+              className="flex flex-col"
             >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <DollarSign className="w-8 h-8 text-primary" />
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
+                  <span className="text-primary-foreground font-bold text-lg">2</span>
+                </div>
+                <h4 className="font-semibold text-foreground text-lg leading-tight pt-1.5">
+                  Upload your passport and photo
+                </h4>
               </div>
-              <h4 className="font-bold text-foreground mb-2">2. Quote</h4>
-              <p className="text-sm text-muted-foreground">Instant pricing shown</p>
+              <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden flex-1">
+                <img
+                  src="https://ik.imagekit.io/9pjdbdyeq/Website%20Images/Screenshot%202025-12-02%20at%206.24.06%E2%80%AFPM.png"
+                  alt="Upload passport and photo"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </motion.div>
-
-            {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div>
 
             {/* Step 3 */}
             <motion.div
@@ -707,79 +716,49 @@ const Consideration = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-center"
+              className="flex flex-col"
             >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Upload className="w-8 h-8 text-primary" />
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
+                  <span className="text-primary-foreground font-bold text-lg">3</span>
+                </div>
+                <h4 className="font-semibold text-foreground text-lg leading-tight pt-1.5">
+                  Make a payment from Atlys Wallet
+                </h4>
               </div>
-              <h4 className="font-bold text-foreground mb-2">3. Upload</h4>
-              <p className="text-sm text-muted-foreground">Client submits docs</p>
+              <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden flex-1">
+                <img
+                  src="https://ik.imagekit.io/9pjdbdyeq/Website%20Images/Screenshot%202025-12-02%20at%206.24.40%E2%80%AFPM.png"
+                  alt="Make payment"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </motion.div>
 
-            {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-6 gap-6 mt-6">
             {/* Step 4 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-center"
+              className="flex flex-col"
             >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-primary" />
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
+                  <span className="text-primary-foreground font-bold text-lg">4</span>
+                </div>
+                <h4 className="font-semibold text-foreground text-lg leading-tight pt-1.5">
+                  Get your visa within the ETA!
+                </h4>
               </div>
-              <h4 className="font-bold text-foreground mb-2">4. QA</h4>
-              <p className="text-sm text-muted-foreground">Expert review</p>
-            </motion.div>
-
-            {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div>
-
-            {/* Step 5 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-primary" />
+              <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden flex-1">
+                <img
+                  src="https://ik.imagekit.io/9pjdbdyeq/Website%20Images/Screenshot%202025-12-02%20at%206.25.08%E2%80%AFPM.png"
+                  alt="Get your visa"
+                  className="w-full h-auto object-contain"
+                />
               </div>
-              <h4 className="font-bold text-foreground mb-2">5. Submit</h4>
-              <p className="text-sm text-muted-foreground">Sent to embassy</p>
             </motion.div>
-
-            {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div>
-
-            {/* Step 6 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <BarChart className="w-8 h-8 text-primary" />
-              </div>
-              <h4 className="font-bold text-foreground mb-2">6. Track</h4>
-              <p className="text-sm text-muted-foreground">Real-time updates</p>
-            </motion.div>
-
-            {/* Placeholder for symmetry */}
-            <div className="hidden md:block"></div>
           </div>
 
           <motion.div
