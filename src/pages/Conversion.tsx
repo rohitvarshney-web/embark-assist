@@ -91,7 +91,7 @@ const Conversion = () => {
       <StatsSection />
 
       {/* Problem/Solution Snapshot */}
-      <section className="py-20 px-4 bg-muted/30">
+      {/* <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -105,9 +105,9 @@ const Conversion = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Before/After 1 */}
-            <motion.div
+          <div className="grid md:grid-cols-3 gap-6"> */}
+      {/* Before/After 1 */}
+      {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -134,10 +134,10 @@ const Conversion = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </motion.div> */}
 
-            {/* Before/After 2 */}
-            <motion.div
+      {/* Before/After 2 */}
+      {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -164,10 +164,10 @@ const Conversion = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </motion.div> */}
 
-            {/* Before/After 3 */}
-            <motion.div
+      {/* Before/After 3 */}
+      {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -197,7 +197,7 @@ const Conversion = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Process Flow Section */}
       <section className="py-20 px-4">
