@@ -22,8 +22,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Footer } from "@/components/landing/Footer";
 import { StatsSection } from "@/components/landing/StatsSection";
-import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
-import destinationsBg from "@/assets/backgrounds/destinations-conversion.jpg";
+// import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
+// import destinationsBg from "@/assets/backgrounds/destinations-conversion.jpg";
 
 const Conversion = () => {
   return (
@@ -730,7 +730,7 @@ const Conversion = () => {
       </section>
 
       {/* Destinations Showcase */}
-      <DestinationsShowcase backgroundImage={destinationsBg} />
+      {/* <DestinationsShowcase backgroundImage={destinationsBg} /> */}
 
       {/* Final Push CTA */}
       <section className="py-20 px-4">
