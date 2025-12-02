@@ -195,9 +195,7 @@ const Consideration = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              The Smarter Way to Run Your Visa Desk
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">The Smarter Way to Run Your Visa Desk</h2>
           </motion.div>
 
           <div className="space-y-24">
@@ -212,11 +210,10 @@ const Consideration = () => {
                 <div className="inline-block px-4 py-2 bg-primary/10 rounded-full">
                   <span className="text-sm font-semibold text-primary">Instant Pricing</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Get Accurate Visa Quotes in Seconds
-                </h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-foreground">Get Accurate Visa Quotes in Seconds</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Stop losing clients to competitors who respond faster. Quote any visa instantly with real-time pricing for 180+ countries.
+                  Stop losing clients to competitors who respond faster. Quote any visa instantly with real-time pricing
+                  for 180+ countries.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -238,8 +235,8 @@ const Consideration = () => {
                   className="absolute inset-0 rounded-2xl opacity-20"
                   style={{
                     backgroundImage: `url(${destinationsBg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
                   }}
                 />
                 <div className="relative bg-white/90 dark:bg-card/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
@@ -287,8 +284,8 @@ const Consideration = () => {
                   className="absolute inset-0 rounded-2xl opacity-20"
                   style={{
                     backgroundImage: `url(${destinationsBg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
                   }}
                 />
                 <div className="relative bg-white/90 dark:bg-card/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
@@ -330,9 +327,7 @@ const Consideration = () => {
                 <div className="inline-block px-4 py-2 bg-primary/10 rounded-full">
                   <span className="text-sm font-semibold text-primary">Guided Uploads</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Upload Documents with Zero Confusion
-                </h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-foreground">Upload Documents with Zero Confusion</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   No more missing documents or format errors. Clients see exactly what to upload with clear guidelines.
                 </p>
@@ -368,7 +363,8 @@ const Consideration = () => {
                   Reduce Rejection Risk With Pro-standard Review
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Every application reviewed by trained visa specialists before submission. Catch errors before embassies do.
+                  Every application reviewed by trained visa specialists before submission. Catch errors before
+                  embassies do.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -390,8 +386,8 @@ const Consideration = () => {
                   className="absolute inset-0 rounded-2xl opacity-20"
                   style={{
                     backgroundImage: `url(${destinationsBg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
                   }}
                 />
                 <div className="relative bg-white/90 dark:bg-card/90 backdrop-blur-sm rounded-2xl shadow-2xl border-2 border-green-200 dark:border-green-800">
@@ -456,8 +452,8 @@ const Consideration = () => {
                   className="absolute inset-0 rounded-2xl opacity-20"
                   style={{
                     backgroundImage: `url(${destinationsBg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
                   }}
                 />
                 <div className="relative bg-white/90 dark:bg-card/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 text-center">
@@ -520,7 +516,9 @@ const Consideration = () => {
             className="mt-32 mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-16">
-              How StampMyVisa Streamlines<br />Your Entire Visa Process
+              How StampMyVisa Streamlines
+              <br />
+              Your Entire Visa Process
             </h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="flex items-start gap-4">
@@ -529,7 +527,9 @@ const Consideration = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-foreground mb-2">Instant Quotes</h4>
-                  <p className="text-muted-foreground">Real-time pricing for 180+ countries. No more "let me get back to you" delays.</p>
+                  <p className="text-muted-foreground">
+                    Real-time pricing for 180+ countries. No more "let me get back to you" delays.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -538,7 +538,9 @@ const Consideration = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-foreground mb-2">Guided Document Collection</h4>
-                  <p className="text-muted-foreground">Country-specific checklists. Clients upload directly - no email chaos.</p>
+                  <p className="text-muted-foreground">
+                    Country-specific checklists. Clients upload directly - no email chaos.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -547,7 +549,9 @@ const Consideration = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-foreground mb-2">Expert Quality Assurance</h4>
-                  <p className="text-muted-foreground">Every application reviewed by visa specialists before submission.</p>
+                  <p className="text-muted-foreground">
+                    Every application reviewed by visa specialists before submission.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -556,7 +560,9 @@ const Consideration = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-foreground mb-2">Real-Time Tracking</h4>
-                  <p className="text-muted-foreground">Live updates from submission to approval. Keep clients informed automatically.</p>
+                  <p className="text-muted-foreground">
+                    Live updates from submission to approval. Keep clients informed automatically.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -565,7 +571,9 @@ const Consideration = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-foreground mb-2">Dedicated Support</h4>
-                  <p className="text-muted-foreground">Personal relationship manager for your agency. Human backup when needed.</p>
+                  <p className="text-muted-foreground">
+                    Personal relationship manager for your agency. Human backup when needed.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -574,14 +582,16 @@ const Consideration = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-foreground mb-2">Latest Requirements</h4>
-                  <p className="text-muted-foreground">Embassy updates monitored daily. Always submit with current rules.</p>
+                  <p className="text-muted-foreground">
+                    Embassy updates monitored daily. Always submit with current rules.
+                  </p>
                 </div>
               </div>
             </div>
           </motion.div>
 
           {/* We've Solved the Concerns Most Agencies Struggle With */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -631,7 +641,7 @@ const Consideration = () => {
                 </CardContent>
               </Card>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
@@ -789,7 +799,6 @@ const Consideration = () => {
           </motion.div>
         </div>
       </section>
-
 
       {/* Social Proof & Case Studies */}
       <section className="py-20 px-4 bg-muted/30">
