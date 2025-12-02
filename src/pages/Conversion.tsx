@@ -79,16 +79,105 @@ const Conversion = () => {
                 <span className="absolute bottom-2 left-0 w-full h-4 bg-purple-400/30 -z-10 rounded" />
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed">
               Your competitors are already booking. Don't let outdated workflows hold you back.{" "}
               <span className="font-semibold text-foreground">There's a better way.</span>
             </p>
+
+            {/* Hero CTA */}
+            <div className="max-w-xl mx-auto mb-8">
+              <Button
+                size="lg"
+                className="gap-2 text-lg px-12"
+                onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
+              >
+                Login to Your Account <ArrowRight className="w-5 h-5" />
+              </Button>
+            </div>
+
+            {/* Trust Markers */}
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span>Your data is safe</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span>Reactivate in minutes</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span>Support available 24/7</span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Stats Section - Trusted Partners */}
       <StatsSection />
+
+      {/* Trust Building Section */}
+      <section className="py-16 px-4 bg-muted/20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Best Prices</h3>
+              <p className="text-sm text-muted-foreground">Competitive rates for travel agents</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Quick & Easy</h3>
+              <p className="text-sm text-muted-foreground">Applications done in minutes</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Proven Track Record</h3>
+              <p className="text-sm text-muted-foreground">99% approval rate</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <User className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Expert Support</h3>
+              <p className="text-sm text-muted-foreground">Dedicated team always ready</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Problem/Solution Snapshot */}
       {/* <section className="py-20 px-4 bg-muted/30">
