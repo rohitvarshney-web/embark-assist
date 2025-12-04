@@ -682,7 +682,7 @@ const Consideration = () => {
             </div>
 
             {/* Step 2 */}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -692,14 +692,14 @@ const Consideration = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <DollarSign className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-bold text-foreground mb-2">2. Quote</h4>
-              <p className="text-sm text-muted-foreground">Instant pricing shown</p>
-            </motion.div> */}
+              <h4 className="font-bold text-foreground mb-2">2. Upload</h4>
+              <p className="text-sm text-muted-foreground">Upload all the required documents</p>
+            </motion.div> 
 
             {/* Arrow */}
-            {/* <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center">
               <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div> */}
+            </div>
 
             {/* Step 3 */}
             <motion.div
@@ -712,8 +712,8 @@ const Consideration = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Upload className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-bold text-foreground mb-2">2. Upload</h4>
-              <p className="text-sm text-muted-foreground">Upload all the required documents</p>
+              <h4 className="font-bold text-foreground mb-2">3. Payment</h4>
+              <p className="text-sm text-muted-foreground"> Make the payment using credit/debit card, UPI or Net Banking/p>
             </motion.div>
 
             {/* Arrow */}
@@ -734,9 +734,9 @@ const Consideration = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-bold text-foreground mb-2">3. Payment</h4>
+              <h4 className="font-bold text-foreground mb-2">4. Track</h4>
               <p className="text-sm text-muted-foreground">
-                Make the payment using credit/debit card, UPI or Net Banking
+                Real-time updates
               </p>
             </motion.div>
 
@@ -766,7 +766,7 @@ const Consideration = () => {
             </div> */}
 
             {/* Step 6 */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -778,7 +778,7 @@ const Consideration = () => {
               </div>
               <h4 className="font-bold text-foreground mb-2">4. Track</h4>
               <p className="text-sm text-muted-foreground">Real-time updates</p>
-            </motion.div>
+            </motion.div> */}
 
             {/* Placeholder for symmetry */}
             <div className="hidden md:block"></div>
