@@ -660,14 +660,14 @@ const Consideration = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-6 gap-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-center gap-4 md:gap-2">
             {/* Step 1 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-center"
+              className="text-center flex-1 max-w-[180px]"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Search className="w-8 h-8 text-primary" />
@@ -677,7 +677,7 @@ const Consideration = () => {
             </motion.div>
 
             {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center flex-shrink-0">
               <ArrowRight className="w-6 h-6 text-muted-foreground" />
             </div>
 
@@ -687,7 +687,7 @@ const Consideration = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-center"
+              className="text-center flex-1 max-w-[180px]"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Upload className="w-8 h-8 text-primary" />
@@ -697,7 +697,7 @@ const Consideration = () => {
             </motion.div>
 
             {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center flex-shrink-0">
               <ArrowRight className="w-6 h-6 text-muted-foreground" />
             </div>
 
@@ -707,7 +707,7 @@ const Consideration = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-center"
+              className="text-center flex-1 max-w-[180px]"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <DollarSign className="w-8 h-8 text-primary" />
@@ -719,71 +719,26 @@ const Consideration = () => {
             </motion.div>
 
             {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center flex-shrink-0">
               <ArrowRight className="w-6 h-6 text-muted-foreground" />
             </div>
-          </div>
 
-          <div className="grid md:grid-cols-6 gap-6 mt-6">
             {/* Step 4 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-center"
+              className="text-center flex-1 max-w-[180px]"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <BarChart className="w-8 h-8 text-primary" />
-                {/* <Shield className="w-8 h-8 text-primary" /> */}
               </div>
               <h4 className="font-bold text-foreground mb-2">4. Track</h4>
               <p className="text-sm text-muted-foreground">Real-time updates</p>
             </motion.div>
-
-            {/* Arrow */}
-            {/* <div className="hidden md:flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div> */}
-
-            {/* Step 5 */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-primary" />
-              </div>
-              <h4 className="font-bold text-foreground mb-2">5. Submit</h4>
-              <p className="text-sm text-muted-foreground">Sent to embassy</p>
-            </motion.div> */}
-
-            {/* Arrow */}
-            {/* <div className="hidden md:flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div> */}
-
-            {/* Step 6 */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <BarChart className="w-8 h-8 text-primary" />
-              </div>
-              <h4 className="font-bold text-foreground mb-2">4. Track</h4>
-              <p className="text-sm text-muted-foreground">Real-time updates</p>
-            </motion.div> */}
-
-            {/* Placeholder for symmetry */}
-            <div className="hidden md:block"></div>
           </div>
+
 
           {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
