@@ -638,13 +638,13 @@ const Conversion = () => {
                         <p className="text-sm text-muted-foreground">WhatsApp notifications</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
+                    {/* <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                      {/* <div>
+                      <div>
                         <p className="font-semibold text-foreground">VRI Discount Codes</p>
                         <p className="text-sm text-muted-foreground">For your first 10 applications</p>
-                      </div> */}
-                    </div>
+                      </div>
+                    </div> */}
                   </div>
                 </div>
 
