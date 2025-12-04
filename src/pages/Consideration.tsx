@@ -694,7 +694,7 @@ const Consideration = () => {
               </div>
               <h4 className="font-bold text-foreground mb-2">2. Upload</h4>
               <p className="text-sm text-muted-foreground">Upload all the required documents</p>
-            </motion.div> 
+            </motion.div>
 
             {/* Arrow */}
             <div className="hidden md:flex items-center justify-center">
@@ -713,7 +713,9 @@ const Consideration = () => {
                 <Upload className="w-8 h-8 text-primary" />
               </div>
               <h4 className="font-bold text-foreground mb-2">3. Payment</h4>
-              <p className="text-sm text-muted-foreground">Make the payment using credit/debit card, UPI or Net Banking</p>
+              <p className="text-sm text-muted-foreground">
+                Make the payment using credit/debit card, UPI or Net Banking
+              </p>
             </motion.div>
 
             {/* Arrow */}
@@ -735,15 +737,13 @@ const Consideration = () => {
                 <Shield className="w-8 h-8 text-primary" />
               </div>
               <h4 className="font-bold text-foreground mb-2">4. Track</h4>
-              <p className="text-sm text-muted-foreground">
-                Real-time updates
-              </p>
+              <p className="text-sm text-muted-foreground">Real-time updates</p>
             </motion.div>
 
             {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
+            {/* <div className="hidden md:flex items-center justify-center">
               <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div>
+            </div> */}
 
             {/* Step 5 */}
             {/* <motion.div
