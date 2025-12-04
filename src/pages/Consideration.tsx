@@ -784,7 +784,7 @@ const Consideration = () => {
             <div className="hidden md:block"></div>
           </div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -798,7 +798,7 @@ const Consideration = () => {
                 <p className="text-sm text-muted-foreground mt-2">vs. 2-3 days manually</p>
               </CardContent>
             </Card>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
