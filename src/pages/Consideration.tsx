@@ -713,7 +713,7 @@ const Consideration = () => {
                 <Upload className="w-8 h-8 text-primary" />
               </div>
               <h4 className="font-bold text-foreground mb-2">3. Payment</h4>
-              <p className="text-sm text-muted-foreground"> Make the payment using credit/debit card, UPI or Net Banking/p>
+              <p className="text-sm text-muted-foreground">Make the payment using credit/debit card, UPI or Net Banking</p>
             </motion.div>
 
             {/* Arrow */}
