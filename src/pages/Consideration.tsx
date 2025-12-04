@@ -656,7 +656,7 @@ const Consideration = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Your Complete Workflow, Simplified</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From client inquiry to visa approval — see exactly how it works
+              From order creation to visa approval — see exactly how it works
             </p>
           </motion.div>
 
@@ -673,7 +673,7 @@ const Consideration = () => {
                 <Search className="w-8 h-8 text-primary" />
               </div>
               <h4 className="font-bold text-foreground mb-2">1. Search</h4>
-              <p className="text-sm text-muted-foreground">Client asks about visa</p>
+              <p className="text-sm text-muted-foreground">Search the country you want to apply visa for</p>
             </motion.div>
 
             {/* Arrow */}
@@ -682,7 +682,7 @@ const Consideration = () => {
             </div>
 
             {/* Step 2 */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -694,12 +694,12 @@ const Consideration = () => {
               </div>
               <h4 className="font-bold text-foreground mb-2">2. Quote</h4>
               <p className="text-sm text-muted-foreground">Instant pricing shown</p>
-            </motion.div>
+            </motion.div> */}
 
             {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
+            {/* <div className="hidden md:flex items-center justify-center">
               <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div>
+            </div> */}
 
             {/* Step 3 */}
             <motion.div
@@ -712,8 +712,8 @@ const Consideration = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Upload className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-bold text-foreground mb-2">3. Upload</h4>
-              <p className="text-sm text-muted-foreground">Client submits docs</p>
+              <h4 className="font-bold text-foreground mb-2">2. Upload</h4>
+              <p className="text-sm text-muted-foreground">Upload all the required documents</p>
             </motion.div>
 
             {/* Arrow */}
@@ -734,8 +734,10 @@ const Consideration = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-bold text-foreground mb-2">4. QA</h4>
-              <p className="text-sm text-muted-foreground">Expert review</p>
+              <h4 className="font-bold text-foreground mb-2">3. Payment</h4>
+              <p className="text-sm text-muted-foreground">
+                Make the payment using credit/debit card, UPI or Net Banking
+              </p>
             </motion.div>
 
             {/* Arrow */}
@@ -744,7 +746,7 @@ const Consideration = () => {
             </div>
 
             {/* Step 5 */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -756,12 +758,12 @@ const Consideration = () => {
               </div>
               <h4 className="font-bold text-foreground mb-2">5. Submit</h4>
               <p className="text-sm text-muted-foreground">Sent to embassy</p>
-            </motion.div>
+            </motion.div> */}
 
             {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
+            {/* <div className="hidden md:flex items-center justify-center">
               <ArrowRight className="w-6 h-6 text-muted-foreground" />
-            </div>
+            </div> */}
 
             {/* Step 6 */}
             <motion.div
@@ -774,7 +776,7 @@ const Consideration = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <BarChart className="w-8 h-8 text-primary" />
               </div>
-              <h4 className="font-bold text-foreground mb-2">6. Track</h4>
+              <h4 className="font-bold text-foreground mb-2">4. Track</h4>
               <p className="text-sm text-muted-foreground">Real-time updates</p>
             </motion.div>
 
