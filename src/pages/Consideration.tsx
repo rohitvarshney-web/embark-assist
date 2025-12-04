@@ -660,7 +660,7 @@ const Consideration = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-8 gap-6">
+          <div className="grid md:grid-cols-6 gap-6">
             {/* Step 1 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -782,7 +782,7 @@ const Consideration = () => {
             </motion.div> */}
 
             {/* Placeholder for symmetry */}
-            {/* <div className="hidden md:block"></div> */}
+            <div className="hidden md:block"></div>
           </div>
 
           {/* <motion.div
