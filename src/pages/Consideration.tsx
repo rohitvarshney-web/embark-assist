@@ -782,7 +782,7 @@ const Consideration = () => {
             </motion.div> */}
 
             {/* Placeholder for symmetry */}
-            <div className="hidden md:block"></div>
+            {/* <div className="hidden md:block"></div> */}
           </div>
 
           {/* <motion.div
