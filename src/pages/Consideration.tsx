@@ -690,7 +690,7 @@ const Consideration = () => {
               className="text-center"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <DollarSign className="w-8 h-8 text-primary" />
+                <Upload className="w-8 h-8 text-primary" />
               </div>
               <h4 className="font-bold text-foreground mb-2">2. Upload</h4>
               <p className="text-sm text-muted-foreground">Upload all the required documents</p>
@@ -710,7 +710,7 @@ const Consideration = () => {
               className="text-center"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Upload className="w-8 h-8 text-primary" />
+                <DollarSign className="w-8 h-8 text-primary" />
               </div>
               <h4 className="font-bold text-foreground mb-2">3. Payment</h4>
               <p className="text-sm text-muted-foreground">
@@ -734,7 +734,8 @@ const Consideration = () => {
               className="text-center"
             >
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-primary" />
+                <BarChart className="w-8 h-8 text-primary" />
+                {/* <Shield className="w-8 h-8 text-primary" /> */}
               </div>
               <h4 className="font-bold text-foreground mb-2">4. Track</h4>
               <p className="text-sm text-muted-foreground">Real-time updates</p>
