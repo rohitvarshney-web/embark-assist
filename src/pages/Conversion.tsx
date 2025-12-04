@@ -589,7 +589,7 @@ const Conversion = () => {
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                       <div>
                         <p className="font-semibold text-foreground">Complete Country Requirements</p>
-                        <p className="text-sm text-muted-foreground">180+ countries, always updated</p>
+                        <p className="text-sm text-muted-foreground">80+ countries, always updated</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -609,7 +609,7 @@ const Conversion = () => {
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                       <div>
-                        <p className="font-semibold text-foreground">WhatsApp RM Support</p>
+                        <p className="font-semibold text-foreground">WhatsApp Support</p>
                         <p className="text-sm text-muted-foreground">Business hours, real humans</p>
                       </div>
                     </div>
@@ -634,16 +634,16 @@ const Conversion = () => {
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                       <div>
-                        <p className="font-semibold text-foreground">Embassy Update Alerts</p>
+                        <p className="font-semibold text-foreground">Order Update Alerts</p>
                         <p className="text-sm text-muted-foreground">WhatsApp notifications</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                      <div>
+                      {/* <div>
                         <p className="font-semibold text-foreground">VRI Discount Codes</p>
                         <p className="text-sm text-muted-foreground">For your first 10 applications</p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
