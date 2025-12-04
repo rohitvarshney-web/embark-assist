@@ -667,9 +667,9 @@ const Conversion = () => {
                         size="lg"
                         variant="outline"
                         className="text-lg px-8"
-                        onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}
+                        onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
                       >
-                        Get Started
+                        Login
                       </Button>
                     </div>
                     <div className="mt-6 flex items-center justify-center gap-6 text-sm text-muted-foreground flex-wrap">
