@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Container } from "./Container";
 
-const LOGO_URL = "https://stampmyvisa.com/assets/images/logo-with-name.svg";
+const LOGO_URL = "https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Bra…o/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863";
 
 interface PageHeaderProps {
   showNavigation?: boolean;
