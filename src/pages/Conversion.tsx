@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { HeroSection, TrustBuildingSection, CTASection, SectionHeader } from "@/components/common";
 import {
   Zap,
   Upload,
@@ -115,7 +116,8 @@ const Conversion = () => {
       </section>
 
       {/* Trust Building Section */}
-      <section className="py-16 px-4 bg-muted/20">
+      <TrustBuildingSection />
+      {/* <section className="py-16 px-4 bg-muted/20">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8">
             <motion.div
@@ -174,7 +176,7 @@ const Conversion = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats Section - Trusted Partners */}
       <StatsSection />
