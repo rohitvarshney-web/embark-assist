@@ -8,16 +8,11 @@ const footerLinks = {
     { name: "Visa Rejection Insurance", href: "https://stampmyvisa.com/home/create-visa" },
   ],
   company: [
-    // { name: "About Us", href: "#" },
-    { name: "Contact", href: "https://stampmyvisa.com/contact-us" },
-    // { name: "Careers", href: "#" },
-    // { name: "Partner Program", href: "#" },
+    { name: "Contact", href: "https://stampmyvisa.com/home/contact" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "https://stampmyvisa.com/privacy" },
-    { name: "Terms & Conditions", href: "https://stampmyvisa.com/terms" },
-    // { name: "Refund Policy", href: "#" },
-    // { name: "Cookie Policy", href: "#" },
+    { name: "Privacy Policy", href: "https://stampmyvisa.com/home/privacy-policy" },
+    { name: "Terms & Conditions", href: "https://stampmyvisa.com/home/terms-conditions" },
   ],
 };
 
