@@ -81,34 +81,6 @@ export function Footer() {
             <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
               India's most trusted visa partner for travel professionals. Simplifying visa processing since 2017.
             </p>
-            <div className="flex gap-3">
-              {["Twitter", "LinkedIn", "Instagram", "Facebook"].map((social, idx) => (
-                <motion.button
-                  key={social}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: idx * 0.1,
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 15,
-                  }}
-                  whileHover={{
-                    y: -4,
-                    scale: 1.1,
-                    transition: { duration: 0.2 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-11 h-11 rounded-xl border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300 flex items-center justify-center group"
-                  aria-label={social}
-                >
-                  <span className="text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors">
-                    {social[0]}
-                  </span>
-                </motion.button>
-              ))}
-            </div>
           </motion.div>
 
           {/* Services Links */}

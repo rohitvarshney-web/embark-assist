@@ -28,7 +28,7 @@ export function StatsSection() {
           <p className="text-muted-foreground text-lg">Join thousands of travel agents and planners who rely on us</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -37,17 +37,17 @@ export function StatsSection() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="relative group"
+              className="relative group h-full"
             >
-              <div className="relative bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+              <div className="relative bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-4 md:p-6 text-center hover:shadow-xl hover:border-primary/30 transition-all duration-300 h-full flex flex-col justify-center min-h-[140px] md:min-h-[160px]">
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
 
                 <div className="relative z-10">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-primary to-primary/60 bg-clip-text text-transparent mb-2">
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-primary to-primary/60 bg-clip-text text-transparent mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm font-medium text-foreground mb-1">{stat.label}</div>
+                  <div className="text-xs md:text-sm font-medium text-foreground mb-1 line-clamp-2">{stat.label}</div>
                   <div className="text-xs text-muted-foreground">{stat.trend}</div>
                 </div>
               </div>
