@@ -74,7 +74,7 @@ const destinations = [
 
 export default function Esim() {
   return (
-    <PageLayout>
+    <PageLayout showNavigation={false}>
       {/* Hero Section */}
       <HeroSection
         title={

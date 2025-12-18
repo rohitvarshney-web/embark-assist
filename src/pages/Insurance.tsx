@@ -101,7 +101,7 @@ const scenarios = [
 
 export default function Insurance() {
   return (
-    <PageLayout>
+    <PageLayout showNavigation={false}>
       {/* Hero Section */}
       <HeroSection
         title={

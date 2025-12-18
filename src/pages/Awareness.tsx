@@ -73,7 +73,7 @@ const newWayItems = [
 
 const Awareness = () => {
   return (
-    <PageLayout showFloatingCTA={false}>
+    <PageLayout showFloatingCTA={false} showNavigation={false}>
       {/* Hero Section */}
       <HeroSection
         title={
