@@ -8,6 +8,7 @@ interface PageLayoutProps {
   showHeader?: boolean;
   showFooter?: boolean;
   showFloatingCTA?: boolean;
+  showNavigation?: boolean;
   headerVariant?: "default" | "simple";
 }
 
@@ -16,11 +17,12 @@ export function PageLayout({
   showHeader = true, 
   showFooter = true, 
   showFloatingCTA = true,
+  showNavigation = true,
   headerVariant = "default"
 }: PageLayoutProps) {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {showHeader && <PageHeader variant={headerVariant} />}
+      {showHeader && <PageHeader variant={headerVariant} showNavigation={showNavigation} />}
       <main className="flex-1 pt-16">
         {children}
       </main>

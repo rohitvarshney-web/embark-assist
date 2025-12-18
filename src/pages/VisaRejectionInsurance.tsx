@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Shield, FileText, Clock, CheckCircle, AlertCircle, Phone, ToggleRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { FAQSection } from "@/components/landing/FAQSection";
-import { Footer } from "@/components/landing/Footer";
-import { FloatingCTA } from "@/components/landing/FloatingCTA";
-import { NavLink } from "@/components/NavLink";
 import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
+import { PageLayout } from "@/components/layout";
 import destinationsBg from "@/assets/backgrounds/destinations-insurance.jpg";
 
 
@@ -80,43 +77,7 @@ export default function VisaRejectionInsurance() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-accent/5">
-      {/* Header */}
-      <motion.header
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50"
-      >
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
-              alt="StampMyVisa Logo"
-              className="h-10 w-auto"
-            />
-            <span className="font-bold text-xl text-foreground">StampMyVisa</span>
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-6">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/awareness">Awareness</NavLink>
-            <NavLink to="/consideration">Consideration</NavLink>
-            <NavLink to="/conversion">Conversion</NavLink>
-            <NavLink to="/esim">eSIM</NavLink>
-            <NavLink to="/insurance">Insurance</NavLink>
-            <NavLink to="/visa-rejection-insurance">Visa Rejection</NavLink>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" asChild>
-              <a href="https://stampmyvisa.com/auth/login">Login</a>
-            </Button>
-            <Button size="sm" asChild>
-              <a href="https://stampmyvisa.com/auth/sign-up">Sign Up</a>
-            </Button>
-          </div>
-        </div>
-      </motion.header>
+    <PageLayout showNavigation={false}>
 
       {/* Hero Section */}
       <section className="relative pt-24 md:pt-32 pb-12 md:pb-20 overflow-hidden">
@@ -546,12 +507,6 @@ export default function VisaRejectionInsurance() {
 
       {/* FAQ */}
       <FAQSection />
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Floating CTA */}
-      <FloatingCTA />
-    </div>
+    </PageLayout>
   );
 }

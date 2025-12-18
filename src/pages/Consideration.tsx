@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import {
   Search,
   DollarSign,
@@ -22,39 +21,14 @@ import { FAQSection } from "@/components/landing/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Footer } from "@/components/landing/Footer";
 import { StatsSection } from "@/components/landing/StatsSection";
 import { DestinationsShowcase } from "@/components/landing/DestinationsShowcase";
+import { PageLayout } from "@/components/layout";
 import destinationsBg from "@/assets/backgrounds/destinations-consideration.jpg";
 
 const Consideration = () => {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="https://ik.imagekit.io/9pjdbdyeq/StampMyVisa%20Brand%20Assets/Logo/Logo-Dark/Logo-Dark.svg?updatedAt=1754036741863"
-              alt="StampMyVisa Logo"
-              className="h-10 w-auto"
-            />
-            <span className="font-bold text-xl text-foreground">StampMyVisa</span>
-          </Link>
-          <div className="flex items-center gap-3">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-in")}
-            >
-              Login
-            </Button>
-            <Button size="sm" onClick={() => (window.location.href = "https://stampmyvisa.com/auth/sign-up")}>
-              Get Started
-            </Button>
-          </div>
-        </div>
-      </header>
+    <PageLayout showNavigation={false}>
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">
@@ -935,10 +909,7 @@ const Consideration = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 
