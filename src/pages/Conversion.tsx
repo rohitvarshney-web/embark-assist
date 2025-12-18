@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { HeroSection, TrustBuildingSection, CTASection, SectionHeader } from "@/components/common";
 import { StatsSection } from "@/components/landing/StatsSection";
 import { PageLayout } from "@/components/layout";
 
